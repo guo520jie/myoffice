@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="400"></canvas>
+
+
+<script>
+
+  //1. 获取画布
+  var canvas = document.getElementById("canvas");
+  //2. 获取2d上下文对象
+  var context = canvas.getContext("2d");
+
+
+  //绘制一条默认的线  1px 黑色线
+  context.moveTo(100, 100);
+  context.lineTo(200, 100);
+  context.stroke();
+
+  context.save();//把默认的状态保存起来。
+
+  //再绘制一条 3px 的红色 的线
+  context.beginPath();
+  context.moveTo(100, 130);
+  context.lineTo(200, 130);
+  context.lineWidth = 3;
+  context.strokeStyle = "#f00";
+  context.stroke();
+
+
+  //我想绘制默认的线
+  //save(): 会把save时的当前状态给保存起来。
+  //restore(): 恢复之前的状态
+  context.beginPath();
+  context.moveTo(100, 160);
+  context.lineTo(200, 160);
+  context.restore();
+  context.stroke();
+
+</script>
+</body>
+</html>

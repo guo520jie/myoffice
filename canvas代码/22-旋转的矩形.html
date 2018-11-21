@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="400"></canvas>
+
+
+<script>
+
+  //1. 获取画布
+  var canvas = document.getElementById("canvas");
+  //2. 获取2d上下文对象
+  var context = canvas.getContext("2d");
+
+  var step = 3;
+  var start = 0;
+  setInterval(function () {
+    //1. 首先保存一下状态
+    context.save();
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    //2. 改变坐标轴，绘制矩形
+    //2.1 平移
+    context.translate(canvas.width/2, canvas.height/2);
+    //2.2 旋转
+    context.rotate(toRadian(start + step));
+    //2.3 绘制矩形
+    context.strokeRect(-100, -100, 200, 200);
+
+    //3. 把状态恢复
+    context.restore();
+
+    start += step;
+  }, 100);
+
+
+
+
+  //角度如何换成弧度
+  function toRadian( angle ) {
+    //当前弧度/2π = 当前角度/360
+    //当前弧度 = 当前角度/360 * 2π
+    return angle/360 * 2 * Math.PI;
+  }
+</script>
+</body>
+</html>

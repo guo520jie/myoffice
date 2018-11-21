@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="400"></canvas>
+
+
+<script>
+
+  //1. 获取画布
+  var canvas = document.getElementById("canvas");
+  //2. 获取2d上下文对象
+  var context = canvas.getContext("2d");
+
+
+  var start = -90;
+  var end = 270;
+  var step = 3;
+  var x = canvas.width / 2;
+  var y = canvas.height / 2;
+  //每一次只只绘制3度
+  var timer = setInterval(function () {
+    //每15毫秒会绘制3度
+    context.beginPath();
+    context.moveTo(x, y);
+    context.arc(x, y, 150, toRadian(-90), toRadian(start + step));
+    //每次填充之前，把之前的内容给清除掉
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.fill();
+
+    //绘制完成，start需要修改
+    start += step;
+    if (start >= end) {
+      clearInterval(timer);
+    }
+  }, 15);
+
+
+  //角度如何换成弧度
+  function toRadian(angle) {
+    //当前弧度/2π = 当前角度/360
+    //当前弧度 = 当前角度/360 * 2π
+    return angle / 360 * 2 * Math.PI;
+  }
+</script>
+</body>
+</html>

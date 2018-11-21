@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="400"></canvas>
+<br>
+<button id="up">上</button>
+<button id="bottom">下</button>
+<button id="left">左</button>
+<button id="right">右</button>
+
+<script>
+
+  //1. 获取画布
+  var canvas = document.getElementById("canvas");
+  //2. 获取2d上下文对象
+  var context = canvas.getContext("2d");
+
+
+  var img = new Image();
+  img.src = "2.png";
+  var index = 0;
+  var direction = 0;//   0:下  1：左  2：右  3：上
+
+  var x = 100;
+  var y = 100;
+  img.onload = function () {
+    var imgW = img.width / 4;
+    var imgH = img.height / 4;
+    //让一个人动起来的规律：不断的改变裁切的x值
+    //context.drawImage(img, 0, 0, imgW, imgH, 100, 100, imgW, imgH);
+    //context.drawImage(img, imgW, 0, imgW, imgH, 100, 100, imgW, imgH);
+    //context.drawImage(img, 2*imgW, 0, imgW, imgH, 100, 100, imgW, imgH);
+    //context.drawImage(img, 3*imgW, 0, imgW, imgH, 100, 100, imgW, imgH);
+
+    setInterval(function () {
+      //在画人之前要清除整个画布
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+      //  0: 下  y += 2;
+      //  1：左  x -= 2;
+      //  2：右  x += 2;
+      //  3：上  y -= 2;
+      //判断方向，确定是修改x还是修改y
+      switch (direction) {
+        case 0:
+          y += 2;
+          break;
+        case 1:
+          x -= 2;
+          break;
+        case 2:
+          x += 2;
+          break;
+        case 3:
+          y -= 2;
+          break;
+      }
+
+      context.drawImage(img, index * imgW, direction * imgH, imgW, imgH, x, y, imgW, imgH);
+      index++;
+      if (index > 3) {
+        index = 0;
+      }
+    }, 100);
+
+
+  };
+
+  document.getElementById("up").onclick = function () {
+    direction = 3;
+  }
+  document.getElementById("bottom").onclick = function () {
+    direction = 0;
+  }
+  document.getElementById("left").onclick = function () {
+    direction = 1;
+  }
+  document.getElementById("right").onclick = function () {
+    direction = 2;
+  }
+</script>
+</body>
+</html>

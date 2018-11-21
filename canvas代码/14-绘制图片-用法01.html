@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="400"></canvas>
+
+
+<script>
+
+  //1. 获取画布
+  var canvas = document.getElementById("canvas");
+  //2. 获取2d上下文对象
+  var context = canvas.getContext("2d");
+
+
+  //作用：往画布中绘制图片
+  //imgObj:图片对象
+  //x,y:图片的位置
+  //drawImage(imgObj, x, y);
+
+  //如何创建一个img对象
+  //var img = document.createElement("img");//创建了一个img标签
+
+  //1. 创建img对象
+  var img = new Image();//image:图片的构造函数
+  //2. 指定img的地址
+  img.src = "1.jpg";//加载图片需要时间
+  //3. 画图，需要在图片加载完成之后才可以调用drawImage
+  //当img图片加载完成之后，才会执行。
+  img.onload = function () {
+    context.drawImage(img, 100, 100);
+  }
+
+
+</script>
+</body>
+</html>

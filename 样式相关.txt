@@ -1,0 +1,280 @@
+//小程序隐藏滚动条
+css中加入：
+::-webkit-scrollbar{
+
+width: 0;
+
+height: 0;
+
+color: transparent;
+
+}
+
+//通过JavaScript读取屏幕宽度，然后根据宽度计算出对应的尺寸并设置根元素的font
+
+const oHtml = document.getElementsByTagName('html')[0]
+const width = oHtml.clientWidth;
+// 320px的屏幕基准像素为12px
+oHtml.style.fontSize = 12 * (width / 320) + "px";
+这样iphone8（375px）下html的font-size 就是14.0625px，iphone8p下font-size就是15.525px
+// 媒体查询
+@media screen and (min-width: 375px){
+    html {
+        font-size: 14.0625px;   
+    }
+}
+@media screen and (min-width: 360px){
+    html {
+        font-size: 13.5px;
+    }
+}
+@media screen and (min-width: 320px){
+    html {
+        font-size: 12px;
+    }
+}
+html {
+    font-size: 16px;
+}
+
+/* 清除浮动 ：在浮动元素的父级添加类名clearfix*/
+  .clearfix::after {
+     content: ".";
+     clear: both;
+     display: block;
+     overflow: hidden;
+     font-size: 0;
+     height: 0;
+    }
+    <div class="out clearfix">
+			<div class="in" style="float:left;"></div>
+		</div>
+
+横线从文字中间穿过的效果
+text-decoration: line-through;
+穿透：
+pointer-event:none；
+控制三行省略号样式：
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+
+//文字显示隐藏
+overflow:hidden; 
+white-space: nowrap; 
+text-overflow:ellipsis;
+
+
+//等宽布局
+ul{
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+ul li {
+  display: table-cell;
+}  
+
+html {
+        /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+        -ms-overflow-style:none;
+        /*火狐下隐藏滚动条*/
+        overflow:-moz-scrollbars-none;
+    }
+    /*Chrome下隐藏滚动条，溢出可以透明滚动*/
+    html::-webkit-scrollbar{width:0px}
+
+//图片变白
+img{
+filter: brightness(0) invert(1);
+-webkit-filter: brightness(0) invert(1);
+}
+按钮样式：
+a{
+        display: inline-block;
+        width:120px;
+        height:46px;
+        line-height:46px;
+        text-align:center;
+        color: #333;
+        border-radius: 4px;
+        font-size: 14px;
+        border:1px solid #c9c9c9;
+        &:hover{
+          color: #fff;
+          background: #b00003;
+          border-color: #b00003;
+        }
+      }
+字体
+@font-face {
+    font-family: NotoSansHans-Black;
+    src: url(../font/NotoSansHans-Black.otf);
+}
+
+input输入框：
+input,textarea,select{ color:#333; margin:0; padding:0; font-size:12px; vertical-align:middle; -webkit-appearance:none; appearance: none; }
+input:focus,textarea:focus{ outline:none;}
+textarea{ resize: none;}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color:transparent;
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+/*删除火狐下按钮默认样式*/
+input{ border: none;background: none; }
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner{
+  border:none; padding:0;}
+
+// 去掉input[type=number]默认的加减号
+input[type=number] {  
+    -moz-appearance:textfield;  
+}  
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button {  
+    -webkit-appearance: none;  
+    margin: 0;  
+}  
+
+//设置表单默认提示样式
+input::-webkit-input-placeholder {
+  color: #a0a0a0;
+}
+input:-moz-placeholder {
+  color: #a0a0a0;
+}
+input::-moz-placeholder {
+  color: #a0a0a0;
+}
+input:-ms-input-placeholder {
+  color: #a0a0a0;
+}
+
+textarea::-webkit-input-placeholder {
+  color: #a0a0a0;
+}
+textarea:-moz-placeholder {
+  color: #a0a0a0;
+}
+textarea::-moz-placeholder {
+  color: #a0a0a0;
+}
+textarea:-ms-input-placeholder {
+  color: #a0a0a0;
+}
+兼容性css
+ -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+ -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+
+-webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+-webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+
+
+//导航下的从中间出现的下划线
+.header .header-main .header-nav a:before {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #107773;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    left: 50%;
+}
+.header .header-main .header-nav a:hover:before, .header .header-main .header-nav a.active:before {
+    width: 100%;
+    left: 0;
+}
+//before 的运用
+.head-mav .win-head-mav li.active:before, .head-mav .win-head-mav li:hover:before {
+    bottom: 0;
+    background: #d82937;
+    width: 100%;
+    height: 2px;
+
+.head-mav .win-head-mav li:before {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    transition: all .4s ease-out;
+    -webkit-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+}
+
+.pre(box-sizing,border-box);
+
+//图片上面加阴影
+.img-left{
+            position: relative;
+            width:620px;
+            height:395px;
+            &:before{
+                z-index: -10;
+                display: block;
+                content: '';
+                position: absolute;
+                background: #F1F1F1;
+                top:56px;
+                left:50px;
+                width:620px;
+                height:395px;
+            }
+
+
+//前面添加小图标
+.header .header-main .header-nav a:before {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #107773;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    left: 50%;
+}
+//兼容IE8的上下居中
+#TipPreView { display:none; position: fixed; width:386px; height:206px; padding:2px; background:#fff; border:#525252 solid 5px; margin: -100px 0 0 -200px; top:50%; left:50%; z-index:99999;}
+*html #TipPreView { position:absolute; margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TipPreViewMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');}
+
+
+
+渐变背景
+ background: -moz-linear-gradient(top,  #e4e4e5 0%, #e4e4e5 70%, #ffffff 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4e4e5),  color-stop(70%,#e4e4e5),color-stop(100%,#ffffff));
+        background: -webkit-linear-gradient(top,  #e4e4e5 0%, #e4e4e5 70%,#ffffff 100%);
+        background: -o-linear-gradient(top,  #e4e4e5 0%, #e4e4e5 70%,#ffffff 100%);
+        background: -ms-linear-gradient(top,  #e4e4e5 0%, #e4e4e5 70%,#ffffff 100%);
+        background: linear-gradient(to bottom,  #e4e4e5 0%, #e4e4e5 70%,#ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e5', endColorstr='#ffffff',GradientType=0 );
+:root .swiper-slide{filter:none;}
+//兼容IE9
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->

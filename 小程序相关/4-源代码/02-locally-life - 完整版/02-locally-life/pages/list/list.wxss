@@ -1,0 +1,47 @@
+.cate-item {
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.cate-item .cate-img {
+  flex: 1;
+  width: 150rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+}
+
+.cate-item .cate-info {
+  position: relative;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  line-height: 40rpx;
+  font-size: 25rpx;
+  color: #678;
+}
+
+.cate-item .cate-title {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.cate-item .cate-score {
+  position: absolute;
+  right: 0;
+  width: 60rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #EE523D;
+  border-radius: 30rpx;
+}
+
+/* 数据加载提示 */
+.has-more {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #666;
+  background-color: #eee;
+}

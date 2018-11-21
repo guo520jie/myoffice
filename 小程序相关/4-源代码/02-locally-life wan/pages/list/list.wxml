@@ -1,0 +1,16 @@
+<scroll-view class="category-container">
+  <navigator url="/pages/detail/detail?id={{ item.id }}" class="cate-item" wx:for="{{ list }}" wx:key="id">
+    <image src="{{ item.images[0] }}" class="cate-img"></image>
+    <view class="cate-info">
+      <text class="cate-title">{{ item.name }}</text>
+      <text>电话：{{ item.phone ? item.phone : '无' }}</text>
+      <text>地址：{{ item.address }}</text>
+      <text>营业时间：{{ item.businessHours }}</text>
+      <text class="cate-score" wx:if="{{ item.score }}">{{ item.score }}</text>
+    </view>
+  </navigator>
+</scroll-view>
+<!-- 加载提示 -->
+<view class="has-more">
+  {{ hasMore ? '数据加载中...': '亲，已经没有数据啦！别拉了~' }}
+</view>

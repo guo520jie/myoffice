@@ -1,0 +1,152 @@
+OA/git:
+june_jin  Y2323121660
+
+phpStorm格式化代码快捷键
+Ctrl+Alt+L
+
+钉钉图片出问题时：
+https://csmobile.alipay.com/detailSolution.htm?questionId=201602149660&token=5bd9d6e4-c8d8-42f0-b40b-3859af74bd13&knowledgeType=3
+
+//css.js集合位置（mvc）
+DSF2.wwwroot->App_Start ->BundleConfig.cs
+
+//baidu地图api
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=WRdovIbo71I9qP1S03jcVSEfvU096ycG"></script>
+
+
+//////判断移动设备
+  php  
+var ua = navigator.userAgent;
+ 
+   var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+  
+        isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+  
+        isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+ 
+        isMobile = isIphone || isAndroid;
+    
+        if (isMobile) {
+       
+        	location.href = '/mobile';
+
+        } else{
+
+  
+	  }
+
+
+MVC模式下的导航定位：
+
+<li class="@Tool.GetCurrentlyStyle("/contact")">
+  
+     <a href="/contact">联系我们</a>
+   
+    <ul class="detail-ul tran2">
+        
+     <li><a href="/contact">联系方式</a></li>
+     
+     <li><a href="/contact/message">在线留言</a></li>
+    
+   </ul>
+
+</li>
+
+如果类名不对，就在Tool.cs中修改
+
+
+//限制字符个数
+   
+ $(".home_p").each(function(){
+       
+ var maxwidth=50;
+       
+ if($(this).text().length>maxwidth){
+          
+$(this).text($(this).text().substring(0,maxwidth));
+   
+$(this).html($(this).html()+"....");
+   
+}
+   
+ });
+
+
+邮箱<a href=“mailto:”></a>自动打开邮箱
+
+轮播bxslider
+http://bxslider.com/options
+
+滚动条
+nicescroll
+
+分享按钮
+http://share.baidu.com/
+
+超高性能，专业级的HTML5动画为现代网络
+动效网站
+https://greensock.com/tweenmax
+
+设计网站：
+http://www.ibg-global.com/contactos
+
+loading动画网站
+
+
+https://loading.io
+
+加载完背景图片之后执行动画
+window.onload = function () {
+            var img = new Image();
+            img.src = '/assets/cn/images/home/bg-1.jpg';
+            if (img.width == 0) {
+                //alert('图片加载失败')
+            } else {
+                guideBox();
+            }
+        }
+
+//动画到达指定高度
+ function toTwoPage() {
+      var _twoPage = $('.mid').offset().top;
+      $("html,body").animate({ "scrollTop": _twoPage },500)
+    }
+    $('#nextPage').click(function () {
+      toTwoPage();
+    });
+
+
+ //js获取地址栏内容
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+ 
+// 调用方法
+alert(GetQueryString("参数名1"));
+alert(GetQueryString("参数名2"));
+alert(GetQueryString("参数名3"));
+下面举一个例子:
+若地址栏URL为：abc.html?id=123&url=http://www.maidq.com
+那么，但你用上面的方法去调用：alert(GetQueryString("url"));
+则会弹出一个对话框：内容就是 http://www.maidq.com
+如果用：alert(GetQueryString("id"));那么弹出的内容就是 123 啦；
+当然如果你没有传参数的话，比如你的地址是 abc.html 后面没有参数，那强行输出调用结果有的时候会报错：
+所以我们要加一个判断 ，判断我们请求的参数是否为空，首先把值赋给一个变量：
+var myurl=GetQueryString("url");
+if(myurl !=null && myurl.toString().length>1)
+{
+   alert(GetQueryString("url"));
+}
+
+
+//fullpage 滚动到下一屏方法
+$(".sectionDown").click(function () {
+	$.fn.fullpage.moveSectionDown();
+});
+
+BX-slider
+ infiniteLoop:false,//判断是否出现左右控制器
+

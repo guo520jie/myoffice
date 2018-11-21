@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="400"></canvas>
+
+
+<script>
+
+  //1. 获取画布
+  var canvas = document.getElementById("canvas");
+  //2. 获取2d上下文对象
+  var context = canvas.getContext("2d");
+
+
+  //圆弧：圆上任意两点间的部分,  圆心，半径，起始角度，结束角度
+  //arc:绘制一个圆弧的路径
+  //x,y  圆心的坐标
+  //r:半径
+  //startRadian：起始的弧度（360 = 2π）
+  //endRadian：结束的弧度
+  //counterclockwise:是否逆时针，false，顺时针
+  //arc(x, y, r, startRadian, endRadian, counterclockwise)
+
+
+  //练习一：绘制一个完整的圆
+  //context.arc(200, 200, 100, 0, 2 * Math.PI);
+  //context.stroke();
+
+
+  //练习二：绘制一个30度的圆弧
+  var x = canvas.width / 2;
+  var y = canvas.height / 2;
+
+  //context.arc(x, y, 150, 0, toRadian(30), true);
+  //context.stroke();
+
+
+  //练习3：绘制一个开始角度15，结束角度70的圆弧，半径是150，圆心在画布中心
+  context.arc(x,y, 150, toRadian(15), toRadian(70));
+  context.stroke();
+
+
+
+  //角度如何换成弧度
+  function toRadian( angle ) {
+    //当前弧度/2π = 当前角度/360
+    //当前弧度 = 当前角度/360 * 2π
+    return angle/360 * 2 * Math.PI;
+  }
+</script>
+</body>
+</html>
