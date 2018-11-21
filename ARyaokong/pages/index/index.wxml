@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container" style="background-image:url({{AppImg.Home_Bg}});">
+  <view class='index_header' style="background-image:url({{AppImg.Home_Banner}});">
+    <text class='title'>{{imgData[swiperIndex].name}}</text>
+    <!-- swiper -->
+       <view class='swiper-box'>
+        <swiper class='swiper-content' autoplay="{{autoplay}}" circular="true" interval='3000' previous-margin="206rpx" next-margin="180rpx" style="height:{{Height}};" bindchange="swiperChange">
+        <swiper-item wx:for="{{imgData}}" wx:key="index">
+          <view class="swiper-img"><image src='{{swiperIndex==index?item.icon_big:item.icon_small}}'></image></view>
+        </swiper-item>
+        </swiper>
+       </view>
+  </view>
+  <!-- 扫码 -->
+  <view class='index_content' style="background-image:url({{AppImg.Scan_thi}});">
+    <!-- <view class='content_msg'>
+      <view class='msg_title'>{{AppMsg.HtmlIndexTitle}}</view>
+      <view class='msg_desc'>{{AppMsg.HtmlIndexDesc}}</view>
+    </view> -->
+
+    <!-- <view class='line'>
+      <image mode='widthFix' src='{{AppImg.Home_Line}}'></image>
+    </view> -->
+
+    <view class='scan' bindtap='bindViewTap' style="background-image:url({{AppImg.Scan_sec}});">
+      <image src='{{AppImg.Scan_fir}}'></image>
+    </view>
+    
+  </view>
+  <view class='txt'>{{AppMsg.HtmlIndexText}}</view>
+</view>
+<userInfo bind:userInfoRequest="getUserInfo"></userInfo>
+<dialog id='dialog'></dialog>

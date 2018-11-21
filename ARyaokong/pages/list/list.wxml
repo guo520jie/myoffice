@@ -1,0 +1,57 @@
+<!--pages/list/list.wxml-->
+<view class='container container-position' style='background-image:url({{AppImg.List_Bg}});'>
+<view class='list_banner' style='background-image:url({{AppImg.swiper_Bg}});'>
+    <swiper id="swiper" class='swiper' style="height:{{swiperData.swiperHeight}}rpx" indicator-dots="{{swiperData.indicatorDots}}" indicator-color="{{swiperData.indicatorColor}}" indicator-active-color="{{swiperData.indicatorActiveColor}}" autoplay="{{swiperData.autoplay}}" interval="{{swiperData.interval}}" duration="{{swiperData.duration}}" circular="true">
+      <block wx:for="{{swiperData.imgData}}" wx:key="index">
+        <swiper-item>
+          <image style="height:{{swiperData.swiperHeight}}rpx" src="{{item.banner_img}}" bindtap='bannerImgClick' data-item="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='list_header' style='background-image:url({{AppImg.List_Time_Bg}});'>
+    <view class='list_header_left'>
+      <view class='left_time'>{{countdown_msg}}</view>
+      <view class='left-word'>
+      {{time_word}}
+      </view>
+    </view>
+    <view class='list_header_right'>
+    <!-- <image class='iconimg' src='{{AppImg.List_radiobtnDown}}'></image> -->
+    {{AppMsg.HtmlListHeaderMsg}}
+    </view>
+  </view>
+
+  
+  <!-- 图片列表 -->
+  <view class='list_body'>
+    <scroll-view scroll-y class='scroll-box'>
+      <view wx:for="{{imgList}}" wx:key="index" class='box-item' style='background-image:url({{AppImg.List_Frame}});'>
+        <image class='user_img' mode='widthFix' src='{{item.img_url}}'></image>
+        <image class='chose_btn' bindtap='choseImg' data-img_id="{{item.id}}" mode='widthFix' src='{{AppImg.List_radiobtnBg}}'></image>
+        <image class='curbg' bindtap='choseImg' data-img_id="{{item.id}}" src='{{AppImg.CurBg}}'></image>
+        <image wx-if="{{item.chose}}" bindtap='choseImg' data-img_id="{{item.id}}" class='select_btn' mode='widthFix' src='{{AppImg.List_radiobtnDown}}'></image>
+      </view>
+    </scroll-view>
+
+     <!-- 无图片 -->
+    <view class='listmask' wx:if="{{listMask}}">
+      <view class='masktxt-top'>暂无图片</view>
+      <view class='masktxt-bot'>请点击“刷新”按钮刷新</view>
+      <view class='maskImg' bindtap='listInit'><image src='../images/refresh.png'></image></view>
+    </view>
+  </view>
+  <!-- 保存 -->
+  <view class='list_footer' wx:if="{{listMaskCur}}">
+  <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->
+    <view wx:if='{{haveMobile}}' bindtap='saveImg' class='list_footer_save' style='background-image:url({{curbg?AppImg.Con_Cur:AppImg.Con_Btn}});width:100%;'>{{AppMsg.HtmlListSaveBtn}}</view>
+    <button wx:else open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='list_footer_btn' style='background-image:url({{AppImg.Con_Btn}});width:100%;'>{{AppMsg.HtmlListSaveBtn}}</button>
+    <!-- <view bindtap='saveImg' class='list_footer_save' style='background-image:url({{AppImg.List_Btn_Save}});'>保存到手机</view>
+    <view class='list_footer_share' style='background-image:url({{AppImg.List_Btn_Share}});'>分享照片</view> -->
+  </view>
+  <view class='saveImgMask' wx:if="{{listMaskCur}}" style='background-image:url("{{AppImg.BtnBg}}")'></view>
+
+</view>
+
+<dialog id='dialog'></dialog>

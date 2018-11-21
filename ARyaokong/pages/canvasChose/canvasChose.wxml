@@ -1,0 +1,35 @@
+<!--pages/canvasChose/canvasChose.wxml-->
+<view class='main' style="background-image:url('{{AppImg.CanvasBg}}')">
+  <!-- 返回 -->
+  <view class='back' bindtap='back'>
+    <image src='{{AppImg.CanvasReturn}}'></image>
+  </view>
+  <!-- 内容 -->
+  <view class='bgbox' style="background-image:url('{{AppImg.CanvasBgMenu}}')">
+  <!-- 上箭头 -->
+    <view class='btn-top' bindtap='prevImg'> 
+    <image src='{{AppImg.CanvasPrev}}'></image>
+    </view>
+    <!-- 内容 -->
+      <swiper class='swiper-content' circular="{{true}}" autoplay="{{autoplay}}" vertical="{{vertical}}" style='height:{{Height}}' current="{{current}}">
+        <swiper-item wx:for="{{imgArr}}" wx:key="index">
+        <view class='topimg' catchtap='choseImg' data-canvas='{{item.top}}'>
+        <image src='{{item.top.img_url}}'></image>
+        </view>
+        <view class='bottomimg' catchtap='choseImg' data-canvas='{{item.bottom}}'>
+        <image src='{{item.bottom.img_url}}'></image>
+        </view>
+        </swiper-item>
+      </swiper>
+    <!-- 下箭头 -->
+    <view class='btn-bottom' bindtap='nextImg'>
+    <image src='{{AppImg.CanvasLast}}'></image>
+    </view>
+  <!-- 倒计时 -->
+  <view class='timer' style="background-image:url('{{AppImg.CanvasCountDown}}');">
+    <view class='toptime'>{{countDownMsg}}</view>
+    <view class='bottom-text'>剩余畅玩时间</view>
+  </view>
+  </view>
+</view>
+<dialog id='dialog'></dialog>

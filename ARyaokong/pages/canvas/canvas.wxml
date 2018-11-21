@@ -1,0 +1,50 @@
+<!--pages/canvas/canvas.wxml-->
+<view class='main' style="background-image:url('{{AppImg.CanvasBg}}')">
+  
+  <view class='left'>
+    <view class='left-img-box'>
+      <view class="{{state==index?'active':''}}" wx:for="{{AppImg.CanvasCrayonData}}" wx:key="index" catchtap='changebg' data-index='{{index}}'>
+      <image  src="{{state==index?AppImg.CanvasCrayonDataSelect[index]:item}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='right'>
+    <view class='top clearfix'>
+      <view class="top-img-box fl" bindtap='drowcircle'>
+      <image src="{{cirflag=='cir'?AppImg.CanvasBrushCircleSelect:AppImg.CanvasBrushCircle}}" style="height: 109rpx; width: 105rpx"></image>
+      </view>
+      <view class="top-img-box fl" bindtap='drowstar'>
+      <image src="{{cirflag=='star'?AppImg.CanvasBrushStarSelect:AppImg.CanvasBrushStar}}" style="height: 109rpx; width: 105rpx"></image>
+      </view>
+      <view class="top-img-box fl" bindtap='drowhart'>
+      <image src="{{cirflag=='hart'?AppImg.CanvasBrushHeartSelect:AppImg.CanvasBrushHeart}}" style="height: 109rpx; width: 105rpx"></image>
+      </view>
+      <view class="top-img-box fl back {{topstate=='top4'?'cur':''}}" bindtap='clearcolor'>
+      <image src='{{AppImg.CanvasCrayonRubber}}' style="height: 85rpx; width: 129rpx"></image>
+      </view>
+      <view class="top-img-box fl back" bindtap='back'>
+      <image src='{{AppImg.CanvasReturn}}' style="height: 96rpx; width: 77rpx"></image>
+      </view>
+      
+    </view>
+    <view class='middle'>
+      <canvas style="width: 576rpx; height: 940rpx;" canvas-id="firstCanvas" bindtouchstart='touchStar' bindtouchmove="touchMove" bindtouchend="touchEnd"></canvas>
+    </view>
+    <view class='bottom-box'>
+      <view class='bottom fr' bindtap='downImg' style='display:{{showBtnSave}}'>
+      <image src='{{AppImg.CanvasBtnSave}}' style= "width: 120rpx; height:109rpx"></image>
+      </view>
+       <!-- 倒计时 -->
+      <view class='timer' style="background-image:url('{{AppImg.CanvasCountDown}}');">
+        <view class='toptime'>{{countDownMsg}}</view>
+        <view class='bottom-text'>剩余畅玩时间</view>
+      </view>
+    </view>
+  </view>
+
+ 
+</view>
+<canvas style="width: 576rpx; height: 576rpx;display:{{secondCanvasShow}}" canvas-id="secondCanvas" bindtouchstart='touchStar' bindtouchmove="touchMove" bindtouchend="touchEnd"></canvas>
+
+<dialog id='dialog'></dialog>

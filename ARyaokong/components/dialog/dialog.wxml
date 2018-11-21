@@ -1,0 +1,24 @@
+<!--components/dialog/dialog.wxml-->
+<view wx:if='{{isShow}}'>
+  <view class='weui-mask'></view>
+  <view class='wx-dialog'>
+    <view class='wx-dialog-title'>{{ title }}</view>
+    <view wx:if="{{!showImage}}" class='wx-dialog-content'>{{ content }}</view>
+    <view wx:if="{{showImage}}" class='wx-dialog-content'>
+      <image mode='widthFix' src='{{ image }}'></image>
+    </view>
+    <view class='wx-dialog-footer'>
+      <view wx:if="{{showCancel}}" class='wx-dialog-btn wx-dialog-btn-cancel' catchtap='_cancelEvent'>{{ cancelText }}</view>
+      <view class='wx-dialog-btn wx-dialog-btn-confirm' catchtap='_confirmEvent'>{{ confirmText }}</view>
+    </view>
+  </view>
+  <!-- <view class="weui-dialog">
+    <view class="weui-dialog__hd">
+      {{content}}
+    </view>
+    <view class="weui-dialog__ft" >
+      <view wx:if="{{showCancel}}" catchtap='_cancelEvent'>{{cancelText}}</view>
+      <view catchtap='_confirmEvent' class="active">{{confirmText}}</view>
+    </view>
+  </view> -->
+</view>

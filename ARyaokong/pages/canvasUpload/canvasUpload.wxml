@@ -1,0 +1,23 @@
+<!--pages/canvasUpload/canvasUpload.wxml-->
+<view class='main' style="background-image:url('{{AppImg.CanvasBg}}')">
+  <view class='imgbox' style="background-image:url('{{AppImg.CanvasBgBlack}}')" bindtouchstart='handlestart' bindtouchmove='handlemove' bindtouchend='handleend'>
+  <!-- top -->
+    <view class='top animation'><image src='{{AppImg.CanvasUp}}'></image></view>
+  <!-- middle -->
+    <view class='content' animation="{{moveData}}">
+    <image src='{{imgshow}}'></image>
+    </view>
+    <!-- word -->
+    <view class='word'><image src='{{AppImg.CanvasWord}}'></image></view>
+  <!-- bottom -->
+    <view class='bottom animation'><image src='{{AppImg.CanvasUp}}'></image></view>
+
+     <!-- 倒计时 -->
+      <view class='timer' style="background-image:url('{{AppImg.CanvasCountDown}}');">
+        <view class='toptime'>{{countDownMsg}}</view>
+        <view class='bottom-text'>剩余畅玩时间</view>
+      </view>
+  </view>
+</view>
+
+<dialog id='dialog'></dialog>
