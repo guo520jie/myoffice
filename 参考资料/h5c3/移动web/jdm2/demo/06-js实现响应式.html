@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 1200px;
+      height: 100px;
+      background-color: pink;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+
+<div></div>
+
+<script>
+
+  //原理：屏幕的宽度不一样，布局就不一样。
+  //需求：
+  // 1. 如果是大屏设备(>1200)，要求div的宽度是1170，并且背景颜色是蓝色
+  // 2. 如果是中屏设备(992-1200)，要求div的宽度是是970，并且背景颜色是绿色
+  // 3. 如果是小屏设备（768-992），要求div的宽度是750，并且背景颜色是红色
+  // 4. 如果是超小屏设备，（<768）,要求div的宽度是100%，背景颜色是黄色
+
+  var div = document.querySelector("div");
+  window.addEventListener("resize", function () {
+
+    //屏幕的宽度
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+
+
+    if(screenWidth >= 1200){
+      div.style.width = "1170px";
+      div.style.backgroundColor = "blue";
+    }else if(screenWidth >= 992) {
+      div.style.width = "970px";
+      div.style.backgroundColor = "green";
+    }else if(screenWidth >= 768) {
+      div.style.width = "750px";
+      div.style.backgroundColor = "red";
+    }else {
+      div.style.width = "100%";
+      div.style.backgroundColor = "yellow";
+    }
+
+  });
+
+</script>
+
+</body>
+</html>

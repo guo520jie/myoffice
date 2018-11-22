@@ -1,0 +1,296 @@
+@charset "UTF-8";
+
+i {
+  font-style: normal;
+}
+
+a {
+  color: #333;
+}
+
+a:hover {
+  color: #e92322;
+  text-decoration: none;
+}
+
+body {
+  height: 2000px;
+}
+
+
+/*微金所头部*/
+.wjs_header {
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  line-height: 40px;
+  text-align: center;
+}
+
+.wjs_header .item {
+  border-right: 1px solid #ccc;
+}
+
+.wjs_header .item:last-child {
+  border-right: none;
+}
+
+.wjs_app {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 100%;
+}
+
+.wjs_app:hover .logo {
+  display: block;
+}
+
+.wjs_app .logo {
+  position: absolute;
+  top:40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #ccc;
+  display: none;
+  z-index: 999;
+}
+
+.wjs_header .btn_register {
+  padding: 2px 12px;
+}
+
+.wjs_header .btn_login {
+  color: #333;
+}
+
+.wjs_header .btn_login:hover {
+  color: #e92322;
+  text-decoration: none;
+}
+
+
+
+/*导航样式*/
+.wjs_nav {
+
+}
+
+
+/*
+  1. 默认的navbar有背景颜色： 清除即可
+  2. 默认的margin-bottom: ，清除即可。
+  3. 加上一个自己的底边框
+*/
+.wjs_nav .navbar-default {
+  background-color: #fff;
+  margin-bottom: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.wjs_nav .navbar-brand,
+.wjs_nav .navbar-nav>li>a{
+  height: 80px;
+  line-height: 50px;
+}
+
+.wjs_nav .navbar-default .navbar-nav>.active>a,
+.wjs_nav .navbar-default .navbar-nav>.active>a:focus,
+.wjs_nav .navbar-default .navbar-nav>.active>a:hover {
+  background-color: #fff;
+  border-bottom: 3px solid #e92322;
+}
+
+.wjs_nav .navbar-default .navbar-nav>li>a:focus,
+.wjs_nav .navbar-default .navbar-nav>li>a:hover {
+  background-color: #fff;
+  border-bottom: 3px solid #e92322;
+}
+
+.wjs_nav .wjs_icon_logo {
+  font-size: 50px;
+  color: #e92322;
+  vertical-align: middle;
+}
+
+.wjs_nav .wjs_icon_word {
+  font-size: 36px;
+  color: #000;
+  vertical-align: middle;
+}
+
+.wjs_nav .navbar-toggle {
+  margin-top: 23px;
+  margin-bottom: 23px;
+}
+
+
+/*轮播图的样式*/
+/*媒体查询做：我希望这两个样式在屏幕宽度超过640的时候，才会生效*/
+@media (min-width: 640px){
+  .wjs_banner .carousel .item {
+    height: 410px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .wjs_banner .carousel .item img {
+    height: 410px;
+    max-width: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+/*微金所信息模块*/
+.wjs_info {
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.wjs_info>.container>div {
+  margin-top: 10px;
+}
+
+.wjs_info .wjs_icon_info {
+  font-size: 36px;
+}
+
+
+
+/*微金所预约模块*/
+.wjs_book {
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.wjs_book .wjs_icon_clock,
+.wjs_book .wjs_icon_video{
+  font-size: 18px;
+}
+
+.wjs_book .book_now {
+  color: #e92322;
+  border-bottom: 1px dashed #e92322;
+}
+
+
+
+/*微金所产品*/
+.wjs_product {
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+  background-color: #f5f5f5;
+}
+
+.wjs_product .nav-tabs>li>a {
+  margin-right: 0;
+  border-radius: 0;
+}
+
+.wjs_product .nav-tabs>li.active>a,
+.wjs_product .nav-tabs>li.active>a:focus,
+.wjs_product .nav-tabs>li.active>a:hover {
+  background-color: #f5f5f5;
+  border: 1px solid transparent;
+  border-bottom: 3px solid #e92322;
+}
+
+.wjs_product .nav>li>a:focus,
+.wjs_product .nav>li>a:hover {
+  background-color: #f5f5f5;
+}
+
+.wjs_product .nav-tabs>li>a:hover {
+  border: 1px solid transparent;
+}
+
+
+.wjs_product .nav_wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.wjs_product .nav {
+  width: 2000px;
+}
+
+
+.wjs_product .product_box {
+  background-color: pink;
+  height: 150px;
+  margin-top: 20px;
+}
+
+.wjs_product .product_box.active {
+  background-color: #e92322;
+  color: #fff;
+}
+
+.product_box .product_right {
+  width: 80px;
+  height: 150px;
+  /*background-color: blue;*/
+  float: right;
+  border-left: 1px dashed blue;
+  position: relative;
+  text-align: center;
+}
+
+.product_box .product_right .num {
+  margin-top: 40px;
+}
+
+.product_box .product_right .num b {
+  font-size: 30px;
+}
+
+.product_box .product_right .word {
+  font-size: 16px;
+}
+
+.product_box .product_right:before,
+.product_box .product_right:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #f5f5f5;
+  left: -10px;
+  border-radius: 50%;
+}
+.product_box .product_right:before {
+  top: -10px;
+}
+
+.product_box .product_right:after {
+  bottom: -10px;
+}
+
+.product_box .product_left {
+  position: relative;
+}
+
+.product_box .product_left h4 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.product_box .product_left p {
+  margin-bottom: 5px;
+}
+
+.product_box .product_left .wjs_icon_experience {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  font-size: 40px;
+}
+
+
+.product_box .product_left {
+  height: 150px;
+  overflow: hidden;
+  /*background-color: green;*/
+}

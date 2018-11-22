@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Promise 是一个构造函数,所以要通过 new 来调用
+    // Promise 的参数是一个回调函数
+    // 返回值是: Promise的实例对象
+    const p = new Promise(function (resolve, reject) {
+      // resolve 表示成功
+      // reject  表示失败
+      // resolve 和 reject 都是函数
+
+      // 封装了异步操作
+      setTimeout(function () {
+        // 如果成功了, 就要调用 resolve 函数
+        resolve( 'jack' )
+
+        // 如果异步操作失败, 就调用reject
+        // reject( 'error' )
+      }, 2000);
+    })
+
+    // p
+    //   .then(function success(data) {
+    //     console.log('then方法在 2s 后执行了', data);
+    //   }, function error(err) {
+    //     console.log('异步操作失败了', err);
+    //   })
+
+    p
+      .then(function (data) {
+        console.log('成功', data);
+      })
+      // catch 用来处理Promise的错误
+      .catch(function (err) {
+        console.log('失败', err);
+      })
+  </script>
+</body>
+
+</html>

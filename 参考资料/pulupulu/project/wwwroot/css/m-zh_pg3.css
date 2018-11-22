@@ -1,0 +1,127 @@
+.page3 {
+  width: 100%;
+  height: 100%;
+}
+.p1_middle,
+.p2_middle,
+.p3_middle {
+  width: 100%;
+  height: 100%;
+  margin-top: 65px;
+  overflow: hidden;
+}
+.p1m_content,
+.p2m_content,
+.p3m_content {
+  padding: 20px;
+  padding-top: 80px;
+}
+.page3 .p1_middle {
+  background-image: url("../img/03_qs/s1_bg.png");
+  background-size: 100%;
+}
+.page3 .p1_middle li {
+  margin-bottom: 15px;
+  padding-left: 64px;
+}
+.page3 li img {
+  height: 100%;
+  max-width: 100%;
+}
+.p1m_content ul {
+  display: none;
+}
+.page3 .p1_middle .p1m_content .s3_top {
+  margin-top: 60px;
+}
+.page3 .p1_middle li:nth-child(1) {
+  height: 12px;
+}
+.page3 .p1_middle li:nth-child(2) {
+  height: 90px;
+  padding: 0;
+}
+.page3 .p1_middle li:nth-child(3) {
+  height: 24px;
+}
+.page3 .p1_middle li:nth-child(4) {
+  color: #f2f2f2;
+  line-height: 24px;
+}
+.page3 .p2_middle {
+  background-image: url("../img/03_qs/s2_bg.png");
+  background-size: 100%;
+}
+.page3 .p2_middle ul {
+  position: relative;
+}
+.page3 .p2_middle li:nth-child(1) {
+  height: 70px;
+  margin-left: 71px;
+  margin-bottom: -22px;
+}
+.page3 .p2_middle li:nth-child(2) {
+  height: 95px;
+  margin-bottom: 40px;
+}
+.page3 .p2_middle .swiper-container img {
+  width: 100%;
+}
+.page3 .p2_middle .p2m_content {
+  padding-top: 60px;
+}
+.box_parent {
+  width: 100%;
+  height: 143px;
+}
+.p2m_content .ul_box {
+  display: none;
+}
+.p2m_content ul {
+  margin-left: 60px;
+}
+.page3 .p3_middle {
+  background-image: url("../img/03_qs/s3_bg.png");
+  background-size: 100%;
+}
+.page3 .p3_middle li:nth-child(1) {
+  height: 70px;
+  margin-left: 71px;
+  margin-bottom: -22px;
+}
+.page3 .p3_middle li:nth-child(2) {
+  height: 95px;
+  margin-bottom: 40px;
+}
+.page3 .p3_middle .swiper-container img {
+  width: 100%;
+}
+.page3 .p3_middle .p3m_content {
+  padding-top: 60px;
+}
+.p3m_content .ul_box {
+  display: none;
+}
+.p3m_content ul {
+  margin-left: 60px;
+}
+.swiper-container {
+  padding-top: 30px;
+  margin: 0 auto;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  width: 25px;
+  top: 106px;
+  left: 50%;
+  background-size: 100%;
+  transform: translateX(-50%);
+}
+.swiper-button-next {
+  top: 12px;
+  background-image: url("../img/03_qs/next.png");
+}
+.swiper-button-prev {
+  top: 280px;
+  background-image: url("../img/03_qs/prev.png");
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<!--
+  navbar-default:默认风格的导航条
+  navbar-inverse:反色的导航条
+-->
+<nav class="navbar navbar-default">
+  <div class="container">
+
+    <!--button和brand最好是成组的出现在移动端-->
+    <!--collapsed：折叠组建-->
+    <!--
+      aria:这类属性可以删除，  屏幕阅读器使用
+      sr-only: 也可以删除  屏幕阅读器用的
+       role="listbox"：也可以删除  屏幕阅读器用的
+    -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <!--对应了三根线-->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--对应的就是最前面的品牌-->
+      <a class="navbar-brand" href="#">微金所</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">我要投资</a></li>
+        <li><a href="#">我要借贷</a></li>
+        <li><a href="#">平台介绍</a></li>
+        <li><a href="#">新手专区</a></li>
+        <li><a href="#">最新动态</a></li>
+        <li><a href="#">微平台</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">个人中心</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<script src="lib/jquery/jquery-1.12.4.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

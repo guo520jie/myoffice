@@ -1,0 +1,50 @@
+.jd_mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .4);
+  display: none;
+
+  .content {
+    width: 300px;
+    height: 150px;
+    background-color: #fff;
+    margin: 200px auto;
+    border-radius: 5px;
+    padding: 10px;
+
+    .info {
+      height: 80px;
+      border-bottom: 1px solid @borderColor;
+      font-size: 16px;
+      text-align: center;
+      line-height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .cancel,
+    .confirm {
+      width: 120px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid @borderColor;
+    }
+
+    .cancel {
+      float: left;
+      background-color: #fff;
+      color: @borderColor;
+    }
+
+    .confirm {
+      float: right;
+      background-color: @jdColor;
+      color: #fff;
+    }
+
+  }
+}
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+
+
+<!--需求：修改轮播图的高度，定死410px-->
+<!--1. 图片的父盒子需要加高度，因为图片定位了，导致父盒子没高-->
+<!--2. 图片的父盒子需要加overflow:hidden, 图片比较，保证图片出不去-->
+<!--3. 不能给父元素加定位，因为父元素有定位-->
+<style>
+  .carousel .item_pc {
+    height: 410px;
+    width: 100%;
+    overflow: hidden;
+    /*不能给父元素加定位, 父元素不能加相对定位*/
+  }
+
+  .carousel .item_pc img {
+    height: 410px;
+    max-width: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+</style>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- 轮播图的图片 -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/slide_01_2000x410.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="images/slide_02_2000x410.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="images/slide_03_2000x410.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="images/slide_04_2000x410.jpg" alt="...">
+    </div>
+  </div>
+
+  <!-- Indicators：指示器，小圆点 -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- 轮播图的左右箭头 -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+
+<script src="lib/jquery/jquery-1.12.4.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

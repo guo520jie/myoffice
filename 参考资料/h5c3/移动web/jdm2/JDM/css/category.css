@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+html,body {
+  height: 100%;
+}
+.jd_container {
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  height: 100%;
+  /*background-color: pink;*/
+  margin: 0 auto;
+  position: relative;
+  padding-top: 44px;
+}
+
+.jd_header {
+  height: 44px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(#fff, #ccc);
+}
+
+.icon_back,
+.icon_menu {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: 0px;
+  padding: 12px;
+  background-clip: content-box;
+  background-origin: content-box;
+  /*background-color: blue;*/
+}
+
+.icon_back {
+  left: 0px;
+  background-position: -20px 0;
+}
+.icon_menu {
+  right: 0px;
+  background-position: -60px 0;
+}
+
+.search {
+  margin: 0 44px;
+  /*background-color: green;*/
+  height: 44px;
+}
+
+.search input {
+  width: 100%;
+  height: 30px;
+  margin-top: 7px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+.jd_main {
+  width: 100%;
+  height: 100%;
+  /*background-color: green;*/
+}
+
+.jd_nav {
+  width: 90px;
+  height: 100%;
+  /*background-color: pink;*/
+  float: left;
+  overflow: hidden;
+}
+
+
+.jd_nav li {
+  background-color: pink;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+.jd_nav li.now {
+  background-color: #fff;
+  border-right-color: #fff;
+}
+
+.jd_nav li.now a {
+  color: red;
+}
+
+.jd_nav li a {
+  color: #000;
+}
+
+.jd_content {
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+
+.jd_content .img_box {
+  padding: 10px;
+}
+
+
+.jd_content h3 {
+  font-weight: 700;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.jd_content li {
+  float: left;
+  width: 33.33%;
+}
+
+.jd_content li img {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.jd_content p {
+  text-align: center;
+  line-height: 30px;
+}
+

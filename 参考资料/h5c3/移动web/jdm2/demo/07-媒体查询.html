@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+    
+    /*
+      @keyframes：定义动画
+      @charset :指定编码
+      @media: 媒体查询
+      
+      @media screen:查询屏幕的宽度
+      and: 连接查询条件
+      
+      (条件)
+      min-width: 最小宽度，只有当大于等于了这个宽度，里面的样式才会生效
+      max-width: 最大宽度，只有当小于等于了这个宽度，里面的样式才会生效
+      width:     只有当前宽度等于了这个值，才生效
+      
+    */
+    @media screen and (width: 992px){
+      
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+      
+    }
+  
+  </style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

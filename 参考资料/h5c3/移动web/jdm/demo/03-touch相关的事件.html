@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+
+<script>
+
+  var div = document.querySelector("div");
+
+  //开始触摸的时候触发
+  div.addEventListener("touchstart", function (e) {
+    console.log("touchstart.....");
+
+    //console.log(e);
+  })
+
+  //触摸移动时触发，触发很多次。
+  div.addEventListener("touchmove", function (e) {
+    console.log("touchmove.....");
+  })
+
+  //结束触摸，离开屏幕
+  div.addEventListener("touchend", function (e) {
+    console.log("touchend.....");
+    console.log(e);
+  })
+
+  //cancel:当有系统级应用导致取消触摸时触发。
+  div.addEventListener("touchcancel", function () {
+    console.log("touchcancel.....");
+  })
+
+
+
+  //判断是左滑，还是右滑动
+</script>
+
+</body>
+</html>

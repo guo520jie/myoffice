@@ -1,0 +1,22 @@
+//如果单独编译header.less这个文件是会报错的，因为header.less这个文件引入了一个没有定义的额变量：@color
+//但是在cart.less中，并不会出现这个问题，因为在cart.less中是有这个变量。
+//解决：不编译header.less ，我们要的仅仅是cart
+body {
+   background-color: @color;
+ }
+
+div {
+  border: 1px solid red;
+}
+
+p {
+  border: 1px solid #000;
+}
+
+span {
+  border: 1px solid #000;
+}
+
+div {
+  border: 1px solid @color;
+}

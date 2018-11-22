@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+<!--渲染引擎  js解析器-->
+<div></div>
+
+<script>
+
+  var div = document.querySelector("div");
+
+  //重绘：当js代码改变了元素的样式的时候，没并没有影响到布局。会发生一次重绘操作。
+  //回流：在元素的样式发生改变，并且是影响到布局的时候，会发生一次回流，回流必然会导致重绘。
+  div.style.backgroundColor = "green";//一次重绘
+  div.style.backgroundColor = "red";//一次重绘
+  div.style.width = "200px";//一次回流+一次重绘
+  div.style.height = "200px";//一次回流+一次重绘
+
+
+  //少些行内样式，多使用class
+  //聪明的浏览器会维护一个队列。 当队列中的数量达到一定的值的时候，会一次性的回流+重绘
+  //当我们去获取元素的宽度，高度，scrollTop等等这些值的时候，浏览器为了给你的数据更加的精确，
+  //会强制刷新队列。
+
+
+</script>
+
+</body>
+</html>

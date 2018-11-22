@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>bootstrap的基本模版</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .container {
+      background-color: pink;
+      height: 100px;
+    }
+    
+    .container > div {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+
+  <!--
+    1. container：留有15px的padding， 为了布局更美观
+      //如何去除： 使用.row这个类
+    2. col-xs-4：是什么意思？
+      //col:列
+      //xs: 表示超小屏及以上的屏生效
+      //sm: 表示小屏及以上的屏幕生效
+      //md：表中中屏及以上的屏幕生效
+      //lg: 表示大屏的屏幕生效
+
+      //4: 整个容器12格，占几格。
+  -->
+  <div class="col-md-4">11</div>
+  <div class="col-md-4">22</div>
+  <div class="col-md-4">33</div>
+
+
+</div>
+
+<script src="jquery/jquery-1.12.4.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
