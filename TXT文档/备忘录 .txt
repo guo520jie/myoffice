@@ -150,3 +150,13 @@ $(".sectionDown").click(function () {
 BX-slider
  infiniteLoop:false,//判断是否出现左右控制器
 
+
+
+//获取url地址栏锚点参数
+
+name：锚点名（字符串类型）
+        function GetQueryString(name){
+	    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	    var r = window.location.search.substr(1).match(reg);
+	    if(r!=null)return  unescape(r[2]); return null;
+	};
