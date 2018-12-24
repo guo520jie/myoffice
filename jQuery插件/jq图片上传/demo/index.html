@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./mavatar.js"></script>
+    <style>
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .avatarbox {
+            width: 300px;
+        }
+        .btn-clip,.btn-reset {
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            border: 1pxs solid #f00;
+        }
+
+        .main {
+            width: 300px;
+        }
+        .main ul li {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .main ul li:nth-child(3){
+            height: 100px;
+        }
+        .main ul li textarea {
+            width: 200px;
+            height: 100px;
+            resize:none;
+        }
+        .main ul li span {
+            display: block;
+            height: 100%;
+            line-height: 100px;
+        }
+        .confim {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="avatarbox">
+        <div id="avatar"></div>
+        <div class="btn-box">
+            <div class="btn-clip" onclick="clip()">裁剪</div>
+            <div class="btn-reset" onclick="reset()">重置</div>
+        </div>
+        <div class="confim">上传中...</div>
+    </div>
+
+       <div class="main">
+           <ul>
+               <li>姓名:<input class="name" type="text" value="name"></li>
+               <li>年龄:<input class="age" type="text"></li>
+               <li><span class="fl">描述：</span><textarea class="fl txt" placeholder="请输入五十字以内的描述，包括符号"></textarea></li>
+           </ul>
+       </div>
+</body>
+</html>
+<script src="./jquery-1.11.1.min.js"></script>
+<script>
+    // $('.main').click(function(){
+    // var name = $('.name').val()
+    // age = $('.age').val()
+    // txt = $('.txt').val()
+    // console.log(`姓名：${name}`)
+    // console.log(`姓名：${age}`)
+    // console.log(`姓名：${txt}`)
+    // })
+    
+    $('#avatar').on("click",function(){
+        $('.confim').show()
+    })
+
+    var avatar = new Mavatar({
+        el:'#avatar',
+        width:'250px',
+        height:'250px',
+        fileOnchange:function(e){
+            $('.confim').hide()
+            console.log(e)
+        }
+    })
+
+    function clip() {
+
+        $('.confim').hide()
+        // console.log(avatar.getfileInfo().size)
+        // 限制图片大小
+        if(avatar.getfileInfo().size>0.2*1024*1024){
+        alert("请选择200k以下的图片")
+        return
+        }
+
+        avatar.imageClipper(function (data) {
+        alert('裁剪成功，生成的图片已覆盖在上传框内');
+        console.log(data);
+        //  将图片上传至后台
+        avatar.upload({
+            url: 'http://localhost:3080/profile',
+            name: 'avatar',
+            data: {userName: 'hzy0913', info: 'someInfo'},
+            success: function (data) {
+            console.log(data)
+            },
+            error: function (error) {
+            console.log(`error${error}`)
+            },
+        });
+        })
+    }
+    function reset(){
+        $('.confim').hide()
+        avatar.resetImage()
+    }
+
+</script>
