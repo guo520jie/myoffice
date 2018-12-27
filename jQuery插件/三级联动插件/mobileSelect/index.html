@@ -221,7 +221,8 @@ var UplinkData =
  */
  
 
-//  多级联动wheels[对象1，对象1，对象1] 几级联动就传入几个参数
+//  多级不联动wheels[对象1，对象1，对象1] 几级联动就传入几个参数
+// 多级联动数据类型如上面的UplinkData结构，里面的id和value，childs等数组的名称可以在mobileSelect.js文件中修改,如：将数组中的value变量名改为area:_this.keyMap = config.keyMap ? config.keyMap : {id:'id', value:'area', childs:'childs'};
 
 var mobileSelect1 = new MobileSelect({
     trigger: '#trigger1', 

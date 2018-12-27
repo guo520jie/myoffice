@@ -38,3 +38,6 @@
 	    <meta name="x5-page-mode" content="app">
 	    <!-- windows phone 点击无高光 -->
 	    <meta name="msapplication-tap-highlight" content="no">
+	    
+	    //rem适配根元素的字体大小
+	    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
