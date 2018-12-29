@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" href="./icon_font/iconfont.css">
+    <link rel="stylesheet" href="./css/mobileSelect.css">
+    <link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+    <!-- 添加地址页 -->
+    <div class="person-info">
+        <div class="info-main">
+            <ul>
+                <li><span>收货人：</span><input class="info name" type="text" placeholder="请输出收货人姓名"></li>
+                <li><span>手机号码：</span><input id="addtel" class="info" type="number" placeholder="请输入11位手机号码"></li>
+                <li><span>所在地区：</span><div id="trigger" class="info">省、市、区/县</div> <i class="iconfont icon-downpx"></i> </li>
+            </ul>
+            <div class="address"><textarea placeholder="请写出详细地址，如道路、门牌号、小区、楼栋号、单元室等"></textarea></div>
+        </div>
+
+        <div class="info-bottom">
+            <div class="btn-main">
+                <ul>
+                    <li class="address-cur"><i class="iconfont icon-yuan"></i> <span>设为默认地址</span></li>
+                    <li>注：请按照顺序填写信息，并保证信息完整无误，我们会根据您提供的信息进行发货，如因信息的错误导致快递未收到，将由您个人承担</li>
+                </ul>
+            </div>
+            <button class="btn btn-cur">确认</button>
+        </div>
+    </div>
+
+    <!-- 弹出提示框 -->
+    <!-- <div class="tips_msg hide">
+			<div class="tips_background"></div>
+			<div class="tips_div">
+				<div class="tips_header">
+				</div>
+				<div class="tips_header">
+					<img class="six_logo_chose" src="img/capable_logo.png" />
+					<img class="right tips_close" src="img/tips_close.png" />
+					<div class="clear"></div>
+				</div>
+				<p class="tips_title fontsize-48"></p>
+				<p class="tips_description fontsize-32"></p>
+				<div class="tips_btn">
+					<button class="btn-orange fontsize-36">确定</button>
+				</div>
+			</div>
+		</div> -->
+
+
+    <!-- 收货信息页 -->
+    <div class="address-info">
+        <!-- <div class="address-main">
+            <div class="top-ads">
+                <div class="name-ads">
+                    <ul>
+                        <li class="name_li"><span>收货人：</span>拉布拉卡</li>
+                        <li class="tel_li">13652654235</li>
+                    </ul>
+                </div>
+                <div class="detial-ads"><span>收货地址：</span>上海市浦东新区浦三路21号银亿诚品中心55-56号20楼</div>
+            </div>
+            <div class="bottom-ads">
+                <ul>
+                    <li class="default"><span>默认地址</span></li>
+                    <li class="update"> <i class="iconfont icon-iconfontedit"></i> 编辑</li>
+                    <li class="delete"><i class="iconfont icon-tubiao110"></i>删除</li>
+                </ul>
+            </div>
+        </div> -->
+
+        <div class="btn-ads">添加收货信息</div>
+    </div>
+
+
+    <!-- 确认定单页 -->
+    <div class="order-info">
+        <div class="oredr-main">
+            <!-- 顶部提示 -->
+            <div class="remind">
+                <p>
+                    请仔细验证以下信息是否正确，提交完成系统会自动扣除积分，我们将按照提交的信息发货、
+                </p>
+            </div>
+            <!-- 收件人信息 -->
+            <div class="personal">
+                <div class="personal-data">
+                    <div class="name-info">
+                        <ul>
+                            <li class="name_li"><span>姓名：</span>拉布拉卡</li>
+                            <li class="tel_li">13655605624</li>
+                        </ul>
+                    </div>
+                    <div class="detail-info"><span>收货地址：</span>上海市浦东新区浦三路21号银亿诚品中心55-56号20楼</div>
+                    <i class="iconfont icon-youjiantou"></i>
+                </div>
+            </div> 
+            <!-- 产品信息  -->
+            <div class="product">
+                <div class="product-data">
+                    <ul>
+                        <li class="order-num"><span>订单编号：</span>E5679810jqk</li>
+                        <li class="img-msg">
+                            <div class="img-box">
+                                <img src="./img/capable_logo.png" alt="">
+                            </div>
+                            <div class="txt-box">
+                                <p class="txt-name">法国进口婴儿小汽车豪华升级进口跑车小孩子的最爱</p>
+                                <p class="txt-color"><span>颜色分类：</span>黄色 豪华升级版</p>
+                            </div>
+                            <div class="price">
+                                <p class="money">￥1600</p>
+                                <p class="number"><span>x</span>1</p>
+                            </div>
+                        </li>
+                        <li class="product-msg">
+                            <p>产品品牌</p>
+                            <p class="kapu">卡比布</p>
+                        </li>
+                        <li class="product-msg">
+                            <p>产品品牌</p>
+                            <p class="kapu">卡比布</p>
+                        </li>
+                        <li class="leave-msg">
+                            <p class="buyer">买家留言：</p>
+                            <div class="leave-buy">
+                                <textarea placeholder="选填：对本次交易的说明"></textarea>
+                            </div>
+                        </li>
+                        <li class="total">
+                            合计消费积分：<span>211</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="commit">提交订单</div>
+    </div>
+    
+    <script src="./js//jquery-1.11.0.min.js"></script>
+    <script src="./js/mobileSelect.js"></script>
+    <script src="./js/load.js"></script>
+    <script>
+
+        $('.person-info').hide()
+        
+        // $('.address-info').hide()  
+
+        $('.order-info').hide()
+
+        // 添加地址页
+        var addressInit = function(){
+        let dataList;
+        let web = "http://192.168.1.40:20301";
+        $.ajax({
+            type:"post",
+            url: web+"/Area/getArea",
+            dataType:"json",
+            success:function(data){
+                if(data.code==200){
+                    // console.log(data)
+                    dataList = data.data
+                    // console.log(dataList)
+                    var mobileSelect = new MobileSelect({
+                    trigger:'#trigger',
+                    wheels:[
+                        {data: dataList}
+                    ],
+                    callback:function(indexArr, data){
+                        // console.log(data);
+                        $('#trigger').css({'color':'#000'})
+                    }
+                })
+
+                   
+                }
+            }
+        })
+
+            // 确定
+            $('.person-info .btn').on("click",function(e){
+                // 姓名验证
+                if($('.person-info .name').val()==''){
+                    // $.msgTips("姓名不能为空")
+                    alert('姓名不能为空')
+                    return false;
+                }
+                // 手机号验证
+                let myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+                if (!myreg.test($('.person-info #addtel').val())) {
+                    alert('手机号码有误，请填写正确的手机号')
+                    return false;
+                }
+                // 所在区域验证
+                if($('.person-info #trigger').text()=='省、市、区/县'){
+                    alert('所在区域不能为空')
+                    return false;
+                }
+                // 详细地址验证
+                if ($('.person-info textarea').val()==''){
+                    alert('详细地址不能为空')
+                    return false;
+                }
+                
+                // 提交数据
+                let name = $('.person-info .info-main .name').val()
+                let tel = $('.person-info #addtel').val()
+                let areaInfo = $('.person-info .info-main #trigger').text()
+                let province = areaInfo.split(" ")[0]
+                let city = areaInfo.split(" ")[1]
+                let county = areaInfo.split(" ")[2]
+                let address = $('.person-info .info-main .address textarea').val()
+                let openid = 'oygyPuIm-M6R_Mi1_IHWncWa2diQ'
+                let account = '7a4bf9ba2bd774068ad50351fb898076'
+                console.log(name)
+                $.ajax({
+                    type:'get',
+                    url:web+'/user/addAddress',
+                    data:{
+                        user_name:name,
+                        mobile:tel,
+                        province:province,
+                        city:city,
+                        county:county,
+                        address:address,
+                        account:account,
+                        openid:openid
+                    },
+                    dataType:'json',
+                    success:function(res){
+                        console.log(res)
+                    }
+                })
+            })
+
+            $('.person-info .address-cur').on("click",function(){
+                $('.person-info .btn-main i').toggleClass('icon-yuan').toggleClass('icon-check-circle-fill')
+            })
+        }
+
+
+        addressInit()
+
+
+        // 收货信息页
+        var addresInfo = function(){
+            let web = "http://192.168.1.40:20301";
+            let openid = 'oygyPuIm-M6R_Mi1_IHWncWa2diQ'
+            let account = '7a4bf9ba2bd774068ad50351fb898076'
+
+            $.ajax({
+                type:'get',
+                url:web+'/user/getAddress',
+                data:{
+                    openid:openid,
+                    account:account
+                },
+                dataType:'json',
+                success:function(res){
+                    console.log(res)
+                    for(var i = 0; i<res.data.length; i++ ){
+                        
+                        // console.log(res.data[i].mobile)
+                    let str = ` 
+                    <div class="address-main">
+                    <div class="top-ads">
+                        <div class="name-ads">
+                            <ul>
+                                <li class="name_li"><span>收货人：</span>${res.data[i].user_name}</li>
+                                <li class="tel_li">${res.data[i].mobile}</li>
+                            </ul>
+                        </div>
+                        <div class="detial-ads"><span>收货地址：</span>${res.data[i].address}</div>
+                    </div>
+                    <div class="bottom-ads">
+                        <ul>
+                            <li class="default"><span>默认地址</span></li>
+                            <li class="update"> <i class="iconfont icon-iconfontedit"></i> 编辑</li>
+                            <li class="delete"><i class="iconfont icon-tubiao110"></i>删除</li>
+                        </ul>
+                    </div>
+                    </div>`
+                    $('.address-info').append(str);
+                    if(res.data[i].is_default==1){
+                        $('.address-info .default span').show()
+                    }
+                }
+                }
+            })
+            
+        }
+        addresInfo()
+
+
+     
+    </script>
+</body>
+</html>

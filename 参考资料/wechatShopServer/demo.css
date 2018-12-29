@@ -1,0 +1,409 @@
+html{height: 100%;}
+body{height: 100%;}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+.fontsize-48{font-size: 0.64rem;}
+.fontsize-36{font-size: 0.48rem;}
+.fontsize-32{font-size: 0.43rem;}
+.fontsize-30{font-size: 0.4rem;}
+.fontsize-22{font-size: 0.29rem;}
+.fontsize-24{font-size: 0.32rem;}
+.fontsize-26{font-size: 0.34rem;}
+.fontsize-28{font-size: 0.37rem;}
+.color-orange{color: #FF6600;}
+.clearFix:after{
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+	line-height:0;
+	content:"";
+}
+
+
+/* 添加地址页 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.person-info input {
+    background:none;  
+	outline:none;  
+	border:0px;
+}
+.person-info textarea {
+    outline: none;
+    resize: none;
+    border: none;
+}
+
+.person-info {
+    width: 100%;
+    height: 100%;
+    font-size: 0.43rem;
+    display: flex;
+    flex-direction: column;
+}
+.person-info ul{
+    list-style: none;
+}
+.person-info li{
+    list-style: none;
+   
+}
+.person-info .info-main {
+    padding-left: 0.5rem; 
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.person-info .info-main ul li {
+  height: 1.5rem;
+  display: flex;
+  line-height: 1.5rem;
+  border-bottom: 0.5px solid #ccc;
+  position: relative;
+}
+.person-info .info-main ul li span {
+    display: block;
+    flex: 1;
+    font-weight: 600;
+}
+.person-info .info-main ul li .info {
+    flex: 3
+}
+#trigger {
+    color:#999;
+}
+.person-info .info-main ul li i {
+   position: absolute;
+   top: 0.1rem;
+   right: 0.3rem;
+   color: #999;
+}
+.person-info .address {
+    width: 100%;
+    height: 3rem;
+    padding-left: 2.3rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+}
+.person-info .address textarea {
+    width: 100%;
+    height: 100%;
+}
+
+.person-info .info-bottom {
+    flex: 1;
+    background-color: #f4f4f4;
+}
+
+.person-info .info-bottom .btn-main{
+    padding: 0.3rem 0 0 0.3rem;
+    box-sizing: border-box;
+}
+.person-info .info-bottom .btn-main li{
+    margin-bottom: 0.5rem;
+}
+.person-info .info-bottom .btn-main li:nth-child(2){
+    color: #777;
+}
+.person-info .icon-check-circle-fill{
+    color: #FF6600;
+}
+.person-info .btn{
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent;  
+    outline: none;
+    width: 100%;
+    height: 1.5rem;   
+    font-size: 0.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: #999;
+}
+.person-info .btn-cur{
+    background-color: #FF6600;
+}
+
+
+/* 收货信息页 */
+.address-info {
+    width: 100%;
+    height: 100%;
+    font-size: 0.43rem;
+    background-color: #f4f4f4;
+}
+.address-info .address-main {
+    width: 100%;
+    height: 3.5rem;
+    background-color: #fff;
+    padding: 0 0.2rem;
+    box-sizing: border-box;
+    margin-bottom: 0.3rem;
+}
+.address-info .address-main .top-ads {
+    width: 100%;
+    height: 2.3rem;
+    /* background-color: aqua; */
+    border-bottom: 0.5px solid #ccc;
+    box-sizing: border-box;
+}
+.address-info .address-main .top-ads .name-ads ul {
+    display: flex;
+    flex-direction: row;
+    height: 1rem;
+    line-height: 1rem;
+}
+.address-info .address-main .top-ads .name-ads .name_li{
+    flex: 1
+}
+.address-info .address-main .top-ads .name-ads .tel_li {
+    flex: 1;
+    text-align: right;
+}
+.address-info .address-main .top-ads .detial-ads {
+    height: 1rem;
+    font-size: 0.35rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.address-info .address-main .bottom-ads ul {
+    display: flex;
+    height: 1.2rem;
+    line-height: 1.2rem;
+}
+.address-info .default {
+    flex: 3;
+    color: #f00;
+}
+.address-info .default span {
+    padding: 0 0.2rem;
+    border: 0.5px solid #f00;
+    display: none;
+}
+
+.address-info .update {
+    flex: 1;
+    text-align: center;
+    margin-right: 0.5rem;
+}
+.address-info .delete {
+    flex: 1;
+    text-align: center;
+}
+.address-info li i {
+    font-size: 0.5rem;
+}
+
+.address-info .btn-ads {
+    width: 100%;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    text-align: center;
+    font-size: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #FF6600;
+    color: #fff;
+}
+
+
+/* 确认订单页 */
+
+.order-info {
+    width: 100%;
+    height: 100%;
+    font-size: 0.43rem;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+.order-info .oredr-main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.order-info .oredr-main .remind {
+    flex: 1;
+    position: relative;
+}
+.order-info .oredr-main .remind p{
+    width: 100%;
+    height: 1.4rem;
+    padding: 0.1rem 0.2rem;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 0.38rem;
+}
+.order-info .oredr-main .personal {
+    flex: 1.6;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+    position: relative;
+}
+.order-info .oredr-main .personal-data {
+    height: 2.3rem;
+    padding: 0 1rem 0 0.2rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    font-size: 0.4rem;
+}
+.order-info .oredr-main .personal-data ul{
+    display: flex;
+    flex-direction: row;
+    line-height: 1rem;
+}
+.order-info .oredr-main .personal-data ul .name_li {
+    flex: 1;
+}
+.order-info .oredr-main .personal-data ul .tel_li {
+    flex: 1;
+    text-align: right;
+}
+.order-info .oredr-main .personal-data i {
+    position: absolute;
+    top: 0;
+    right: 0.3rem;
+    text-align: center;
+    line-height: 2.3rem;
+    font-weight: 600;
+}
+
+
+/* 产品信息*/
+.order-info .oredr-main .product {
+    flex: 8;
+}
+.order-info .oredr-main .product .product-data{
+    width: 100%;
+    height: 100%;
+}
+.order-info .oredr-main .product .product-data li {
+    width: 100%;
+    height: 1.5rem;
+    padding: 0 0.2rem;
+    margin-bottom: 1px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.order-info .oredr-main .product .product-data .order-num {
+    line-height: 1.5rem;
+}
+
+.order-info .oredr-main .product .product-data .img-msg {
+    height: 2.6rem;
+    display: flex;
+}
+.order-info .oredr-main .product .product-data .img-msg .img-box {
+    flex: 1;
+    margin-top: 0.1rem;
+}
+.order-info .oredr-main .product .product-data .img-msg .img-box img {
+    width: 100%;
+    height: 100%;
+}
+.order-info .oredr-main .product .product-data .img-msg .txt-box {
+    flex: 2.3;
+    margin: 0.1rem 0.2rem;
+}
+.order-info .oredr-main .product .product-data .img-msg .txt-box .txt-name{
+    font-size: 0.38rem;
+    height: 1rem;
+    margin-bottom: 0.3rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.order-info .oredr-main .product .product-data .img-msg .txt-box .txt-color {
+    font-size: 0.3rem;
+    color: #c3c3c3;
+}
+.order-info .oredr-main .product .product-data .img-msg .price {
+    flex: 0.7;
+    margin-top: 0.1rem;
+}
+.order-info .oredr-main .product .product-data .img-msg .price .money {
+    height: 1.8rem;
+    text-align: right;
+}
+.order-info .oredr-main .product .product-data .img-msg .price .number {
+    text-align: right;
+    color: #c3c3c3;
+    font-size: 0.4rem;
+}
+
+.order-info .oredr-main .product .product-data .leave-msg {
+    height: 3rem;
+}
+
+.order-info .oredr-main .product .product-data .product-msg {
+    display: flex;
+}
+.order-info .oredr-main .product .product-data .product-msg p {
+    flex: 1;
+    line-height: 1.5rem;
+}
+.order-info .oredr-main .product .product-data .product-msg .kapu {
+    text-align: right;
+}
+
+.order-info .oredr-main .product .product-data .leave-msg {
+    display: flex;
+    padding-top: 0.5rem;
+    box-sizing: border-box;
+}
+.order-info .oredr-main .product .product-data .leave-msg .buyer{
+    flex: 1;
+}
+.order-info .oredr-main .product .product-data .leave-msg .leave-buy {
+    flex: 3
+}
+.order-info .oredr-main .product .product-data .leave-msg .leave-buy textarea{
+    outline: none;
+    resize: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+.order-info .oredr-main .product .product-data .total {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: right;
+    font-size: 0.4rem;
+}
+.order-info .oredr-main .product .product-data .total span {
+    color: #FF6600;
+    font-size: 0.6rem;
+}
+.order-info .commit {
+    width: 100%;
+    height: 1.3rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    line-height: 1.3rem;
+    background-color: #FF6600;
+    color: #fff;
+}
