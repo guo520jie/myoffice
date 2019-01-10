@@ -8,12 +8,12 @@ import './assets/iconfont/iconfont.css'
 import store from './store'
 import VueScroller from 'vue-scroller'
 // 导入 vux 组件
-import { XButton, AlertPlugin, DatetimePlugin, LoadingPlugin, WechatPlugin } from 'vux'
+import { XButton, AlertPlugin, DatetimePlugin, LoadingPlugin, WechatPlugin, ConfirmPlugin } from 'vux'
 
 Vue.use(WechatPlugin)
 Vue.use(LoadingPlugin)
 Vue.use(DatetimePlugin)
-
+Vue.use(ConfirmPlugin)
 Vue.use(AlertPlugin)
 
 Vue.component('x-button', XButton)

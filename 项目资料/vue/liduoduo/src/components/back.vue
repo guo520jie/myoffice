@@ -2,6 +2,7 @@
     <div class="container">
         <div class="main">
             <div class="head">
+                <div class="exit" @click="exitLogin"><img src="../assets/exit.png" alt=""></div>
                 <div class="head-person">
                     <div class="img-box"><img :src="user.avatarUrl" alt=""></div>
                     <div class="admin-name">
@@ -27,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="service"><span>客服热线：15026756127</span></div>
+            <div class="service" @click="serviceShow"><span>客服热线联系方式 ></span></div>
         </div>
     </div>
 </template>
@@ -47,9 +48,6 @@ var imgurl = require('../assets/logo.png')
 			});
           var timer = setInterval(this.showMarquee, 2000);
           this.personInfo()
-        },
-        mounted(){
-            this.scan()
         },
         data(){
             return{
@@ -73,6 +71,10 @@ var imgurl = require('../assets/logo.png')
 			}
         },
         methods:{
+            exitLogin:function(){
+                localStorage.clear()
+                this.$router.replace({path:'/'})
+            },
             personInfo:function(){
                 this.name = this.$store.state.username
                 this.loginImg = this.$store.state.userImg ? this.$store.state.userImg : imgurl
@@ -93,18 +95,13 @@ var imgurl = require('../assets/logo.png')
                 buttonText:'确定',
                 })
             },
-             init:function(data){
-                //通过config接口注入权限验证配置
-                this.$wechat.config({
-                    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-                    appId: data.app_id, // 必填，公众号的唯一标识
-                    timestamp: data.timestamp, // 必填，生成签名的时间戳
-                    nonceStr: data.nonceStr, // 必填，生成签名的随机串
-                    signature: data.signature,// 必填，签名，见附录1
-                    jsApiList: ['scanQRCode'] // 必填，需要使用的JS接口列表
-                });
-                //通过ready接口处理成功验证
-               
+            serviceShow:function(){
+                this.$vux.confirm.show({
+                    title:'客服联系方式',
+                    content: '<div style="text-align:left;margin-left:28px;margin-top:30px;"><p style="margin-bottom:15px;">微信：15026756127</p> <p style="margin-bottom:15px;">Q Q： 2180647457</p> <p style="margin-bottom:15px;">座机：021-56775190</p> <p style="margin-bottom:15px;">手机：15026756127</p> <p style="margin-bottom:15px;">邮箱：2180647457@qq.com</p></div>',
+                    confirmText:'知道了',
+                    showCancelButton: false
+                })
             },
             getQrcodeInfo:function (code) {
             	let self = this;
@@ -131,37 +128,56 @@ var imgurl = require('../assets/logo.png')
 					}
 				})
 			},
-            scanCode:function(){
-            	this.getQrcodeInfo('7cf0524e');
-            	return
-                 this.$wechat.ready(()=>{
-                     this.$wechat.scanQRCode({
-                        needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
-                        scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
-                        success: function (res) {
-                            var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
-                            this.getQrcodeInfo(result)
-                        }
-                     });
-                 })
-            },
-            scan:function(){
-                this.$http({
-                    methods:'get',
-                    url:'/gongzhonghao/Jssdk',
-                    params:{
-                        // 代码需要上传服务器，否则返回为0
-                        url:window.location.href,
-                    }
-                }).then(res=>{
-                    // console.log(res.data.data)
-                    this.init(res.data.data)
-                    // this.scanCode(res.data)
-                })
-            },
+			scanCode:function(){
+				// this.$store.commit('setQrCode','e1dddec9');
+				// this.getQrcodeInfo('e1dddec9');
+				// return
+				let self = this;
+				if(this.isWeixn()){
+					this.$vux.loading.show({
+						text:'加载中'
+					});
+					setTimeout(function () {
+						self.$vux.loading.hide();
+					},1500);
+					// this.$wechat.ready(()=>{
+					self.$wechat.scanQRCode({
+						needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+						scanType: ["qrCode"], // 可以指定扫二维码还是一维码，默认二者都有
+						success: function (res) {
+							self.$vux.loading.hide();
+							var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+							if (result){
+								self.$store.commit('setQrCode',result);
+								self.getQrcodeInfo(result)
+							}else {
+								self.$vux.alert.show({
+									content:'未识别的兑换码'
+								})
+							}
+
+						}
+					});
+					// })
+				}else {
+					this.$vux.alert.show({
+						content:'请在微信中打开'
+					})
+				}
+
+			},
 			goQuery:function () {
                 this.$router.push({path:'/query'})
-			}
+            },
+            isWeixn:function(){
+                var ua = navigator.userAgent.toLowerCase();
+                if(ua.match(/MicroMessenger/i)=="micromessenger") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
         }
     }
 </script>
@@ -190,6 +206,17 @@ var imgurl = require('../assets/logo.png')
         background: -o-linear-gradient(0deg,rgba(94,191,255,1),rgba(76,135,255,1)); /* Opera 11.1 - 12.0 */
         background: -moz-linear-gradient(0deg,rgba(94,191,255,1),rgba(76,135,255,1)); /* Firefox 3.6 - 15 */
         background:linear-gradient(0deg,rgba(94,191,255,1),rgba(76,135,255,1));
+    }
+    .main .head .exit {
+        width: 84/@r;
+        height: 84/@r;
+        position: absolute;
+        top: 30/@r;
+        right: 30/@r;
+    }
+    .main .head .exit img {
+        width: 100%;
+        height: 100%;
     }
     .main .head .head-person {
         width: 100%;

@@ -13,7 +13,7 @@
             </div>
 
             <div class="num">
-                <input type="number" v-model="num" placeholder="请输入需要核销的积分数">
+                <input type="text" v-model="num" placeholder="请输入需要核销的积分数"  pattern="[0-9]*">
                 <p>积分</p>
             </div>
 
@@ -43,9 +43,6 @@ var imgurl = require('../assets/logo.png')
             this.telreplace()
             // console.log(this.qrCodeUser)
         },
-        updated(){
-            this.btnMaskShow()
-        },
         data(){
             return{
                 txtmsg:'请仔细核对用户信息，确认无误后输入积分',
@@ -60,10 +57,26 @@ var imgurl = require('../assets/logo.png')
 			uid:function () {
 				return this.$store.getters['getUUID'];
 			},
+            qrCode:function () {
+                return this.$store.getters['getQrCode'];
+			},
             qrCodeUser:function () {
                 return this.$store.getters['getQrCodeUserInfo']
 			}
 		},
+        watch:{
+        	num:function (val, oldVal) {
+        		this.num = val.replace(/\D/g,'');
+        		if (this.num<1){
+        			this.num = '';
+                }
+                if(this.num!==''){
+					this.btnMask = false
+                }else {
+					this.btnMask = true
+                }
+			}
+        },
         methods:{
             personInfo:function(){
                 var info = this.qrCodeUser
@@ -79,20 +92,21 @@ var imgurl = require('../assets/logo.png')
                     url:'/mfw/xiaoliwu/backend/Login/verification',
                     params:{
                         uid:uid,
-                        code:'eded852d',
+                        code:this.qrCode,
                         score: this.num
                     }
                 }).then(res=>{
                     if(res.data.code == 0){
                         console.log(res)
-                        this.$router.push({
+                        this.$router.replace({
                             path:'/success',
                             query:{
                                 score:this.num
                             }
                         })
                     }else{
-                        this.$router.push({
+                    	this.$store.commit('setErrMsg',res.data.msg)
+                        this.$router.replace({
                             path:'/defeated'
                         })
                     }
@@ -103,11 +117,6 @@ var imgurl = require('../assets/logo.png')
                 let telchange = tel.replace(tel.substring(3,7),'****')
                 this.tel = telchange
             },
-            btnMaskShow:function(){
-                if(this.num!=''){
-                    this.btnMask = false
-                }
-            }
         }
     }
 </script>

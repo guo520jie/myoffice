@@ -26,9 +26,9 @@ var imgurl = require('../assets/logo.png')
             return {
                 isShow:true,
                 result:'核销成功',
-                jifen:'6000',
-                name:'Summer',
-                tel:'13655606248',
+                jifen:'***',
+                name:'***',
+                tel:'***********',
                 img:null
             }
         },
@@ -126,6 +126,7 @@ var imgurl = require('../assets/logo.png')
         font-size: 30/@r;
     }
     .main .confirm {
+        height: 70/@r;
         position: absolute;
         bottom: 120/@r;
         left: 50%;
@@ -136,6 +137,7 @@ var imgurl = require('../assets/logo.png')
         height: 70/@r;
         margin: 0 auto;
         border: 1px solid #4F90FF;
+        box-sizing: border-box;
         text-align: center;
         line-height: 70/@r;
         border-radius: 5/@r;

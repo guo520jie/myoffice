@@ -2,7 +2,7 @@
     <div class="container">
         <div class="main">
             <div class="result">核销失败</div>
-            <div class="defeated">改用户积分不足，无法核销</div>
+            <div class="defeated">{{errorMsg}}</div>
             <div class="confirm" @click="btnsuccess"><p>完成</p></div>
         </div>
     </div>
@@ -15,6 +15,11 @@
 
             }
         },
+		computed:{
+			errorMsg:function () {
+				return this.$store.getters['getErrMsg'];
+			},
+		},
         methods:{
             btnsuccess:function(){
                 this.$router.replace({

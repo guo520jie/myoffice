@@ -40,7 +40,9 @@ function createUUID (len, radix) {
 const state = {
   uuid: '',
   user: {},
+  qrCode:'',
   qrCodeUser:{},
+  errorMsg:'',
 }
 
 const mutations = {
@@ -65,6 +67,12 @@ const mutations = {
   },
   setQrCodeUserInfo(state,data){
   	state.qrCodeUser = data;
+  },
+  setQrCode(state,data){
+  	state.qrCode = data;
+  },
+  setErrMsg(state,data){
+  	state.errorMsg = data
   }
 }
 
@@ -91,8 +99,14 @@ const getters = {
   getAdminUserInfo: function () {
     return state.user
   },
+  getQrCode:function () {
+    return state.qrCode
+  },
   getQrCodeUserInfo:function () {
 	  return state.qrCodeUser
+  },
+  getErrMsg:function () {
+	  return state.errorMsg
   }
 }
 
