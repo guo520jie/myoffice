@@ -1,0 +1,57 @@
+{
+  "configs": [
+    {
+      "server": "45.62.103.161",
+      "server_port": 9001,
+      "password": "xupengfei2016",
+      "method": "aes-256-cfb",
+      "remarks": "",
+      "auth": false
+    },
+    {
+      "server": "43.225.56.17",
+      "server_port": 9001,
+      "password": "xupengfei2016",
+      "method": "aes-256-cfb",
+      "remarks": "",
+      "auth": false
+    },
+    {
+      "server": "119.28.74.147",
+      "server_port": 9001,
+      "password": "xupengfei2016",
+      "method": "aes-256-cfb",
+      "remarks": "",
+      "auth": false
+    }
+  ],
+  "strategy": null,
+  "index": 2,
+  "global": false,
+  "enabled": true,
+  "shareOverLan": false,
+  "isDefault": false,
+  "localPort": 1080,
+  "pacUrl": null,
+  "useOnlinePac": false,
+  "availabilityStatistics": false,
+  "autoCheckUpdate": false,
+  "isVerboseLogging": false,
+  "logViewer": {
+    "fontName": "Consolas",
+    "fontSize": 8.25,
+    "bgColor": "Black",
+    "textColor": "White",
+    "topMost": false,
+    "wrapText": false,
+    "toolbarShown": false,
+    "width": 600,
+    "height": 400,
+    "top": 178,
+    "left": 559,
+    "maximized": false
+  },
+  "useProxy": false,
+  "proxyServer": null,
+  "proxyPort": 0
+}
