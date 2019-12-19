@@ -27,7 +27,7 @@
   ],
   "strategy": null,
   "index": 2,
-  "global": false,
+  "global": true,
   "enabled": true,
   "shareOverLan": false,
   "isDefault": false,
