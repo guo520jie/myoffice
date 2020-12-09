@@ -1,6 +1,0 @@
-{
-  "usingComponents":{
-    "userInfo":"/components/userInfo/userInfo",
-    "dialog": "/components/dialog/dialog"
-  }
-}

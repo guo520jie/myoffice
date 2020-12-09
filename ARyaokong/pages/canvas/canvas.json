@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "dialog": "/components/dialog/dialog"
-  },
-  "disableScroll": true
-}

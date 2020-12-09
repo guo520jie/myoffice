@@ -1,7 +1,0 @@
-<!--pages/canvasImg/canvasImg.wxml-->
-<view class='main' style="background-image:url('{{AppImg.CanvasBg}}')">
-  <view class='img-box'>
-    <canvas style="width: 684rpx; height: 1163rpx;" canvas-id='firstCanvas'></canvas>
-  </view>
-</view>
-<dialog id='dialog'></dialog>
