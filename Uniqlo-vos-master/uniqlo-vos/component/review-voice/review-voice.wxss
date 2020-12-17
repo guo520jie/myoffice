@@ -1,0 +1,55 @@
+.bottompanel {
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0rpx;
+  padding: 50rpx 0 80rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-record {
+  border: 1rpx #7b2a8a solid;
+  border-radius: 50rpx;
+  color: #7b2a8a;
+  padding: 5rpx 20rpx;
+  background: #fff;
+  height: 78rpx;
+  width: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60rpx;
+  margin-left: 18%;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.4rpx;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-microphone:before {
+  content: "\e660";
+}
+
+.icon-microphone {
+  border-radius: 50rpx;
+  color: #fff;
+  padding: 5rpx 20rpx;
+  height: 80rpx;
+  width: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60rpx;
+  margin-right: 18%;
+  background: linear-gradient(to right, #843590, #b570a9);
+}
+
+
+.icon-record:before {
+  content: "\e60e";
+}

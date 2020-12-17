@@ -1,0 +1,20 @@
+<!-- component/nextAndBack/nextAndBack.wxml -->
+<!-- 优化层级  view -->
+<view class='next-back-box'>
+  <view class='to-speak-box'>
+    <image bindtap='back' wx:if='{{hideBack}}' src="/images/dangan.png" />
+  </view>
+  <view class='microphone-box'>
+    <view class="postion-box" wx:if="{{hideMicroPhone}}" bindtouchstart="startRecord" bindtouchend="stopRecord" bindtouchcancel="touchCancel" bindtouchmove="touchMove">
+      <view class='postion'>
+        <image class='iconfont' mode='aspectFit' src="/images/microphone.png" />
+      </view>
+      <view wx:if='{{!hiddenMsg}}' class='microphone-msg'>{{currLanguage.speak}}</view>
+    </view>
+  </view>
+  <view class='to-speak-box'>
+    <!-- <image wx:if='{{hideNext}}' bindtap='submit' src="/images/A.png" /> -->
+    <view class="next-box" wx:if='{{hideNext}}' bindtap='submit'>下一条</view>
+  </view>
+</view>
+<view class="mask" wx:if="{{isSpeaking}}">正在录音...</view>

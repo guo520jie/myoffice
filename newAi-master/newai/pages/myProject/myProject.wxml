@@ -1,0 +1,49 @@
+<!-- pages/myProject/myProject.wxml -->
+<view class='container'>
+  <scroll-view style="height: calc(100vh - 200rpx);" scroll-with-animation='true' scroll-y='true'>
+    <block wx:for="{{projectList}}" :key='item.id'>
+      <view class='flex align-center margin-tb-sm' data-index='{{index}}' bindtap='getProjectIndex'>
+        <image data-index="{{index}}" bindtap='removeProject' wx:if="{{isModify}}" class='delete-image' src='/images/delete.png' />
+        <view class='project-image-box'>
+          <image class='project-image' src='/images/icon-removebg-preview.png' />
+        </view>
+        <view wx:if="{{!isModify}}" class='project-size'>{{item.name}}</view>
+        <view wx:else>
+          <textarea value='{{modifyProjectValue}}' data-index="{{index}}" placeholder='{{item.name}}' bindblur="modifyTextAreaBlur" auto-height />
+        </view>
+      </view>
+    </block>
+    <view wx:if="{{isModify}}" class='flex align-center margin-tb-sm'>
+      <image bindtap='addProject' class='delete-image' src='/images/add.png' />
+      <view class='project-image-box'>
+        <image class='project-image' src='/images/icon-removebg-preview.png' />
+      </view>
+      <view>
+        <textarea placeholder='请输入项目名' value='{{getAddProjectValue}}' bindblur="getAddProject" auto-height />
+      </view>
+    </view>
+  </scroll-view>
+  <view class='margin-top'>
+    <button bindtap='modifyProject' class=" cu-btn bg-default shadow-blur round">
+      {{  isModify? '确认' : '管理项目' }}
+    </button>
+  </view>
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">确认移除项目</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        <picker range-key="name" class='work-time-box' value="{{currProjectIndex}}" range="{{newProjectList}}"  bindcancel='removeOptions' bindchange="bindTimeChange">
+          <view class="picker">{{newProjectList[currProjectIndex].name}}</view>
+        </picker>
+      </view>
+      <button bindtap='submitDelProject' style="width:200rpx;margin-bottom:30rpx;" class="cu-btn bg-default shadow-blur round">
+        提交
+      </button>
+    </view>
+  </view>
+</view>

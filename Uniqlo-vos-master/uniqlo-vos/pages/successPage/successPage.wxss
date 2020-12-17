@@ -1,0 +1,14 @@
+/* pages/successPage.wxss */
+.image-box {
+  display: flex;
+  justify-content: start;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50%;
+}
+
+.image-box>image {
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 30rpx;
+}

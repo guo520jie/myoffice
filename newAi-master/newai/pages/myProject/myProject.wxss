@@ -1,0 +1,45 @@
+/* pages/myProject/myProject.wxss */
+.project-image-box {
+  margin: 10rpx 30rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2rpx solid rgba(75, 116, 227, 1);
+}
+
+.project-image {
+  height: 120rpx;
+  width: 120rpx;
+}
+
+.delete-image {
+  height: 48rpx;
+  width: 48rpx;
+}
+
+button {
+  font-size: 40rpx !important;
+  width: 80vw !important;
+  height: 90rpx !important;
+  border: 2rpx solid rgba(255, 255, 255, 0) !important;
+}
+
+textarea {
+  padding: 20rpx;
+  width: 50vw;
+  min-height: 160rpx !important;
+  border-radius: 10rpx;
+  background-color: rgba(248, 248, 248, 1);
+  color: rgba(28, 28, 28, 1);
+  border: 2rpx solid rgba(255, 0, 0, 0);
+}
+.picker{
+  height: 60rpx;
+  align-content: center;
+  line-height: 60rpx;
+  width: 100%;
+}

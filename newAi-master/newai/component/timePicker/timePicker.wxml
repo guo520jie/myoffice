@@ -1,0 +1,6 @@
+<!-- component/timePicker/timePicker.wxml -->
+<view>
+  <picker disabled="{{disabled}}" mode="multiSelector" bindchange="pickerChange" bindcolumnchange="pickerColumnChange" bindcancel="pickerCancel" value="{{pickerIndex}}" range="{{pickerArray}}" range-key="{{'name'}}">
+    <view style='width:100%;text-align:center'>{{placeholder}}</view>
+  </picker>
+</view>

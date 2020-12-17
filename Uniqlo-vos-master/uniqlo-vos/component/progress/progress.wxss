@@ -1,0 +1,39 @@
+/* component/progress/progress.wxss */
+.progress-box {
+  position: relative;
+  font-size: 28rpx;
+  z-index: 10;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 0);
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+
+.action-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #E60012;
+  color: #fff;
+  height: 100%;
+  z-index: 9;
+  border-radius: 4rpx;
+
+}
+
+.bottom-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  color: #000;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  border-radius: 4rpx;
+}
+
+.totalNum {
+  margin-right: 20rpx;
+}

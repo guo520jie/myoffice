@@ -1,0 +1,85 @@
+/**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@import "colorui/animation.wxss";
+
+.container {
+  min-height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #7E3D8C !important;
+  border-color: #7E3D8C !important;
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+  background: #7E3D8C !important;
+  border-color: #7E3D8C !important;
+}
+
+.next-and-back {
+  position: fixed;
+  bottom: 30rpx;
+  left: 0;
+}
+
+.authorization-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  height: 100vh;
+  width: 100vw !important;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 8887;
+  opacity: 0.6;
+}
+
+.modalDlg {
+  width: 580rpx;
+  height: 240rpx;
+  position: fixed;
+  top: 60%;
+  left: 0;
+  padding: 40rpx 0;
+  z-index: 8888;
+  margin: -370rpx 85rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalDlg .btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save_money {
+  color: #fff;
+  width: 200rpx;
+  line-height: 60rpx;
+  background: #aa74b0;
+  text-align: center;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+  margin: 0 30rpx;
+  margin-top: 60rpx;
+  font-weight: 400;
+}

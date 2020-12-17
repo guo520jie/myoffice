@@ -1,0 +1,21 @@
+.float-view-box {
+  position: fixed;
+  width: 98vw;
+  top: 0;
+  left: 1vw;
+  display: flex;
+  align-items: center;
+  border-radius: 16rpx;
+  background: rgba(245, 95, 95, 0.5);
+  height: 90rpx;
+}
+
+.text-msg {
+  font-size: 28rpx;
+}
+
+.float-view-box>image {
+  height: 50rpx;
+  width: 50rpx;
+  margin:0 10rpx ;
+}

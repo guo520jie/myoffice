@@ -1,0 +1,159 @@
+/* pages/user/user.wxss */
+.user-box {
+  margin: 50rpx 25rpx;
+}
+
+.container {
+  padding-bottom: 50rpx;
+
+}
+
+/* 进度条从写 */
+.cu-progress {
+  width: 82% !important;
+  height: 38rpx !important;
+}
+
+.cu-progress view {
+  font-size: 27rpx !important;
+}
+
+/* 进度条从写 */
+
+
+.user-info-box {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-url {
+  height: 120rpx;
+  width: 120rpx;
+  margin-right: 30rpx;
+}
+
+.user-item {
+  height: 120rpx;
+  font-size: 28rpx;
+  margin-right: 120rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  /* align-items: center; */
+  justify-content: space-around;
+}
+
+.user-name {
+  margin: 10rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.position {
+  margin-left: 18rpx;
+  padding: 0 20rpx;
+  height: 36rpx;
+  line-height: 30rpx;
+  border-radius: 30rpx;
+  color: rgba(230, 0, 18, 1);
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 36rpx;
+  border: 2rpx solid rgba(230, 0, 18, 1);
+}
+
+.ranking-box {
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+.ranking-url {
+  height: 60rpx;
+  width: 60rpx;
+  margin-right: 10rpx;
+}
+
+.progress-box {
+  margin: 0 auto;
+  margin-top: 60rpx;
+  width: 95%;
+  line-height: 40rpx;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 0);
+}
+
+.progress-title {
+  margin: 26rpx auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.progress-title image {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.progress-item {
+  margin-left: 55rpx;
+}
+
+progress {
+  margin: 20rpx 0;
+  width: 90%;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 0);
+  border-radius: 28rpx;
+  overflow: hidden
+}
+
+.wx-progress-inner-bar {
+  border-radius: 28rpx;
+}
+
+.page-box {
+  margin: 60rpx auto 50rpx auto;
+  width: 95%;
+  border-radius: 6rpx;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.page-item {
+  text-align: center;
+  font-size: 28rpx;
+  margin: 40rpx 0;
+  width: 50%;
+}
+
+.page-box>view>image {
+  margin: 30rpx 100rpx;
+  height: 90rpx;
+  width: 90rpx;
+}
+
+
+.authorization-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  height: 100vh;
+  width: 100vw !important;
+}
+
+.goal-setting {
+  color: rgba(236, 4, 4, 1);
+  font-size: 28rpx;
+  /* border-bottom: 2rpx solid rgba(236, 4, 4, 1); */
+  text-decoration: underline;
+}

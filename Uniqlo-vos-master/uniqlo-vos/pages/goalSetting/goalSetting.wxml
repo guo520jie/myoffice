@@ -1,0 +1,25 @@
+<!-- pages/goalSetting/goalSetting.wxml -->
+<view class='container'>
+  <view class='item-header  margin-bottom-lg' wx:if="{{ type == 1 }}">
+    {{questionObj.startDay}} - {{questionObj.endDay}} 本店定向问卷达标数设定
+  </view>
+
+  <view class='item-header  margin-bottom-lg' wx:else>
+    开放问卷达标数设定
+  </view>
+
+  <view wx:for="{{questionObj.targetSettingVOS}}">
+    <view class='item-body'>
+      <view class='body-title margin-left'>{{item.title}}</view>
+      <view class='margin-left margin-bottom-xl'>{{item.startTime}}</view>
+      <view class='input-box  margin-left  margin-bottom-lg'>
+        <input placeholder="请输入达标数字" type="number" value="{{item.num}}" data-index='{{index}}' bindfocus="getInputItem" bindinput="getStandardNum" />
+        <view style="margin-left:10rpx;">份</view>
+      </view>
+      <button class="bg-default  default-btn" data-index='{{index}}' bindtap='onSubmit'>确认</button>
+    </view>
+  </view>
+</view>
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

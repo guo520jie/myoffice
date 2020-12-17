@@ -1,0 +1,15 @@
+<view class='date-select'>
+  <!-- <view bindtap='customTime'>{{lang.customTime}}</view> -->
+  <!-- <calendar bindtap='customTime' msg="{{lang.customTime}}" activationIndex='{{activationIndex}}' selectedMode='square' mode='pickerRange' showTime='{{false}}' bottomPadding='{{false}}' class='data'></calendar> -->
+  <!-- <view bindtap='selectMonth' style="color:{{activationIndex===1?'#a75fa2':''}}">
+    {{lang.month}}
+  </view>
+  <view bindtap='selectWeek' style="color:{{activationIndex===2?'#a75fa2':''}}">{{lang.week}}</view>
+  <view bindtap='selectDay' style="color:{{activationIndex===3?'#a75fa2':''}}">{{lang.day}}</view> -->
+  <!-- <view bindtap='selectMonth' style="color:{{activationIndex===1?'#a75fa2':''}}">
+    {{lang.month}}
+  </view> -->
+  <!-- vos 项目 -->
+  <view bindtap='selectCustom' class="select {{activationIndex===2?'action':''}}">自定义</view>
+  <view bindtap='selectWeek' class="select  {{activationIndex===1?'action':''}}">当周</view>
+</view>

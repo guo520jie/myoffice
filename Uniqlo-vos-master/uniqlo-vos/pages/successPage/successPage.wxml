@@ -1,0 +1,14 @@
+<!-- pages/successPage.wxml -->
+<view>
+  <view class='container'>
+    <view class='image-box'>
+      <image mode='aspectFit' src="../../images/Messagesuccess.png" />
+      <view>问卷已完成</view>
+    </view>
+    <nextAndBack bind:Back='back' hideMicroPhone='{{false}}' hideNext='{{false}}' />
+  </view>
+</view>
+
+<view class='water_top' >
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

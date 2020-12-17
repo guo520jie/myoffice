@@ -1,0 +1,10 @@
+<!-- index.wxml -->
+<view class="container">
+  <image class='logo' src="/images/logo.png" />
+  <view class='logo-msg'>{{currLanguage.littleHelper}}</view>
+  <!-- <view class='input-box'>
+    <input value='{{phone}}' maxlength='11' bindblur="getPhone" placeholder="{{currLanguage.inputPhone}}" type='number' />
+  </view> -->
+  <button  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="cu-btn bg-default margin-tb-sm lg">{{currLanguage.openToUse}}</button>
+</view>
+  <!-- <button wx:if="{{!isAuthSetting}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='authorization-box'></button> -->

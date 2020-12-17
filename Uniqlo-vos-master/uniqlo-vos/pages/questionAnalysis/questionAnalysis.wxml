@@ -1,0 +1,87 @@
+<!-- pages/questionAnalysis/questionAnalysis.wxml -->
+<date-select bind:getWeek='getWeek' bind:getToCustom='getToCustom' />
+<view class='container'>
+  <view class='position-box'>
+    <image mode='aspectFit' src="../../images/position.png" class='position-img' bindtap='toDefaultShop' />
+    <picker mode="multiSelector" bindchange="MultiChange" bindcancel='cancelPicker' bindcolumnchange="MultiColumnChange" value="{{multiIndex}}" range="{{objectMultiArray}}" range-key="name">
+      <view class="picker  flex text-default">
+        <!-- <view wx:if="{{userInfo.virtualAddress && userInfo.virtualShopId}}">
+          ({{userInfo.virtualAddress}})
+        </view> -->
+        <view wx:if="{{userInfo.address && objectMultiArray[0][multiIndex[0]].name ==='本店铺'}}">
+          本店铺 ({{userInfo.address}})
+        </view>
+        <view wx:else>{{objectMultiArray[0][multiIndex[0]].name }}</view>
+        <view class='margin-left-xs' wx:if="{{objectMultiArray[1][multiIndex[1]].name && !objectMultiArray[2][multiIndex[2]].id}}">
+          {{objectMultiArray[1][multiIndex[1]].name}}
+        </view>
+        <view class='margin-left-xs' wx:if="{{objectMultiArray[2][multiIndex[2]].name}}">
+          {{objectMultiArray[2][multiIndex[2]].name}}
+        </view>
+      </view>
+      <image mode='aspectFit' src="../../images/bottom-arrow.png" class='bottom-arrow' />
+    </picker>
+  </view>
+  <view class='margin-top-sm' wx:if="{{selectType===1}}">
+    共完成
+    <text class='text-default text-xxl'>{{total || 0}}</text>
+    份
+  </view>
+  <block wx:else>
+    <view class='prompt-msg  margin-top-sm'>注：仅显示2个月内的数据</view>
+    <view class='search-product-box  margin-top-sm'>
+      <image mode='aspectFit' src='../../images/search.png' />
+      <input placeholder="请输入商品六位码" maxlength="6" value='{{productCode}}' bindinput="getProductCode" bindblur="searchProductCode" />
+    </view>
+  </block>
+  <view class='goods-list-box margin-top-lg'>
+    <scroll-view scroll-y="{{true}}" class='scroll-box'>
+      <block wx:for="{{productList}}">
+        <view class='flex-center' bindtap='toQuestionAnalysisList' data-id="{{item.qusuId}}">
+          <view  class='max-width-70'>
+            <view class='body-title text-default'>{{item.qusuTitle}}</view>
+            <view class='margin-bottom-xl'>{{item.startTime}}-{{item.endTime}}</view>
+          </view>
+          <view class='finish-total'>已完成{{item.finishedCount || 0}}份</view>
+        </view>
+        <block wx:for="{{item.commodityVOS}}" wx:for-item="el" wx:if="{{selectType===1 || showProductBox}}">
+          <view class='good-box' bindtap='toDetails' data-el="{{el}}" data-item="{{item}}">
+            <image mode='aspectFit' class='good-img' src="{{el.productMainCover || '../../images/noPicture.png'}}" />
+            <view class='good-details'>
+              <view>{{el.productName || '暂无数据'}}</view>
+              <view>品番号 : {{el.productCode || '暂无数据'}}</view>
+              <view>部门号 : {{el.deptCode || '暂无数据'}}</view>
+            </view>
+            <view class='btn-default  margin-left-lg'>查看详情</view>
+          </view>
+        </block>
+      </block>
+    </scroll-view>
+  </view>
+  <!-- <view wx:else class='goods-list-box margin-top-lg'>
+    <scroll-view scroll-y="{{true}}" class='scroll-box'>
+      <block wx:for="{{productList}}">
+        <view class='flex-center'>
+          <view>
+            <view class='body-title text-default'>{{item.qusuTitle}}</view>
+            <view class='margin-bottom-xl'>{{item.startTime}}-{{item.endTime}}</view>
+          </view>
+          <view class='finish-total  text-cut'>已完成{{item.finishedCount || 0}}份</view>
+        </view>
+        <block wx:for="{{item.commodityVOS}}" wx:for-item="el">
+          <view class='good-box' bindtap='toDetails' data-item="{{el}}">
+            <image mode='aspectFit' class='good-img' src="{{el.productMainCover || '../../images/noPicture.png'}}" />
+            <view class='good-details'>
+              <view>商品名 : {{el.productName || '暂无数据'}}</view>
+              <view>部门号 : {{el.deptCode || '暂无数据'}}</view>
+            </view>
+            <view class='btn-default  margin-left-lg'>查看详情</view>
+          </view>
+        </block>
+      </block>
+    </scroll-view>
+  </view> -->
+</view>
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

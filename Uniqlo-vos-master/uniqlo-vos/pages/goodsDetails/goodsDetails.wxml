@@ -1,0 +1,70 @@
+<!-- pages/goodsDetails/goodsDetails.wxml -->
+<!-- <date-select bind:getUpToNow='getUpToNow' activationIndex="{{selectType}}" bind:getToDay='getToDay' /> -->
+<view class='container'>
+  <!-- <view class='position-box'>
+    <image mode='aspectFit' src="../../images/position.png" class='position-img' />
+    <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker">
+        {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}}
+      </view>
+      <image mode='aspectFit' src="../../images/bottom-arrow.png" class='bottom-arrow' />
+    </picker>
+  </view> -->
+  <view class='good-details-box'>
+    <view class='good-img-box'>
+      <image mode='aspectFit' bindtap='previewImage' lazy-load="{{true}}" class='good-img' src="{{goodsObj.productMainCover + '?x-oss-process=image/resize,m_lfit,h_136,w_136' || '../../images/noPicture.png'}}" />
+    </view>
+    <view class='good-details'>
+      <view>{{goodsObj.productName || '暂无数据'}}</view>
+      <view>品番号：{{goodsObj.productCode || '暂无数据'}}</view>
+      <view>部门号：{{goodsObj.deptCode || '暂无数据'}}</view>
+      <!-- <view>颜色：{{goodsObj.color || '暂无数据'}}</view> -->
+      <!-- <view>尺码：{{goodsObj.size || '暂无数据'}}</view> -->
+    </view>
+  </view>
+  <view class='total-evaluation-box  margin-top-xl'>
+    <view class='title'>总体评价情况</view>
+    <view class='total-evaluation-body'>
+      <view class='evaluation-body-item'>
+        <view wx:for="{{progressList}}" class='progress-msg'>
+          {{item.subTitle}} :
+          <text class='text-bold'>{{item.subNum || 0}}</text>
+          条 占
+          <text class='text-bold'>{{item.subRatio}}</text>
+        </view>
+      </view>
+      <view class='wxcharts-box'>
+        <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
+      </view>
+      <!-- <view class='title margin-top-xl'>试穿多了会购买</view> -->
+      <view class='progress-box'>
+        <block wx:for="{{progressList}}" wx:for-index="i">
+          <view class='progress-msg title'>{{item.subTitle}}:</view>
+          <view class="margin-left-sm  {{i%2!==0?'text-blue':'text-default'}}" wx:for="{{item.subOptions}}" wx:for-item='el' wx:key="id" data-item='{{el}}' bindtap='toGoodsComments'>
+            <view class='progress-msg '>{{el.optionTitle}}:</view>
+            <view class="margin-tb-xs option-msg ">
+              <text class='text-bold'>{{el.optionNum || 0}}</text>
+              条 占
+              <text class='text-bold'>{{el.optionRatio ||'0%'}}</text>
+            </view>
+            <view class="cu-progress radius striped active">
+              <view class="{{i%2!==0?'bg-blue':'bg-default'}}" style="width:{{el.optionRatio}};"></view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <!-- <view class='title margin-top-xl'>购买意愿低，不购买</view>
+      <view class='progress-box margin-bottom-xxxl'>
+        <block wx:for="{{progressList}}">
+          <view class='progress-msg'>面料：5条 占73.86%</view>
+          <view class="cu-progress radius striped active">
+            <view class="bg-hate" style="width:30%;">30%</view>
+          </view>
+        </block>
+      </view> -->
+    </view>
+  </view>
+</view>
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

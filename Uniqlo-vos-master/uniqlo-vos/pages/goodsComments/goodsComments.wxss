@@ -1,0 +1,81 @@
+/* pages/goodsDetails/goodsDetails.wxss */
+.good-details-box {
+  position: relative;
+  height: 100%;
+  margin-top: 40rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.good-img {
+  width: 300rpx;
+  height: 300rpx;
+  margin-right: 20rpx;
+}
+
+.good-details view {
+  margin: 20rpx 0;
+  font-size: 30rpx;
+  width: 330rpx;
+
+}
+
+.title {
+  font-weight: bold;
+}
+
+.evaluation-body-item {
+  margin: 20rpx 0 50rpx 30rpx;
+}
+
+.canvas {
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.progress-box {
+  margin-left: 30rpx;
+  padding-bottom: 60rpx;
+}
+
+.progress-msg {
+  margin: 20rpx 0;
+}
+
+.cu-progress {
+  height: 40rpx !important;
+}
+
+.margin-bottom-xxxl {
+  margin-bottom: 70rpx;
+}
+
+.user-item image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.user-box {
+  margin: 40rpx 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.end {
+  justify-content: space-between;
+}
+
+.evaluation-msg {
+  padding: 20rpx;
+  border-radius: 6rpx;
+  background-color: rgba(248, 248, 248, 1);
+  color: rgba(16, 16, 16, 1);
+  font-size: 28rpx;
+  border: 2rpx solid rgba(255, 0, 0, 0);
+}

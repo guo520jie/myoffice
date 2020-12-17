@@ -1,0 +1,48 @@
+<!-- pages/goodsDetails/goodsDetails.wxml -->
+<!-- <date-select bind:getUpToNow='getUpToNow' bind:getToDay='getToDay' /> -->
+<view class='container'>
+  <!-- <view class='position-box'>
+    <image mode='aspectFit' src="../../images/position.png" class='position-img' />
+    <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker">
+        {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}}
+      </view>
+      <image mode='aspectFit' src="../../images/bottom-arrow.png" class='bottom-arrow' />
+    </picker>
+  </view> -->
+  <view class='good-details-box'>
+    <view class='good-img-box'>
+      <image mode='aspectFit' class='good-img' src="{{goodsObj.productMainCover  || '../../images/noPicture.png'}}" />
+    </view>
+    <view class='good-details'>
+      <view>品番号：{{goodsObj.productCode || '暂无数据'}}</view>
+      <view>部门号：{{goodsObj.deptCode || '暂无数据'}}</view>
+      <!-- <view>颜色：{{goodsObj.color || '暂无数据'}}</view> -->
+      <!-- <view>尺码：{{goodsObj.size || '暂无数据'}}</view> -->
+    </view>
+  </view>
+  <view class='details-box  margin-top-xl'>
+    <view class='title text-default'>
+      <view>
+        {{goodsObj.optionObj.optionTitle}} :  {{goodsObj.optionObj.optionNum}}条 占{{goodsObj.optionObj.optionRatio}}
+      </view>
+    </view>
+    <view class='details-body'>
+      <block wx:for="{{goodsCommentList}}">
+        <view class='user-box'>
+          <view wx:if="{{item.audioText}}" class='evaluation-msg'>{{item.audioText}}</view>
+          <view class='user-item flex end'>
+            <view class='flex'>
+              <image mode='aspectFit' src="../../images/user-black.png" />
+              <view>{{item.user.nickname}}</view>
+            </view>
+            <view>{{item.updateTime}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

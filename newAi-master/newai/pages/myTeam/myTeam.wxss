@@ -1,0 +1,153 @@
+/* pages/myTeam/myTeam.wxss */
+.header-box {
+  width: 100%;
+}
+
+.title {
+  color: rgba(28, 28, 28, 1);
+  font-size: 40rpx;
+  font-weight: 400;
+  margin: 90rpx 0 40rpx 0;
+}
+
+.team-image-box {
+  margin: 10rpx 30rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2rpx solid #FED402;
+}
+
+.team-image {
+  height: 114rpx;
+  width: 106rpx;
+}
+
+.team-name-box {
+  width: 60vw;
+  min-height: 120rpx;
+  background: linear-gradient(to right, #FED402, #fff);
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  width: 58vw;
+
+}
+
+.msg {
+  color: rgba(28, 28, 28, 1);
+  font-size: 36rpx;
+  font-weight: 400;
+  margin-left: 50rpx;
+}
+
+button {
+  font-size: 40rpx !important;
+  width: 80vw !important;
+  height: 90rpx !important;
+  border: 2rpx solid rgba(255, 255, 255, 0) !important;
+}
+
+.modify-box {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin: 16rpx;
+}
+
+.item-box {
+  height: 100rpx;
+  width: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rpx;
+}
+
+.border-radius {
+  border: 4rpx dashed #d2d2d2;
+  margin: 16rpx;
+  /* font-weight: 400; */
+  font-size: 50rpx;
+  color: #d2d2d2;
+}
+
+.action-item {
+  border: 4rpx dashed #853590;
+}
+
+.icon {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+
+.head-imgUrl {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 10rpx;
+}
+
+.team-image-box {
+  margin: 10rpx 30rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2rpx solid #FED402;
+}
+
+.team-image {
+  height: 120rpx;
+  width: 120rpx;
+}
+
+.delete-image {
+  height: 48rpx;
+  width: 48rpx;
+}
+
+textarea {
+  padding: 20rpx;
+  width: 50vw;
+  min-height: 160rpx !important;
+  border-radius: 10rpx;
+  background-color: rgba(248, 248, 248, 1);
+  color: rgba(28, 28, 28, 1);
+  border: 2rpx solid rgba(255, 0, 0, 0);
+}
+
+.action-team {
+  background: linear-gradient(to right, #FED402, #fff);
+}
+
+.team-size {
+  width: 60vw;
+  min-height: 120rpx;
+  line-height: 120rpx;
+  font-size: 36rpx;
+  font-weight: 400;
+  border-radius: 24rpx;
+}
+
+.button-box {
+  position: fixed;
+  bottom: 80rpx;
+  left: 50%;
+  margin-left: -40vw;
+}
+
+.add-button {
+  padding: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

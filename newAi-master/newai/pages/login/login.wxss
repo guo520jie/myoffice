@@ -1,0 +1,30 @@
+/**index.wxss**/
+.logo{
+  height: 300rpx;
+  width: 300rpx;
+  margin-top: 200rpx;
+  margin-bottom: 30rpx;
+}
+
+.logo-msg{
+  color: rgba(126, 61, 140, 1);
+  font-size: 56rpx;
+  font-weight: bold;
+  margin-bottom: 40% !important;
+
+}
+.input-box{
+  height:80rpx;
+  font-size:40rpx;
+  width:75% !important;
+  border-bottom:2rpx solid #AD66A5;
+}
+input{
+  color:#4D4646;
+  height:80rpx;
+}
+
+button{
+  width:80% !important;
+  border-radius: 36px !important;
+}

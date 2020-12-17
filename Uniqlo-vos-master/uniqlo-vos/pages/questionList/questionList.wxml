@@ -1,0 +1,21 @@
+<!-- pages/questionList/questionList.wxml -->
+<view class='container'>
+  <view wx:for="{{questionList}}" wx:key='id' class='question-box'>
+    <view class='item' data-item='{{item}}' bindtap='toDetails'>
+      <view class='item-msg'>
+        <view class='title flex'>
+          <view style="width:60%;">{{item.title}}</view>
+          <view class='bg-orange  preview' wx:if="{{item.previewFlag === 1}}">预览</view>
+        </view>
+        <view wx:if='{{item.startTime &&  item.endTime}}'>{{item.startTime}}-{{item.endTime}}</view>
+      </view>
+      <!-- <image mode='aspectFit' wx:if='{{item.isComplete}}' src="../../images/success.png" />
+      <image mode='aspectFit' wx:else src="../../images/right.png" class='opacity' /> -->
+      <view class='finish-total'>已完成{{item.qusuNum?item.qusuNum:0}}份</view>
+    </view>
+  </view>
+</view>
+
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

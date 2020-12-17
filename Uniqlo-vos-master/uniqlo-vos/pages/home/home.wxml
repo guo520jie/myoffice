@@ -1,0 +1,120 @@
+<view class="protect-inaver _30f2b4d">
+  <!-- 占据顶部位置， 伪padding板块 -->
+</view>
+<!-- index.wxml -->
+<!-- 团队切换 -->
+<picker bindchange="pickerGroup" value="{{targetIndex}}" range="{{groupList}}" range-key="teamName" mode='selector'>
+  <view class="pick">
+    <view>{{groupList[targetIndex].teamName}}</view>
+    <image mode='aspectFit' src="../../images/sanjiao_xia.svg"></image>
+  </view>
+</picker>
+<!-- 设置及个人信息 -->
+<view class="need">
+  <!-- 设置 -->
+  <view class="setting" bindtap="toSettings">
+    <view class="title">{{lang.itemList}}</view>
+    <image mode='aspectFit' class='setting-img' src="../../images/setting.png"></image>
+  </view>
+  <!-- 个人中心 -->
+  <button open-type="getUserInfo" class="userIcon" bindtap="gotomain">
+    <i class="iconfont icon-user"></i>
+  </button>
+</view>
+<view class="main">
+  <!-- menu 只显示4个 -->
+  <view class="menu block" wx:if="{{config[4].isCheck}}">
+    <view class="items">
+      <view class="item {{itemIndex==item.id?'itemActive':''}}" wx:for="{{itemList}}" wx:key="{{index}}" id="{{item.id}}" bindtap="itemtabChange">
+        {{item.name}}
+      </view>
+    </view>
+    <!-- 历史最近一条的语音文字 -->
+    <view class="historyVoiceText" wx:if="{{projectShow && recentContent}}">
+      <!-- <view class="title">{{lang.recentContent}}</view> -->
+      <textarea class="weui-input" placeholder="{{!!recentContent?recentContent:lang.recentContent}}"></textarea>
+    </view>
+  </view>
+  <!-- 地理位置 -->
+  <view class="location block">
+    <view class="item" wx:if="{{config[3].isCheck}}">
+      {{lang.address}} :
+      <image mode='aspectFit' src="../../images/address.png"></image>
+      {{address}}
+    </view>
+    <view class="item" wx:if="{{recentTime}}">
+      {{lang.voiceTime}} :
+      <image mode='aspectFit' src="../../images/time.png"></image>
+      <text class="t">{{recentTime}}</text>
+    </view>
+    <view class="item" wx:if="{{config[5].isCheck}}">
+      {{lang.uploadType}} :
+      <image mode='aspectFit' src="../../images/type.png"></image>
+      <text class="t">{{translatResultType[resultType]}}</text>
+    </view>
+    <view class="item  customerPhone" wx:if="{{config[7].isCheck}}">
+      <view>{{lang.customerPhone}} :</view>
+      <input disabled placeholder="{{lang.customerPhoneInstruction}}"></input>
+    </view>
+  </view>
+  <view class="input-group item-tags " wx:if="{{config[8].isCheck}}">
+    <view class="input-title">{{lang.goodsCode}}</view>
+    <view class="input-item good-items">
+      <input value="{{lang.goodsCode}}" bindinput="codeConfrim" placeholder="{{lang.inputcode}}"></input>
+      <i class="iconfont icon-close" bindtap="onClear" wx:if='{{goodsCode!=="" && isuser == 0}}'></i>
+    </view>
+    <i class="iconfont icon-scan" bindtap="onScan" wx:if="{{isuser == 0}}"></i>
+  </view>
+  <!-- 当前语音信息 -->
+  <view class="voice block" wx:if="{{config[0].isCheck}}">
+    <view class="title">{{lang.recentContent}}:</view>
+    <textarea class="weui-input" maxlength="200" bindblur="onChangeVoiceContent" value="{{!!voiceContent?voiceContent:''}}"></textarea>
+  </view>
+  <!-- tags -->
+  <view class="tagWrap" wx:if="{{config[1].isCheck}}">
+    <view class="title">{{lang.lable}}:</view>
+    <view class="tagsContent">
+      <view class="item" wx:for="{{tags}}" wx:key="{{item}}" id="{{item}}" bindtap="removerTag">
+        {{item}}
+      </view>
+      <input type="text" class="item tagInput" auto-focus placeholder="{{lang.addLable}}" bindblur="submitInput" wx:if="{{isShowTagInput}}"></input>
+      <view class="item add" bindtap="addTag" wx:if="{{!isShowTagInput}}">{{lang.addLable}}</view>
+    </view>
+  </view>
+  <!-- 图像 -->
+  <view class="imgBox block" wx:if="{{config[2].isCheck}}">
+    <view class="title">{{lang.photographs}}</view>
+    <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+      <view id="{{item.id}}" class="scroll-view-item_H demo-text-1" wx:for="{{imageList}}" wx:key="{{item.id}}" bindtap="removeImage" data-value="{{item}}">
+        <image mode='aspectFit' src="{{item.url}}"></image>
+      </view>
+      <view class=" scroll-view-item_H add" bindtap="chooseImg">
+        <image mode='aspectFit' src="../../images/jiahao.svg"></image>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class="footer">
+  <view class="footerinner">
+    <view class="toolbar-item" bindtap="gotodate">
+      <image mode='aspectFit' src="../../images/shu.svg" class="iconfont"></image>
+    </view>
+    <button open-type="getUserInfo" class="toolbar-item phone" bindtouchstart="touchdown" bindtouchend="touchup" bindtouchcancel="touchcanel" bindtouchmove="touchmove">
+      <image mode='aspectFit' class="voc" src="../../images/voc.svg"></image>
+    </button>
+    <view class="toolbar-item next" bindtap="nextAction">{{lang.next}}</view>
+  </view>
+  <view id="mask" wx:if="{{isSpeaking}}">正在录音...</view>
+</view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view>{{lang.if}}{{teamName}}</view>
+  <view class="btn">
+    <view class='save_money' bindtap="reject">{{lang.reject}}</view>
+    <view class='save_money' bindtap="join">{{lang.join}}</view>
+  </view>
+</view>
+<view class="mask" bindtap="preventTouchMove" wx:if="{{showModal}}"></view>
+
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

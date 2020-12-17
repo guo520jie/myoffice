@@ -1,0 +1,106 @@
+<!-- pages/user/user.wxml -->
+<i-notice-bar wx:if="{{noticeObject.total>0}}" icon='message' color='#000' i-class='notice-box' loop tag='{{noticeObject.total}}'>
+  {{noticeObject.noticeStr}}
+</i-notice-bar>
+<view style="{{ noticeObject.total > 0 ? 'margin-top: 100rpx;':'' }}  " class='container'>
+  <view class='user-info-box'>
+    <image mode='aspectFit' class='avatar-url' src="{{userInfo.avatar?userInfo.avatar:'../../images/WechatIMG929.png'}}" lazy-load="{{true}}" />
+    <view class='user-item'>
+      <view class='user-name'>
+        <view>{{userInfo.name}}</view>
+        <view wx:if="{{userInfo.position}}" class='position'>{{userInfo.position}}</view>
+      </view>
+      <view>{{userInfo.address || ''}}</view>
+    </view>
+    <!-- <view class='ranking-box'>
+      <image mode='aspectFit' class='ranking-url' src="../../images/ranking.png" lazy-load="{{true}}" />
+      <view>第7名</view>
+    </view> -->
+  </view>
+  <view class='progress-box'>
+    <view class='progress-title'>
+      <view>{{progressMsg}}</view>
+      <!-- <image mode='aspectFit' data-name='goalSetting' wx:if="{{userInfo.isLeader == 1}}" bindtap='navigateFn' src="../../images/mubiao.png" /> -->
+      <view class='goal-setting' data-name='goalSetting' data-type='1' wx:if="{{userInfo.isLeader == 1}}" bindtap='navigateFn'>
+        目标设定
+      </view>
+    </view>
+    <view class='progress-item'>
+      <view class='flex-center-sb'>
+        <view>定向问卷填写达标数（填写份数）</view>
+        <!-- 暂时不发 6 月 12 日 16:37 -->
+        <!-- <view class='goal-setting' data-name='goalSetting' data-type='1' wx:if="{{userInfo.isLeader == 1}}" bindtap='navigateFn'>
+          目标设定
+        </view> -->
+      </view>
+      <view class="cu-progress radius striped active  mg-t-b-30" bindtap="toFillInDetails">
+        <view class="bg-default" style="width:{{queryProgress.dingXiangWidth}}">
+          {{queryProgress.dingXiangFinishQuestCount}}
+        </view>
+      </view>
+      <text class='text-default  margin-left-sm'>{{queryProgress.dingXiangAllCount}}</text>
+      <view class='flex-center-sb'>
+        <div>开放问卷收集数</div>
+        <!-- 暂时不发 6 月 12 日 16:37 -->
+        <!-- <view class='goal-setting' data-name='goalSetting' data-type='2' wx:if="{{userInfo.isLeader == 1}}" bindtap='navigateFn'>
+          目标设定
+        </view> -->
+      </view>
+      <view class="cu-progress radius striped active  mg-t-b-30">
+        <view class="bg-default" style="width:{{queryProgress.globalWidth}}">
+          {{queryProgress.globalFinishQuestCount}}
+        </view>
+      </view>
+      <text class='text-default  margin-left-sm'>{{queryProgress.newGlobalAllCount}}</text>
+    </view>
+  </view>
+  <view class='page-box'>
+    <view class='page-item' data-name='questionList' bindtap='navigateFn'>
+      <image mode='aspectFit' src="../../images/wenjuan.png" />
+      <view>定向问卷</view>
+    </view>
+    <view class='page-item' data-name='globalQuestion' bindtap='navigateFn'>
+      <image mode='aspectFit' src="../../images/quanqiu.png" />
+      <view>开放问卷</view>
+    </view>
+    <view class='page-item' data-name='questionAnalysis' bindtap='navigateFn'>
+      <image mode='aspectFit' src="../../images/shuju1.png" />
+      <view>定向问卷分析</view>
+    </view>
+    <view class='page-item'></view>
+  </view>
+</view>
+<!-- 授权 -->
+<button wx:if="{{!isAuthSetting}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='authorization-box'></button>
+<!-- UNIQLO VOS APP使用须知 -->
+<view class="cu-modal {{modal?'show':''}}">
+  <view class="cu-dialog">
+    <view class="my-padding-tb bg-white justify-end">
+      <view class="content  text-black">UNIQLO VOS APP使用须知</view>
+      <!-- <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view> -->
+    </view>
+    <view class="padding-lr-xl  padding-bottom-xs  bg-white  text-black">
+      <view class='text-left'>欢迎您使用UNIQLO VOS APP！</view>
+      <view class='text-left  margin-tb-sm'>本APP的基本业务功能为收集顾客和店员对于优衣库品牌以及优衣库商品的心声。</view>
+      <view class='text-left  margin-tb-sm'>为完成该基本业务功能所需，我将将会收集和使用以下个人信息：</view>
+      <view class='text-left  margin-tb-sm'>	您的姓名和员工号</view>
+      <view class='text-left  margin-tb-sm'>	您通过本APP提交的语音、图像和文字信息</view>
+      <view class='text-left  margin-tb-sm'>
+        	收集上述个人信息是完成本APP的基本业务功能所必须的，如您同意我们收集和使用上述个人信息，请点击“同意”并继续使用本APP。
+      </view>
+    </view>
+    <view class="cu-bar bg-white  justify-center">
+      <view class="action  justify-around flex width-xl">
+        <button class="cu-btn  line-green text-default " style="margin-right:50rpx;" bindtap="noModal">
+          不同意
+        </button>
+        <button class="cu-btn  margin-left  bg-default " bindtap="hideModal">同意</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

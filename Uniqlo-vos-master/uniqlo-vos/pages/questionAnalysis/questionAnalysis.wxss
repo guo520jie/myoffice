@@ -1,0 +1,81 @@
+/* pages/questionAnalysis/questionAnalysis.wxss */
+
+.item-title {
+  font-weight: 600;
+}
+
+.good-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.good-img {
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 20rpx;
+}
+
+.scroll-box {
+  margin-top: 40rpx;
+  height: calc(100vh - 410rpx);
+}
+
+.good-details {
+  margin-left: 30rpx;
+  /* height: 100rpx; */
+  font-size: 24rpx;
+  width: 45%;
+}
+
+.picker {
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.container {
+  position: relative;
+}
+
+.finish-total {
+  min-width: 71px;
+  height: 18px;
+  border-radius: 15rpx;
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(8, 8, 8, 1);
+  font-size: 20rpx;
+  text-align: center;
+  border: 2rpx solid rgba(8, 8, 8, 1);
+}
+
+.flex-center {
+  width: 94%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size: 20rpx;
+
+}
+
+.body-title {
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.prompt-msg {
+  color: #888888;
+  font-size: 28rpx;
+}
+
+.search-product-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-product-box image {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 20rpx;
+}

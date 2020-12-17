@@ -1,0 +1,169 @@
+.calendar {
+  color: #333;
+  margin: 2px 4px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  z-index: 9999;
+}
+
+.bg {
+  background: #fff;
+}
+
+.fixed {
+  background: #fff;
+}
+
+.form-item {
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: rgb(206, 49, 206);
+  font-size: 24rpx;
+}
+
+.form-item-calendar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.form-item-calendar>image {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.placeholder {
+  color: #888;
+}
+
+.calendar-title {
+  display: flex;
+  justify-content: center;
+  font-size: 13pt;
+  /* font-weight: 200; */
+  color: #000;
+  font-weight: 300;
+  align-items: center;
+  padding: 6px 32px;
+}
+
+.calendar-title>image {
+  width: 20px;
+  height: 20px;
+}
+
+.calendar-title>text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.container-days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  min-height: 54px;
+  flex-basis: 14%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 11pt;
+}
+
+.day:nth-child(7n) {
+  flex-basis: 15%;
+}
+
+.day:nth-child(7n+1) {
+  flex-basis: 15%;
+}
+
+.day-header {
+  color: #000;
+  font-size: 10pt;
+  font-weight: 200;
+}
+
+.day-current-month {
+  color: #000;
+  font-weight: 200;
+}
+
+.today {
+  color: #db18c1;
+  font-weight: bold;
+}
+
+.day-range {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-in-range {
+  background-color: rgba(34, 134, 255, 0.1);
+}
+
+.day-range-start {
+  background-color: rgba(34, 134, 255, 0.1);
+  /* border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px; */
+}
+
+.day-range-end {
+  background-color: rgba(34, 134, 255, 0.1);
+  /* border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px; */
+}
+
+.day-content {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content-sub {
+  font-size: 8pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-sub-dot {
+  border-radius: 4px;
+  width: 4px;
+  height: 4px;
+  background: red;
+  margin-right: 2px;
+}
+
+.day-selected-round {
+  background: #28f;
+  color: #fff;
+  border-radius: 30px;
+}
+
+.day-selected-square {
+  background: #a75fa2;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.btn {
+  margin: 40rpx 60rpx 60rpx 180rpx;
+  background: #a75fa2;
+  font-weight: 300;
+  font-size: 40rpx;
+  color: #fff;
+  margin-bottom: 600rpx;
+}

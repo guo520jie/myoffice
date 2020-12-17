@@ -1,0 +1,50 @@
+<!-- pages/fillInDetails/fillInDetails.wxml -->
+<view class='container'>
+  <view class='item-header  margin-bottom-lg'>
+    {{lookPlanObj.startDay}} - {{lookPlanObj.endDay}} 本店定向问卷填写进度
+  </view>
+  <view wx:for="{{lookPlanObj.targetSettingVOS}}">
+    <view class='item-body'>
+      <view class='flex-center'>
+        <view>
+          <view class='body-title '>{{item.title}}</view>
+          <view class='margin-bottom-xl'>{{item.startTime}} - {{item.endTime}}</view>
+        </view>
+        <view>
+          <view>
+            <text style="font-size:40rpx;">{{item.dingXiangFinishQuestCount || 0}}</text>
+            /
+            <text>{{item.num || 1}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='input-box  margin-left  margin-bottom-lg'>
+        <view wx:if="{{item.notDoneUsers.length>0}}">
+          <view class='text-default'>未填写</view>
+          <view class='user-list-box'>
+            <block wx:for="{{item.notDoneUsers}}" wx:for-item="el">
+              <view class='user-list  margin-left-sm    margin-tb-sm'>
+                <image mode='aspectFit' src="../../images/user-black.png" />
+                <view>{{el.userName}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view wx:if="{{item.qusuUserVOS.length>0}}">
+          <view class='text-default'>已填写</view>
+          <view class='user-list-box'>
+            <block wx:for="{{item.qusuUserVOS}}" wx:for-item="elem">
+              <view class='user-list  margin-left-sm    margin-tb-sm'>
+                <image mode='aspectFit' src="../../images/user-black.png" />
+                <view>{{elem.userName}} {{elem.count}}份</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

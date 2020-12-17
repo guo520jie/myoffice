@@ -1,0 +1,31 @@
+<!-- pages/userInfo/userInfo.wxml -->
+<view>
+  <view class='user-info-box flex align-center'>
+    <view class='avatarUrl-box margin-left margin-right'>
+      <image src='{{userInfo.avatarUrl}}' />
+    </view>
+    <view class='userInfo-details-box'>
+      <view class='nick-name'>{{userInfo.nickName}}</view>
+      <view class='margin-top-xs'>{{currTeam.teamName}}</view>
+    </view>
+    <view wx:if="{{isLeader==1}}" class='is-leader-box  margin-left'>Leader</view>
+  </view>
+  <view class='setting-box'>
+    <block wx:for="{{settingList}}" wx:key='id'>
+      <view bindtap="toPathFn" data-path='{{item.toPath}}' class='setting-item flex align-center  justify-center'>
+        <view style="{{item.color}}" class='icon-box'>
+          <image class='icon' src='{{item.image}}' />
+        </view>
+        <view style="font-size:50rpx;">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='microphone-box'>
+    <view class="microphone-item">
+      <view class='postion' bindtap='toSpeak'>
+        <image class='iconfont' mode='aspectFit' src="/images/microphone.png" />
+      </view>
+      <view class='microphone-msg'>{{currLanguage.tapBack}}</view>
+    </view>
+  </view>
+</view>

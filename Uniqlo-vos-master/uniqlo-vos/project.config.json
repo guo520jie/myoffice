@@ -1,0 +1,622 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": true,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": true,
+		"preloadBackgroundData": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.1",
+	"appid": "wx1fd1b1c6b5232a9f",
+	"projectname": "Uniqlp-vos",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "qywx_simulator_plugin",
+	"simulatorPluginLibVersion": {
+		"qywx_simulator_plugin": "2.8.3"
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/main/main",
+					"pathName": "pages/main/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/history/history",
+					"pathName": "pages/history/history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wait/wait",
+					"pathName": "pages/wait/wait",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pay/pay",
+					"pathName": "pages/pay/pay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pay/pay",
+					"pathName": "pages/pay/pay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/paydetail/paydetail",
+					"pathName": "pages/paydetail/paydetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/setting/setting",
+					"pathName": "pages/setting/setting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "pages/price/price",
+					"pathName": "pages/price/price",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "历史记录列表详情",
+					"pathName": "pages/history/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/date/date",
+					"pathName": "pages/date/date",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/home",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/main/main",
+					"pathName": "pages/main/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/newdetail/newdetail",
+					"pathName": "pages/newdetail/newdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/manage/manage",
+					"pathName": "pages/manage/manage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/group/group",
+					"pathName": "pages/group/group",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/setgroup/setgroup",
+					"pathName": "pages/setgroup/setgroup",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/note/note",
+					"pathName": "pages/note/note",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/minute/minute",
+					"pathName": "pages/minute/minute",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/build/build",
+					"pathName": "pages/build/build",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/auth/auth",
+					"pathName": "pages/auth/auth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coin/coinreview",
+					"pathName": "pages/coin/coinreview",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coin/coinrank",
+					"pathName": "pages/coin/coinrank",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coin/coinreview",
+					"pathName": "pages/coin/coinreview",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coin/coinreview",
+					"pathName": "pages/coin/coinreview",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coin/coinreview",
+					"pathName": "pages/coin/coinreview",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coin/coinrank",
+					"pathName": "pages/coin/coinrank",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/main/main",
+					"pathName": "pages/main/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/question/question",
+					"pathName": "pages/question/question",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/question/question",
+					"pathName": "pages/question/question",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/question/details",
+					"pathName": "pages/question/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/question/details",
+					"pathName": "pages/question/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/question/details",
+					"pathName": "pages/question/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/globalQuestion/globalQuestion",
+					"pathName": "pages/globalQuestion/globalQuestion",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/globalQuestion/globalQuestion",
+					"pathName": "pages/globalQuestion/globalQuestion",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/globalQuestion/globalQuestion",
+					"pathName": "pages/globalQuestion/globalQuestion",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/globalDetails/globalDetails",
+					"pathName": "pages/globalDetails/globalDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionList/questionList",
+					"pathName": "pages/questionList/questionList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goalSetting/goalSetting",
+					"pathName": "pages/goalSetting/goalSetting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goodsDetails/goodsDetails",
+					"pathName": "pages/goodsDetails/goodsDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionDetails/questionDetails",
+					"pathName": "pages/questionDetails/questionDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionList/questionList",
+					"pathName": "pages/questionList/questionList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionDetails/questionDetails",
+					"pathName": "pages/questionDetails/questionDetails",
+					"query": "id=7",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/globalQuestion/globalQuestion",
+					"pathName": "pages/globalQuestion/globalQuestion",
+					"query": "id=7",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/globalQuestion/globalQuestion",
+					"pathName": "pages/globalQuestion/globalQuestion",
+					"query": "id=7",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/submitSuccess/submitSuccess",
+					"pathName": "pages/submitSuccess/submitSuccess",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionList/questionList",
+					"pathName": "pages/questionList/questionList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goodsDetails/goodsDetails",
+					"pathName": "pages/goodsDetails/goodsDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goodsDetails/goodsDetails",
+					"pathName": "pages/goodsDetails/goodsDetails",
+					"query": "id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/submitSuccess/submitSuccess",
+					"pathName": "pages/submitSuccess/submitSuccess",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/submitSuccess/submitSuccess",
+					"pathName": "pages/submitSuccess/submitSuccess",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionList/questionList",
+					"pathName": "pages/questionList/questionList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionList/questionList",
+					"pathName": "pages/questionList/questionList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goalSetting/goalSetting",
+					"pathName": "pages/goalSetting/goalSetting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goalSetting/goalSetting",
+					"pathName": "pages/goalSetting/goalSetting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/fillInDetails/fillInDetails",
+					"pathName": "pages/fillInDetails/fillInDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/successPage/successPage",
+					"pathName": "pages/successPage/successPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionList/questionList",
+					"pathName": "pages/questionList/questionList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysis/questionAnalysis",
+					"pathName": "pages/questionAnalysis/questionAnalysis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysisList/questionAnalysisList",
+					"pathName": "pages/questionAnalysisList/questionAnalysisList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionDetails/questionDetails",
+					"pathName": "pages/questionDetails/questionDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionAnalysisList/questionAnalysisList",
+					"pathName": "pages/questionAnalysisList/questionAnalysisList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/globalQuestion/globalQuestion",
+					"pathName": "pages/globalQuestion/globalQuestion",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

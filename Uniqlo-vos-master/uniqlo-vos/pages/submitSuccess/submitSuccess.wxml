@@ -1,0 +1,42 @@
+<!-- pages/submitSuccess/submitSuccess.wxml -->
+<view>
+  <view class='container'>
+    <view class='image-box'>
+      <image mode='aspectFit' src="../../images/Messagesuccess.png" />
+      <view>问卷已完成</view>
+    </view>
+    <view class='done-detail-box  margin-top-xl'>
+      <view class='margin-bottom-xl  text-bold ' style="font-size:40rpx">
+        问卷名 : {{doneDetailList.title || '暂无数据'}}
+      </view>
+      <view wx:if="{{doneDetailList.productList.length>0}}" wx:for="{{doneDetailList.productList}}" wx:for-item="item">
+        <view class='margin-top  margin-bottom-xl text-bold text-default' wx:if="{{item.itemName}}">
+          商品名 : {{item.itemName }} {{item.itemCode}}
+        </view>
+        <view wx:for="{{item.subjectPoolList}}" wx:for-item="el" wx:for-index="i">
+          <view class='margin-tb'>
+            <view class='text-bold'>{{i+1}} : {{el.subjectTitle}}</view>
+          </view>
+          <view class=' option-box'>
+            <view class='padding-bottom ' wx:for="{{el.optionList}}" wx:for-item="items">
+              <view wx:if="{{items.optionTitle}}">选项 : {{items.optionTitle}}</view>
+              <view wx:if="{{items.audioText}}">语音 : {{items.audioText}}</view>
+            </view>
+            <view class='margin-tb-sm' wx:if="{{el.images.length>0}}">图片上传 :</view>
+            <view class="cu-form-group" wx:if="{{el.images.length>0}}">
+              <view class="grid col-4 grid-square flex-sub">
+                <view class="bg-img" wx:for="{{el.images}}" wx:for-item="imgItem" wx:key="{{index}}">
+                  <image mode='aspectFit' src='{{imgItem.imgUrl}}' mode='aspectFill'></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <nextAndBack bind:Back='back' bind:Next='next' nextMsg='确认提交' hideMicroPhone='{{false}}' />
+  </view>
+</view>
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

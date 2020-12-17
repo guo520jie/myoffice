@@ -1,0 +1,119 @@
+<!-- pages/speak/speak.wxml -->
+<view class='container'>
+  <toUserInfo teamCurrId='{{teamCurrId}}' showTeam='true' teamList='{{teamList}}' bind:getTeamCurrId='getTeamCurrId' />
+  <!-- 语音内容 -->
+  <view class='voice-msg-box box'>
+    <text class='title'>{{currLanguage.speechContent}}</text>
+    <view class='voice-input-box margin-top-sm' bindtap='validate'>
+      <textarea disabled="{{!hideRefresh}}" bindblur="getVoiceMsg" placeholder='{{currLanguage.turnText}}' value='{{voiceMsg}}' auto-height />
+    </view>
+    <view class='item flex-center-sb' wx:if="{{recentTime}}">
+      <image class='icon' src='/images/shijian.png' />
+      <timePicker style="width:70vw;" placeholder="{{recentTime}}" date="{{recentTime}}" disabled="{{disabled}}" bind:onPickerChange="onPickerChange" startDate="{{startDate}}" endDate="{{endDate}}" />
+      <image class='bottom-arrow' src='/images/bottom-arrow.png' />
+    </view>
+    <view class='item flex-center-sb' wx:if='{{workTimeStr}}'>
+      <image class='icon sm-icon' src='/images/gongzuoliu.png' />
+      <picker class='work-time-box' style="width:70vw;"  value="{{timeIndex}}" range="{{timeArray}}" bindchange="bindTimeChange">
+        <view class="picker">{{workTimeStr}} 小时</view>
+      </picker>
+      <image class='bottom-arrow' src='/images/bottom-arrow.png' />
+    </view>
+  </view>
+  <!-- 项目 -->
+  <view class='project-box  box  margin-top-sm'>
+    <text class='title'>{{currLanguage.project}}</text>
+    <view class='project-scroll-box  margin-top-sm'>
+      <scroll-view scroll-y="{{true}}">
+        <view class="project-flex">
+        <view wx:for='{{projectList}}' class="project-item-box">
+          <view bindtap="getActionProject" data-index='{{index}}' class="{{index=== currProjectIndex?'item-action':''}} scroll-view-item">
+            <view class="project-name">{{item.name}}</view>
+          </view>
+        </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 素材 -->
+  <view class='material-box box margin-top-lg'>
+    <!-- 定位 -->
+    <view wx:if='{{address}}' class='flex-center-sb  margin-tb'>
+      <image class='iconImage' src='/images/dingwei.png' />
+      <text>{{address}}</text>
+      <image bindtap='getLocation' data-type='upData' class='iconImage' src="/images/ai244.png" />
+    </view>
+    <!-- 拍照 -->
+    <view class='photo-upload-box  margin-tb' wx:if="{{imgList.length>0}}">
+      <image class='iconImage' src='/images/paizhao.png' />
+      <view class="cu-form-group">
+        <view class="grid col-4 grid-square flex-sub">
+          <view class="bg-img" wx:if="{{imgList.length>0}}" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index].imgUrl}}">
+            <image src='{{imgList[index].imgUrl}}' mode='aspectFill'></image>
+            <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+              <text class="cuIcon-close"></text>
+            </view>
+          </view>
+          <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<6}}">
+            <text class="cuIcon-cameraadd"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 日报共享 -->
+    <view class='tag-box  margin-tb' wx:if="{{currTeamMemberList.length> 0}}">
+      <image class='iconImage' src='/images/geren.png' />
+      <view class='tag-item-box'>
+        <view wx:for="{{currTeamMemberList}}" wx:key="{{index}}">
+          <view class="cu-tag round margin-sm" catchtap="DelTag" data-index="{{index}}">
+            {{item}}
+            <view class="cu-tag badge">－</view>
+          </view>
+        </view>
+        <view bindtap="getTeamMemberList" data-target="DrawerModalL" class="cu-tag round margin-sm add">
+          +
+        </view>
+      </view>
+    </view>
+    <view class='material-item-box'>
+      <text class='title'>{{currLanguage.material}}</text>
+      <image class='iconImage' bindtap='getLocation' src='/images/dingwei.png' />
+      <image class='iconImage' bindtap="ChooseImage" src='/images/paizhao.png' />
+      <image data-target="DrawerModalL" class='iconImage' bindtap="getTeamMemberList" src='/images/geren.png' />
+    </view>
+  </view>
+  <!-- 成员弹窗 -->
+  <view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+      <view class="cu-list menu text-left">
+        <checkbox-group bindchange="checkboxChange">
+          <label class="cu-item" wx:for="{{memberList}}" wx:key='item.id'>
+            <view class="content checkbox-item  text-cut">
+              <view class="margin-right-sm">
+                <checkbox value="{{item.userId}}" checked="{{item.checked}}" />
+              </view>
+              <view>{{item.nickname}}</view>
+            </view>
+          </label>
+        </checkbox-group>
+        <!-- <view class="cu-item" wx:for="{{memberList}}" wx:key='item.id'>
+          <view class="content">
+            <view>{{item.nickname}}</view>
+          </view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <view class='next-and-back'>
+    <nextAndBack voiceId='{{voiceId}}' hideBack='true' hideNext='{{hideRefresh}}' hiddenMsg="true" bind:getRecordMsg='getRecordMsg' bind:Submit='saveVoiceAttribute' />
+  </view>
+  <!-- 加入团队 -->
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <view>是否加入{{shareMessage.teamName}}</view>
+    <view class="btn">
+      <view class='save_money' bindtap="reject">拒绝</view>
+      <view class='save_money' bindtap="join">加入</view>
+    </view>
+  </view>
+  <view class="mask" bindtap="preventTouchMove" wx:if="{{showModal}}"></view>
+</view>

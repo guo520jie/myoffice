@@ -1,0 +1,5 @@
+<!-- component/floatView/floatView.wxml -->
+<view class='float-view-box'>
+  <image src="/images/msg-icon.png" />
+  <text class='text-msg'>长按下方话筒,多多使用语言,'说'出自己宝贵的意见吧!</text>
+</view>

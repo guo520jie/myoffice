@@ -1,0 +1,121 @@
+<!-- pages/globalDetails/globalDetails.wxml -->
+<i-notice-bar icon='message' color='#000' i-class='notice-box'>
+  长按下方话筒,多多使用语言,'说'出自己宝贵的意见吧!
+</i-notice-bar>
+
+<view class='container'   wx:if="{{questionObj.qusuId}}">
+  <!-- 题目序号 -->
+  <!-- <view class='header-box'>
+    <view wx:if="{{questionObj.qusuId>0}}">
+      <text style="font-size:50rpx">{{questionObj.orderv}}</text>
+      <text>/{{questionObj.questionCount}}</text>
+    </view>
+  </view> -->
+  <!-- 商品序号 -->
+  <view class='header-box'>
+    <view wx:if="{{questionObj.productNum !==''}}">
+      <text style="font-size:50rpx">商品{{questionObj.productNum+1}}</text>
+      <text>/{{questionObj.productTotal}}</text>
+    </view>
+  </view>
+  <!-- 商品详情 -->
+  <view class='good-details-box' wx:if="{{goods.length>0}}">
+    <view class='good-img-box'>
+      <image wx:if="{{questionObj.productImg}}" mode='aspectFit' bindtap='previewImage' mode='aspectFit' lazy-load="{{true}}" class="{{questionObj.productImg  ?'good-img':'no-picture-img'}}" src="{{questionObj.productImg  + '?x-oss-process=image/resize,m_lfit,h_136,w_136' || '../../images/noPicture.png'}}" />
+      <image wx:else mode='aspectFit' bindtap='previewImage' mode='aspectFit' lazy-load="{{true}}" class="{{goods[0].productMainCover  ?'good-img':'no-picture-img'}}" src="{{goods[0].productMainCover  + '?x-oss-process=image/resize,m_lfit,h_136,w_136' || '../../images/noPicture.png'}}" />
+    </view>
+    <view class='good-details'>
+      <view>{{goods[0].productName  || '暂无数据'}}</view>
+      <view>部门编号：{{goods[0].deptCode || '暂无数据'}}</view>
+      <!-- <view>颜色：{{goods[0].color  || '暂无数据'}}</view>
+      <view>尺码：{{goods[0].size  || '暂无数据'}}</view> -->
+      <view>编码：{{goods[0].productCode  || '暂无数据'}}</view>
+    </view>
+  </view>
+  <!-- 问题详情 -->
+  <view class='content-box'>
+    <view>
+      Q : {{questionObj.subjectTitle}}
+      <!-- {{questionList[questionIndex].subjectTitle}} -->
+      <b wx:if="{{questionObj.maxChooseNum &&  questionObj.subjectType === 0}}">
+        ( 最多{{questionObj.maxChooseNum}}项 )
+      </b>
+    </view>
+    <!-- <image mode='aspectFit' src="{{questionList[questionIndex].logo}}" mode='widthFix' /> -->
+  </view>
+  <!-- 标签 list -->
+  <view class='flex  margin-top'>
+    <view wx:if="{{questionObj.subIsNull ===0}}" class="cu-tag round  bg-default">必答</view>
+    <view wx:else class="cu-tag round  bg-default">选答</view>
+    <view wx:if="{{questionObj.subjectType === 0}}" class="cu-tag round  bg-orange">多选题</view>
+    <view wx:if="{{questionObj.subjectType === 1}}" class="cu-tag round  bg-orange">单选题</view>
+    <view wx:if="{{questionObj.subjectType === 3}}" class="cu-tag round  bg-orange">主观题</view>
+  </view>
+  <!-- 单选/多选 -->
+  <view class='question-list-box'>
+    <view class="radio" wx:for="{{questionObj.psqItemOptionList}}" wx:for-index="i" wx:key="name">
+      <view wx:if="{{questionObj.subjectType ===1 ||  questionObj.subjectType === 0 }}" class="{{item.isCheck?'actionItem':''}},item" bindtap="radioChange" data-item='{{item}}' data-index='{{i}}'>
+        <view class='padding-lr'>{{item.optionTitle}}</view>
+      </view>
+      <view wx:if="{{item.isCheck && item.isVoiceInput===1}}">
+        <textarea wx:if='{{curCheckBox === i}}' focus="{{curCheckBox === i}}" placeholder-style='font-size: 28rpx;color: #98989D;' data-index='{{i}}' placeholder="{{item.userAudioText || item.optionDescribe || '可语音补充说明.'}}" class="weui-input-check" maxlength="200" bindfocus="focusVoiceContent" bindblur="blurVoiceContent" bindinput="onChangeVoiceContent" data-index='{{i}}' value="{{item.userAudioText}}"></textarea>
+        <view class="weui-input-check" wx:else data-index='{{i}}' bindtap='getCurCheckBox'>
+          {{item.userAudioText || item.optionDescribe  || '可语音补充说明.'}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 主观题 -->
+  <view wx:if="{{questionObj.subjectType ===3}}" class="voice-block" style="margin-bottom:{{isIphoneX?'160rpx':'140rpx'}}">
+    <textarea auto-height='true' placeholder-style='font-size: 28rpx;color: #98989D;' placeholder='可语音补充说明.' class="weui-input" maxlength="200" bindinput="onChangeOptionAudioText" value="{{questionObj.psqItemOptionList[actionIndex].userAudioText}}"></textarea>
+  </view>
+  <!-- 上传图片 -->
+  <block wx:if="{{questionObj.psqItemOptionList[actionIndex].isUploadImg ===1}}">
+    <view class="cu-bar bg-white margin-top">
+      <view class="action">图片上传</view>
+      <view class="action">{{imgList.length}}/5</view>
+    </view>
+    <view class="cu-form-group">
+      <view class="grid col-4 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index].imgUrl}}">
+          <image mode='aspectFit' src='{{imgList[index].imgUrl}}' mode='aspectFill'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<5}}">
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 录音浮层 -->
+  <view id="mask" wx:if="{{isSpeaking}}">正在录音...</view>
+  <nextAndBack hideBack='{{questionObj.orderv !==1}}' hideMicroPhone="{{questionObj.psqItemOptionList[actionIndex].isVoiceInput===1}}" bind:Back='back' bind:Next='next' nextNavigateTo='{{nextNavigateTo}}' bind:getRecordMsg='getRecordMsg' />
+</view>
+<!-- UNIQLO VOS APP使用提示 -->
+<view class="cu-modal {{modal?'show':''}}">
+  <view class="cu-dialog" style="background: #fff;">
+    <view class="padding-lr-xl  padding-top-45 padding-bottom-xs  bg-white  text-black">
+      <view class='text-left'>请您在上传语音、图像、文字前知悉并确保如下事项：</view>
+      <view class='text-left  margin-tb-sm'>1.	请勿上传与店铺心声无关的语音、图像或文字；</view>
+      <view class='text-left  margin-tb-sm'>
+        2.	请勿上传包含顾客个人信息或个人隐私的语音、图像或文字（例如：顾客的姓名、顾客的身份证件号码、顾客的联系方式、顾客的住址、包含顾客肖像的照片等）；
+      </view>
+      <view class='text-left  margin-tb-sm'>3.	您上传语音、图像和文字不得侵犯他人的著作权、肖像权、名誉权、隐私权或其他权利；</view>
+      <view class='text-left  margin-tb-sm'>4.	您上传的语音、图像和文字不得包含任何违反国家法律法规或公司规章制度的内容。</view>
+    </view>
+    <view class="cu-bar bg-white  justify-center  padding-bottom-45">
+      <view class="action  justify-around flex width-xl">
+        <button class="cu-btn line-green text-default " style="margin-right:50rpx;" bindtap="noVoicePrompt">
+          取消
+        </button>
+        <button class="cu-btn bg-default  margin-left " bindtap="hideModal">确认</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:{{elementHeight}};min-height:100vh;'></canvas>
+</view>

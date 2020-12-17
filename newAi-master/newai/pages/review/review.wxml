@@ -1,0 +1,116 @@
+<!-- pages/review/review.wxml -->
+<view class='container'>
+  <toUserInfo showUser='true' showDate='true' userList='{{memberList}}' bind:getMemberCurrId='getMemberCurrId' bind:dateChange='dateChange' />
+  <!-- 日历视图 -->
+  <view wx:if='{{pageType===0}}' class='swiper animation-slide-left'>
+    <swiper current="{{ currDayIndex }}" vertical='true' circular="true" bindchange="calendarSwiper">
+      <block wx:for="{{dayList}}" wx:key="id">
+        <swiper-item>
+          <view class='currWeek-box flex align-center justify-between'>
+            <view wx:if="{{currDay &&  currWeek}}">
+              <view class='curr-day'>{{currDay}}</view>
+              <view class='margin-top-xs'>星期{{currWeek}}</view>
+            </view>
+            <view wx:if='{{isChooseProject}}' bindtap="toProjectList" class='choose-project-box flex align-center'>
+              <view class='icon-box'>
+                <image src='/images/icon-removebg-preview.png' />
+              </view>
+              <view>{{currProjectItem.name || ''}}</view>
+            </view>
+          </view>
+          <scroll-view scroll-into-view='{{toView}}' class="ul" scroll-with-animation='true' scroll-y='true'>
+            <block wx:for="{{dateTimeList}}" wx:for-index="index" wx:key='id'>
+              <view id='{{item.hourText}}{{item.hour}}' class='margin-tb-lg flex  justify-between'>
+                <view style="width:120rpx;">
+                  <text style="font-size:48rpx;">{{item.hour}}</text>
+                  <text>{{item.hourText}}</text>
+                </view>
+                <view class='content-box  project-item-box' wx:if="{{item.itemList.length>0}}">
+                  <view wx:for="{{item.itemList}}" wx:for-item="ele" wx:for-index="i" wx:key="id">
+                    <view class='margin-top'>
+                      <view class='flex justify-between'>
+                        <view class='project-name'>{{ele.projectName || ''}}</view>
+                        <label data-index='{{index}}' data-i='{{i}}' catchtap='checkedTap'>
+                          <radio checked="{{ele.status == 11 ? true : false}}" />
+                        </label>
+                      </view>
+                      <view class='message-box  margin-top'>
+                        <view class='flex margin-top-sm  align-center' wx:if="{{ele.address}}">
+                          <image class='icon  margin-right-sm' src='/images/dingwei.png' />
+                          <view>{{ele.address}}</view>
+                        </view>
+                        <view class='flex margin-top-sm  align-center' wx:if="{{ele.status==11 && ele.workTime &&  ele.workTime>0}}">
+                          <image class='icon  margin-right-sm' src='/images/gongzuoliu.png' />
+                          <view>{{ele.workTime}}个小时</view>
+                        </view>
+                        <view class='flex margin-top-sm  align-center' wx:if="{{ele.ccList && ele.ccList.length>0}}">
+                          <image class='icon  margin-right-sm' src='/images/geren.png' />
+                          <view class='flex flex-wrap list-box'>
+                            <block wx:for="{{ele.ccList}}" wx:for-item="userItem" wx:key="id">
+                              <view class='margin-xs'>@{{userItem.username}}</view>
+                            </block>
+                          </view>
+                        </view>
+                        <view class='flex margin-top-sm  align-center' wx:if="{{ele.imageList && ele.imageList.length>0}}">
+                          <image class='icon  margin-right-sm' src='/images/paizhao.png' />
+                          <view class='flex flex-wrap list-box'>
+                            <block wx:for="{{ele.imageList}}" wx:for-item="element" wx:key="id">
+                              <view class='margin-xs  list-item-box'>
+                                <image class='list-box-image' src='{{element}}' />
+                              </view>
+                            </block>
+                            <view class='margin-xs  list-item-box more'>+more</view>
+                          </view>
+                        </view>
+                        <view class='margin-top-sm' style="text-align:left;">
+                          {{ele.voiceContent}}
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+                <view class='content-box' wx:else>该时段暂无内容</view>
+              </view>
+            </block>
+
+            <view class="tips" wx:if='{{dateTimeList.length<=0}}'>
+              该时段暂无内容
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 项目视图 -->
+  <view wx:else class='swiper animation-slide-left'>
+    <scroll-view style="height: calc(100vh - 400rpx);" scroll-with-animation='true' scroll-y='true'>
+      <block wx:for="{{projectList}}" :key='item.id'>
+        <view class='flex align-center margin-sm' data-index='{{index}}' bindtap='getProjectIndex'>
+          <view class='project-image-box'>
+            <image class='project-image' src='/images/icon-removebg-preview.png' />
+          </view>
+          <view class='project-size'>{{item.name}}</view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <view class='next-and-back'>
+    <nextAndBack hiddenMsg="true" bind:getRecordMsg='getRecordMsg' />
+  </view>
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">确认工时</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        <input bindblur="getNewWorkTime" value="{{newTime}}" placeholder="{{placeholder}}" bindfocus="onFocus"></input>
+      </view>
+      <button bindtap='updateTime' style="width:200rpx;margin-bottom:30rpx;" class="cu-btn bg-default shadow-blur round">
+        提交
+      </button>
+    </view>
+  </view>
+</view>

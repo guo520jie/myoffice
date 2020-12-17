@@ -1,0 +1,42 @@
+/* component/toUserInfo/toUserInfo.wxss */
+.to-user-info-box {
+  width: 90vw;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  margin-top: 40rpx;
+  position: relative;
+  min-height: 120rpx;
+}
+
+.to-user-info {
+  height: 100rpx;
+  width: 100rpx;
+  position: absolute;
+  right: 0;
+  /* top: 0; */
+}
+
+.pick {
+  font-size: 28rpx;
+  color: #7b2a8a;
+  font-weight: 200;
+  padding: 4rpx 10rpx;
+  /* background: #f8dcf6; */
+  display: flex;
+}
+
+.picker-overflow {
+  width: 180rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+picker image {
+  width: 16px;
+  height: 16px;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}

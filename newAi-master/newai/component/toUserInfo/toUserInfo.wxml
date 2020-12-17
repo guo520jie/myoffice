@@ -1,0 +1,28 @@
+<!-- component/toUserInfo/toUserInfo.wxml -->
+<view class='to-user-info-box'>
+  <view wx:if="{{showTeam && teamList.length>0}}">
+    <picker bindchange="bindTeamListChange" range-key="teamName" value="{{teamCurrIndex}}" range="{{teamList}}">
+      <view class="pick">
+        <view class='picker-overflow'>{{teamList[teamCurrIndex].teamName}}</view>
+        <image src="/images/sanjiao_xia.svg"></image>
+      </view>
+    </picker>
+  </view>
+  <view wx:if="{{showUser && userList.length>0}}">
+    <picker bindchange="bindUserListChange" range-key="nickname" value="{{memberCurrIndex}}" range="{{userList}}">
+      <view class="pick">
+        <view class="picker-overflow">{{userList[memberCurrIndex].nickname}}</view>
+        <image src="/images/sanjiao_xia.svg"></image>
+      </view>
+    </picker>
+  </view>
+  <view wx:if="{{showDate && dateList.length>0}}">
+    <picker bindchange="bindDateChange" value="{{dateCurrIndex}}" range="{{dateList}}">
+      <view class="pick">
+        <view class="picker-overflow">{{dateList[dateCurrIndex]}}</view>
+        <image src="/images/sanjiao_xia.svg"></image>
+      </view>
+    </picker>
+  </view>
+  <image class='to-user-info' bindtap='toUserInfo' src='/images/toUserInfo.png' />
+</view>

@@ -1,0 +1,9 @@
+<!-- component/progress/progress.wxml -->
+<view class='progress-box' style="width:{{width}};height:{{height}}">
+  <view class='action-box' wx:if="{{actionNum && actionNum > 0}}">
+    <text class='actionNum'>{{actionNum}}</text>
+  </view>
+  <view class='bottom-box'>
+    <text class='totalNum'>{{totalNum}}</text>
+  </view>
+</view>

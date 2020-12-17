@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/login/login",
+    "pages/speak/speak",
+    "pages/review/review",
+    "pages/userInfo/userInfo",
+    "pages/myProject/myProject",
+    "pages/myTeam/myTeam"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#7E3D8C",
+    "navigationBarTitleText": "我AI说",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "nextAndBack": "/component/nextAndBack/nextAndBack",
+    "toUserInfo": "/component/toUserInfo/toUserInfo",
+    "timePicker": "/component/timePicker/timePicker"
+  },
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于定位"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

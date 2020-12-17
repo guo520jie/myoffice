@@ -1,0 +1,35 @@
+/* pages/submitSuccess/submitSuccess.wxss */
+
+.submit-success-box {
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  font-size: 40rpx;
+
+}
+
+.done-detail-box {
+  margin-top: 40rpx;
+}
+
+.image-box {
+  display: flex;
+  justify-content: start;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.image-box>image {
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 30rpx;
+}
+
+.option-box {
+  border-bottom: 2rpx dashed #BBBBBB;
+}
+
+.container {
+  padding-bottom: 200rpx;
+}

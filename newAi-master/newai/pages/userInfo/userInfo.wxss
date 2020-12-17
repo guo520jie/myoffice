@@ -1,0 +1,108 @@
+/* pages/userInfo/userInfo.wxss */
+.user-info-box {
+  width: 100vw;
+  height: 230rpx;
+  box-shadow: 0px 4rpx 12rpx 0px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to right, #7E3D8C, #823c8d);
+}
+
+.avatarUrl-box image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 88rpx;
+}
+
+.userInfo-details-box {
+  color: #fff;
+}
+
+.is-leader-box {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  opacity: 0.8;
+  border-radius: 18rpx;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 28rpx;
+  text-align: center;
+  font-family: -apple-system;
+  border: 2rpx solid rgba(255, 255, 255, 0);
+  background: #fff;
+}
+
+.nick-name {
+  font-size: 34rpx;
+  font-weight: 400;
+}
+
+.setting-box {
+  width: 90%;
+  margin: 60rpx auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.setting-item {
+  width: 100%;
+  height: 200rpx;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  box-shadow: 0px 4rpx 12rpx 0px rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 1);
+  margin-bottom: 40rpx;
+}
+
+.icon {
+  height: 80rpx;
+  width: 80rpx;
+
+}
+
+.icon-box {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40rpx;
+}
+
+
+.microphone-box {
+  width: 250rpx;
+  height: 100rpx;
+  -webkit-appearance: none;
+  /* margin: 0 auto; */
+  text-align: center;
+  position: fixed;
+  left:50%;
+  margin-left: -125rpx;
+  bottom: 150rpx;
+}
+
+.postion image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.postion {
+  color: #7b2a8a;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 130%;
+  background: linear-gradient(to right, #843590, #b570a9);
+  border-radius: 60rpx;
+  padding: 20rpx 0;
+}
+
+.microphone-msg{
+  margin-top: 30rpx;
+  font-size: 34rpx;
+}

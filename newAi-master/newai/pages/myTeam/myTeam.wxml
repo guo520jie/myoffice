@@ -1,0 +1,83 @@
+<!-- pages/myTeam/myTeam.wxml -->
+<view class='container'>
+  <block wx:if="{{!isModify}}" class='animation-slide-left'>
+    <view class='header-box'>
+      <view class='title'>您目前在:</view>
+      <view class='flex align-center'>
+        <view class='team-image-box'>
+          <image class='team-image' src='/images/icon_2-removebg-preview.png' />
+        </view>
+        <view class='team-name-box'>
+          <text class='msg text-cut'>{{currTeam.teamName}}</text>
+        </view>
+      </view>
+    </view>
+    <scroll-view style="height: calc(100vh - 580rpx);" scroll-with-animation='true' scroll-y='true'>
+      <view class='flex flex-wrap'>
+        <block wx:for="{{memberList}}" wx:key='id'>
+          <view class="{{currMemberIndex===index?'action-item':''}}">
+            <view class="modify-box" data-index='{{index}}' bindtap='modifyTeamLeader'>
+              <view class='item-box'>
+                <image class='head-imgUrl' src="{{item.headImgUrl}}" />
+              </view>
+              <view class='flex align-center' style="width:150rpx;">
+                <image wx:if="{{item.isLeader===1}}" class='icon' src="/images/MBEfenggeduosetubiao-qizhi.png" />
+                <text style="width:{{item.isLeader===1 ? '100rpx;':'150rpx;' }}" class='text-cut'>
+                  {{item.nickname}}
+                </text>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='item-box  border-radius' wx:if="{{memberList.length>0}}">
+          <button class="add-button" size="default" open-type="share">
+            <image class='icon' src="/images/add-icon.png" />
+          </button>
+        </view>
+        <view class='item-box border-radius' bindtap='removeMemberByTeam'  wx:if="{{memberList.length>0}}">
+          <image class='icon' src="/images/deldete-icon.png" />
+        </view>
+      </view>
+    </scroll-view>
+  </block>
+  <scroll-view class='animation-slide-left' wx:else style="height: calc(100vh - 200rpx);" scroll-with-animation='true' scroll-y='true'>
+    <block wx:for="{{teamList}}" wx:key='item.id'>
+      <view class='flex align-center margin-tb-sm' data-index='{{index}}' data-id='{{item.id}}' bindtap='getTeamCurrId'>
+        <!-- <image data-index="{{index}}" bindtap='deleteteam' wx:if="{{isModify}}" class='delete-image' src='/images/delete.png' /> -->
+        <view class='team-image-box'>
+          <image class='team-image' src='/images/icon_2-removebg-preview.png' />
+        </view>
+        <!-- <view wx:if="{{!isModify}}" class='team-size'>{{item.teamName}}</view> -->
+        <view class="{{teamCurrId === item.id ? 'action-team':''}} team-size">
+          <text style="margin-left:50rpx;">{{item.teamName}}</text>
+        </view>
+        <!-- <view wx:else>
+          <textarea data-index="{{index}}" placeholder='{{item.teamName}}' bindblur="modifyTextAreaBlur" auto-height />
+        </view> -->
+      </view>
+    </block>
+    <view wx:if="{{isModify}}" class='flex align-center margin-tb-sm'>
+      <!-- <image bindtap='addteam' class='delete-image' src='/images/add.png' /> -->
+      <view class='team-image-box'>
+        <image class='team-image' src='/images/icon_2-removebg-preview.png' />
+      </view>
+      <view>
+        <textarea placeholder='请输入团队名' value='{{addTeamValue}}' bindblur="getAddTeamValue" auto-height />
+      </view>
+    </view>
+  </scroll-view>
+  <view class='button-box' bindtap='modifyTeam'>
+    <button wx:if="{{currMemberIndex ==='' && !isModify && !addTeamValue }}" data-type='switchTeam' class=" cu-btn bg-default shadow-blur round">
+      切换团队
+    </button>
+    <button wx:elif="{{isModify && !addTeamValue}}" data-type='submitSwitchTeam' class=" cu-btn bg-default shadow-blur round">
+      确认切换
+    </button>
+    <button wx:elif="{{addTeamValue}}" data-type='addTeam' class=" cu-btn bg-default shadow-blur round">
+      确认添加
+    </button>
+    <button wx:else data-type='setLevel' class=" cu-btn bg-default shadow-blur round">
+      设为Leader
+    </button>
+  </view>
+</view>

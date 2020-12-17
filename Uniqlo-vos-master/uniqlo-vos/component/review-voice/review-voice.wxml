@@ -1,0 +1,4 @@
+<view class="bottompanel" style="{{isIphoneX? 'bottom:80rpx' : 'bottom:0rpx'}}">
+  <i class="iconfont icon-record" bindtap="_gotoreview"></i>
+  <i class="iconfont icon-microphone" bindtap="_goVoiceReport"></i>
+</view>

@@ -1,0 +1,28 @@
+<!-- pages/home/hone.wxml -->
+<view class='container'>
+  <toUserInfo />
+  <view class='prompt-msg-box margin-top-lg'>
+    <view>你可以试试这样说：</view>
+    <view>「 明天上午十点出一份汇报用的PPT。 」</view>
+    <view>「 昨天下午三点和客户开会，用时2小时。 」</view>
+    <view>「 电梯位置摆放杂物。 」</view>
+    <view>「 天花板漏水。 」</view>
+    <view>「 客户A的合作意向很明确。 」</view>
+  </view>
+  <view>
+    <nextAndBack bind:getRecordMsg='getRecordMsg' />
+  </view>
+  <view class='to-speak-box'>
+    <image src="/images/dangan.png" bindtap='toReview' />
+  </view>
+  <!-- 加入团队 -->
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <view>是否加入{{shareMessage.teamName}}</view>
+    <view class="btn">
+      <view class='save_money' bindtap="reject">拒绝</view>
+      <view class='save_money' bindtap="join">加入</view>
+    </view>
+  </view>
+  <view class="mask" bindtap="preventTouchMove" wx:if="{{showModal}}"></view>
+</view>
+<button wx:if="{{!isAuthSetting}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='authorization-box'></button>
