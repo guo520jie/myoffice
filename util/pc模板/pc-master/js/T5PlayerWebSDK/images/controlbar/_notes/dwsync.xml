@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="background.png" server="192.168.254.13//" local="131159602227596754" remote="131237528400000000" Dst="0" />
+<file name="capLeft.png" server="192.168.254.13//" local="131159602227606764" remote="131237528400000000" Dst="0" />
+<file name="capRight.png" server="192.168.254.13//" local="131159602227621775" remote="131237528400000000" Dst="0" />
+<file name="ccButton.png" server="192.168.254.13//" local="131159602227631782" remote="131237528400000000" Dst="0" />
+<file name="ccButtonOver.png" server="192.168.254.13//" local="131159602227646789" remote="131237528400000000" Dst="0" />
+<file name="divider.png" server="192.168.254.13//" local="131159602227666807" remote="131237528400000000" Dst="0" />
+<file name="durationBackground.png" server="192.168.254.13//" local="131159602227676814" remote="131237528400000000" Dst="0" />
+<file name="elapsedBackground.png" server="192.168.254.13//" local="131159602227686817" remote="131237528400000000" Dst="0" />
+<file name="fullscreenButton.png" server="192.168.254.13//" local="131159602227696821" remote="131237528400000000" Dst="0" />
+<file name="fullscreenButtonOver.png" server="192.168.254.13//" local="131159602227706828" remote="131237528400000000" Dst="0" />
+<file name="hdButton.png" server="192.168.254.13//" local="131159602227716839" remote="131237528400000000" Dst="0" />
+<file name="hdButtonOver.png" server="192.168.254.13//" local="131159602227726846" remote="131237528400000000" Dst="0" />
+<file name="muteButton.png" server="192.168.254.13//" local="131159602227736853" remote="131237528400000000" Dst="0" />
+<file name="muteButtonOver.png" server="192.168.254.13//" local="131159602227751863" remote="131237528400000000" Dst="0" />
+<file name="nextButton.png" server="192.168.254.13//" local="131159602227761874" remote="131237528400000000" Dst="0" />
+<file name="nextButtonOver.png" server="192.168.254.13//" local="131159602227776881" remote="131237528400000000" Dst="0" />
+<file name="normalscreenButton.png" server="192.168.254.13//" local="131159602227781891" remote="131237528400000000" Dst="0" />
+<file name="normalscreenButtonOver.png" server="192.168.254.13//" local="131159602227796895" remote="131237528400000000" Dst="0" />
+<file name="pauseButton.png" server="192.168.254.13//" local="131159602227806905" remote="131237528400000000" Dst="0" />
+<file name="pauseButtonOver.png" server="192.168.254.13//" local="131159602227821913" remote="131237528400000000" Dst="0" />
+<file name="playButton.png" server="192.168.254.13//" local="131159602227836923" remote="131237528400000000" Dst="0" />
+<file name="playButtonOver.png" server="192.168.254.13//" local="131159602227846931" remote="131237528400000000" Dst="0" />
+<file name="prevButton.png" server="192.168.254.13//" local="131159602227861944" remote="131237528400000000" Dst="0" />
+<file name="prevButtonOver.png" server="192.168.254.13//" local="131159602227871951" remote="131237528400000000" Dst="0" />
+<file name="timeSliderBuffer.png" server="192.168.254.13//" local="131159602227886959" remote="131237528400000000" Dst="0" />
+<file name="timeSliderBufferCapLeft.png" server="192.168.254.13//" local="131159602227896992" remote="131237528400000000" Dst="0" />
+<file name="timeSliderBufferCapRight.png" server="192.168.254.13//" local="131159602227902021" remote="131237528400000000" Dst="0" />
+<file name="timeSliderCapLeft.png" server="192.168.254.13//" local="131159602227917031" remote="131237528400000000" Dst="0" />
+<file name="timeSliderCapRight.png" server="192.168.254.13//" local="131159602227927035" remote="131237528400000000" Dst="0" />
+<file name="timeSliderProgress.png" server="192.168.254.13//" local="131159602227932042" remote="131237528400000000" Dst="0" />
+<file name="timeSliderProgressCapLeft.png" server="192.168.254.13//" local="131159602227942046" remote="131237528400000000" Dst="0" />
+<file name="timeSliderProgressCapRight.png" server="192.168.254.13//" local="131159602227952056" remote="131237528400000000" Dst="0" />
+<file name="timeSliderRail.png" server="192.168.254.13//" local="131159602227962063" remote="131237528400000000" Dst="0" />
+<file name="timeSliderRailCapLeft.png" server="192.168.254.13//" local="131159602227972070" remote="131237528400000000" Dst="0" />
+<file name="timeSliderRailCapRight.png" server="192.168.254.13//" local="131159602227987081" remote="131237528400000000" Dst="0" />
+<file name="timeSliderThumb.png" server="192.168.254.13//" local="131159602227997113" remote="131237528400000000" Dst="0" />
+<file name="unmuteButton.png" server="192.168.254.13//" local="131159602228027164" remote="131237528400000000" Dst="0" />
+<file name="unmuteButtonOver.png" server="192.168.254.13//" local="131159602228047178" remote="131237528400000000" Dst="0" />
+</dwsync>

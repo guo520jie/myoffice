@@ -1,0 +1,3 @@
+/* 背景音乐按钮 */
+.bgmBtn{ position: absolute; left: 0.35rem; top: 0.25rem; width: 0.9rem; height: 0.9rem; z-index: 9;}
+.bgmBtn .play,.bgmBtn .pause{ width: 100%; height: 100%;}

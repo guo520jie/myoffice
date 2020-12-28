@@ -1,0 +1,9 @@
+<view class='navigationBar' style='padding-top:{{navigationPadding}};' wx:if='{{navigationShow}}'>
+    <view class="bar" style='height:{{navigationHeight}};'>
+        <view class='back' catchtap='navigationBackClick' wx:if='{{navigationBack}}'>
+            <view class='ic'></view>
+            <text class='text'>{{navigationBackText}}</text>
+        </view>
+        <text class='title text'>{{navigationTitle}}</text>
+    </view>
+</view>

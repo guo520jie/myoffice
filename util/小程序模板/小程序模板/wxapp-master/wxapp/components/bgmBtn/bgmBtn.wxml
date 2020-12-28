@@ -1,0 +1,4 @@
+<view class='bgmBtn' catchtap='bgmClick' wx:if='{{bgmBtnShow}}'>
+    <image src='../../images/common/bgm_on.png' class="play" wx:if='{{bgmPlay}}'></image>
+    <image src='../../images/common/bgm_off.png' class="pause" wx:if='{{!bgmPlay}}'></image>
+</view>

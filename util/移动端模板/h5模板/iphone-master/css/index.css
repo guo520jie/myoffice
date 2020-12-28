@@ -1,0 +1,34 @@
+/* ------------------------------------------------------ 20:9(刘海屏/水滴屏/打孔屏+物理系统按键/超全面屏等最新安卓手机的微信、iphoneX/R/MAX的微信无底部History工具条，注意要为最底下的SYSTEMBAR留出安全区域) ------------------------------------------------------*/
+
+.media{width: 4rem; height: 1rem; background-color: black; color: #fff; font-size: 0.4rem; text-align: center; line-height: 1rem; margin: 1rem auto;}
+
+/*------------------------------------- iphoneX/XR/XMAX------------------*/
+@media screen and (orientation:portrait) and (width: 375px) and (min-height: 720px), screen and (orientation:portrait) and (width: 414px) and (min-height: 800px), screen and (orientation:portrait) and (width: 390px), screen and (orientation:portrait) and (width: 428px),
+screen and (orientation:landscape) and (height: 375px) and (min-width: 720px), screen and (orientation:landscape) and (height: 414px) and (min-width: 800px), screen and (orientation:landscape) and (height: 390px), screen and (orientation:landscape) and (height: 428px){
+	.media{ background-color: gray;}
+}
+
+
+/*------------------------------------- 19:9（刘海屏/水滴屏/打孔屏+虚拟系统按键安卓手机的微信）------------------*/
+@media screen and (orientation:portrait) and (width: 360px) and (max-height: 670px), screen and (orientation:portrait) and (width: 375px) and (max-height: 700px), screen and (orientation:portrait) and (min-width: 390px) and (max-width: 400px) and (max-height: 710px), screen and (orientation:portrait) and (min-width: 412px) and (max-width: 414px) and (max-width: 770px),
+screen and (orientation:landscape) and (height: 360px) and (max-width: 670px), screen and (orientation:landscape) and (height: 375px) and (max-width: 700px), screen and (orientation:landscape) and (min-height: 390px) and (max-height: 400px) and (max-width: 710px), screen and (orientation:landscape) and (min-height: 412px) and (max-height: 414px) and (max-width: 770px){
+.media{ background-color: red;}
+}
+
+/*------------------------------------- 18:9（全面屏安卓手机的微信 、iphoneX的微信底部有历史工具条/浏览器、iphone12/pro浏览器）------------------*/
+@media screen and (orientation:portrait) and (width: 360px) and (max-height: 610px), screen and (orientation:portrait) and (width: 375px) and (max-height: 650px), screen and (orientation:portrait) and (min-width: 390px) and (max-width: 400px) and (max-height: 670px), screen and (orientation:portrait) and (min-height: 412px) and (max-height: 414px) and (max-height: 710px), screen and (orientation:portrait) and (width: 428px) and (max-height: 750px),
+screen and (orientation:landscape) and (height: 360px) and (max-width: 610px), screen and (orientation:landscape) and (height: 375px) and (max-width: 650px), screen and (orientation:landscape) and (min-height: 390px) and (max-height: 400px) and (max-width: 670px), screen and (orientation:landscape) and (min-height: 412px) and (max-height: 414px) and (max-width: 710px), screen and (orientation:landscape) and (height: 428px) and (max-width: 750px){
+.media{ background-color: blue;}
+}
+
+/* ------------------------------------------------------ 16:9(标准屏安卓手机、18:9的浏览器、iphone5/6/7/8) ------------------------------------------------------*/
+@media screen and (orientation:portrait) and (width: 360px) and (max-height: 580px), screen and (orientation:portrait) and (width: 375px) and (max-height: 605px), screen and (orientation:portrait) and (min-width: 390px) and (max-width: 400px) and (max-height: 630px), screen and (orientation:portrait) and (min-width: 412px) and (max-width: 414px) and (max-height: 675px),
+screen and (orientation:landscape) and (height: 360px) and (max-width: 580px), screen and (orientation:landscape) and (height: 375px) and (max-width: 605px), screen and (orientation:landscape) and (min-height: 390px) and (max-height: 400px) and (max-width: 630px), screen and (orientation:landscape) and (min-height: 412px) and (max-height: 414px) and (max-width: 675px){
+.media{background-color: green;}
+}
+
+/*------------------------------------ 15:9（标准屏+虚拟系统按键安卓手机（华为P9）的微信、16:9的浏览器 、iphone8的微信底部有历史工具条/浏览器）--------------------*/
+@media screen and (orientation:portrait) and (width: 360px) and (max-height: 540px), screen and (orientation:portrait) and (width: 375px) and (max-height: 560px), screen and (orientation:portrait) and (min-width: 390px) and (max-width: 400px) and (max-height: 590px), screen and (orientation:portrait) and (min-width: 412px) and (max-width: 414px) and (max-height: 630px),
+screen and (orientation:landscape) and (height: 360px) and (max-width: 540px), screen and (orientation:landscape) and (height: 375px) and (max-width: 560px), screen and (orientation:landscape) and (min-height: 390px) and (max-height: 400px) and (max-width: 590px), screen and (orientation:landscape) and (min-height: 412px) and (max-height: 414px) and (max-width: 630px){
+.media{background-color: orange;}
+}

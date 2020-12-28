@@ -1,0 +1,110 @@
+//--------------------------------------------------------------------------------------------------------苹果----------------------------------------------------
+//----------物理HOME键屏,分辨率折合750x1334------------------
+iphone5s/SE 逻辑分辨率320x568
+iphone8/SE2 逻辑分辨率375x667
+iphone8Plus 逻辑分辨率414x736
+//----------刘海全面屏，分辨率折合750x1624------------------
+iphone12Mini 逻辑分辨率360x780
+iphone11Pro 逻辑分辨率375×812
+iphone12/Pro 逻辑分辨率390 x 844
+iphoneXR/11/11ProMax 逻辑分辨率414 x 896
+iphone12ProMax 逻辑分辨率428 x 926
+
+竖屏：
+iphone5 屏幕:320x568 / 微信:320x504 / 浏览器:320x460 / wxApp：320 x 504/568
+iphone6/7/8 屏幕:375x667 / 微信:375x603 / 微信 with history bar:375x554 / 浏览器:375x553 / wxApp：375 x 603/667
+iphone6/7/8 plus 屏幕:414x736 / 微信:414x672(375x609) / 微信 with history bar:414x623(375x564) / 浏览器:414x622(375x564) / wxApp：412 x 672/736
+iphoneX 屏幕:375×812 / 微信:375x724 / 微信 with history bar:375x641 / 企业微信：375 x 690 / 浏览器:375x635 / taobao:375x690 / wxApp：375 x 724/812 
+iphoneMax 屏幕:414*896 / 微信:414x808 / 微信 with history bar:414x725 / 浏览器:414x719 / wxApp：414x808/896
+iphone12/Pro 屏幕:390 x 844 / 微信:390x753 / 微信 with history bar:390x664 / 企业微信：375 x 690 / 浏览器:390x664 
+iphone12ProMax 屏幕:428*926 / 微信:428*835 / 微信 with history bar:428*752 / 企业微信：375 x 690 / 浏览器:428*746
+
+横屏：
+iphone5 屏幕:568x320 / 微信:568x268 / 浏览器:568x320
+iphone6/7/8 屏幕:667x375 / 微信:667x323 / 浏览器:667x375
+iphone6/7/8 plus 屏幕:736x414 / 微信:736x350 / 浏览器:736x414
+iphoneX 屏幕:812×375 / 微信:812x343(左右留黑，有效显示区域为724x343)/ 微信 history bar:724x273  / 浏览器:724x375
+iphoneMax 屏幕:896×414 / 微信:896x370(左右留黑，有效显示区域为781x370)/ 微信 history bar:808x343  / 浏览器:896x300
+
+
+原生浏览器标识：
+Mozilla/5.0 (iPhone; CPU iPhone OS 12_0_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A421 Safari/604.1
+
+微信浏览器标识：
+Mozilla/5.0 (iPhone; CPU iPhone OS 12_0_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Mobile/15A421 MicroMessenger/6.5.18 NetType/WIFI Language/zh_CN
+
+微信小程序webview标识：
+Mozilla/5.0 (iPhone; CPU iPhone OS 12_0_0 like Mac OS X) AppleWebKit/604.5.6 (KHTML, like Gecko) Mobile/15D100 MicroMessenger/6.6.3 NetType/WIFI Language/zh_CN
+
+//--------------------------------------------------------------------------------------------------------安卓----------------------------------------------------
+物理分辨率 ：
+//-----16:9
+android 720P 720x1280
+android 1080P 1080x1920
+android 1440p 1440x2560
+//-----18:9
+android 720P 720x1440
+android 1080P 1080x2160
+android 1440p 1440×2880
+//-----19:9(刘海屏+虚拟系统按键)
+android 1080p 1080x2280
+//-----20:9(刘海屏/水滴屏/打孔屏+物理系统按键、超全面屏)
+android 1080p 1080x2340
+android 2K 1440x3120
+
+
+竖屏：
+//-----15:9(带虚拟系统按键的16:9手机)
+android 720p/1080p 屏幕:360x640 / 微信:360x528 / 浏览器:360x496 / wxApp：360 x 526/598
+//-----16:9
+android 720p/1080p 屏幕:360x640 / 微信:360x572 / 浏览器:360x514 / wxApp：360 x 574/640
+android 1440p 屏幕:360x640 / 微信:360x568 / 浏览器:360x536 / wxApp：360 x 574/640
+//-----18:9
+android 720p 屏幕:360x720 / 微信:360x608 / 浏览器:360x656
+android 1080p 屏幕:360x720 / 微信:360x606 / 浏览器:360x554 / wxApp：360 x 672
+小米/红米系列  屏幕:393x786 / 微信:393x667 / 浏览器:393x609 / wxApp：393 x 666/738
+//-----19:9
+android 1080p 屏幕:360x760 / 微信:360x639 / 浏览器:360x687
+android 1080p(物理系统按键) 屏幕:360x720 / 微信:360x648 / 浏览器:360x616 / wxApp:360x648
+//-----20:9
+华为P21 屏幕:360x748 / 微信:360x677 / 浏览器:360x630
+华为P30 屏幕:400x867 / 微信:400x791 / 浏览器:360x649
+android 1080p(物理系统按键) 屏幕:360x760 / 微信:360x686 / 浏览器:360x650
+vivo x23 屏幕:360x780 / 微信:360x704 / 浏览器:360x645
+
+
+横屏：
+//-----15:9
+android 720p/1080p 屏幕:598x360 / 微信:598x288 / 浏览器:598x280
+android 1440p 屏幕:684x412 / 微信:684x340
+//-----16:9
+android 720p/1080p 屏幕:640x360 / 微信:640x295
+android 1440p 屏幕:732x412 / 微信:732x340 / 浏览器:732x332
+//-----18:9(全面屏)
+android 720p 屏幕:681x360 / 微信:681x288 / 浏览器:681x360
+android 1080p 屏幕:678x360 / 微信:678x288 / 浏览器:678x236
+android 1080p(无虚拟系统按键) 屏幕:720x360 / 微信:720x288 / 浏览器:720x280
+mix2 屏幕:786x393 / 微信:739x321 / 浏览器:739x343
+//-----19:9(刘海屏)
+android 1080p 屏幕:760x360 / 微信:687x282 / 浏览器:687x360
+android 1080p(无虚拟系统按键) 屏幕:760x360 / 微信:730x282 / 浏览器:730x280
+
+原生浏览器标识：
+Mozilla/5.0 (Linux; U; Android 8.0.1; zh-cn;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2785.146 Mobile Safari/537.36
+
+微信浏览器标识：
+
+小米： 
+Mozilla/5.0 (Linux; Android 7.0; MI 5 Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQ浏览器/6.2 TBS/043520 Safari/537.36 MicroMessenger/6.5.16.1120 NetType/WIFI Language/zh_CN
+
+红米：
+Mozilla/5.0 (Linux; Android 6.0.1; Redmi 4 Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQ浏览器/6.2 TBS/043520 Safari/537.36 MicroMessenger/6.5.16.1120 NetType/WIFI Language/zh_CN
+
+华为：
+Mozilla/5.0 (Linux; Android 7.0; EVA-AL10 Build/HUAWEIEVA-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQ浏览器/6.2 TBS/043520 Safari/537.36 MicroMessenger/6.5.16.1120 NetType/WIFI Language/zh_CN
+
+oppo：
+Mozilla/5.0 (Linux; Android 5.1; OPPO R9m Build/LMY47I; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQ浏览器/6.2 TBS/043508 Safari/537.36 MicroMessenger/6.5.16.1120 NetType/WIFI Language/zh_CN
+
+vivo：
+Mozilla/5.0 (Linux; Android 5.1.1; vivo X7 Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQ浏览器/6.2 TBS/043520 Safari/537.36 MicroMessenger/6.5.13.1100 NetType/WIFI Language/zh_CN

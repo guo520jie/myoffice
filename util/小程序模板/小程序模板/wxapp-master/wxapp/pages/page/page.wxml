@@ -1,0 +1,15 @@
+<page-meta root-font-size="{{fontSize}}" page-style="padding-top:{{pagePadding}}" catchtouchmove='articleTouchmove'>
+    <!---- navigationBar begin ----->
+    <navigationBar id="navigationBar" navigation-title="内页" navigation-backText="返回" navigation-back="../index/index" bindback="navigationBack" ></navigationBar>
+    <!---- navigationBar end ----->
+    <!-- article begin -->
+    <view id="article" style='height:{{pageHeight}}'>
+        <!---- bgm start ----->
+        <bgmBtn id='bgmBtn'></bgmBtn>
+        <!---- bgm end ----->
+    </view>
+    <!---- article end ----->
+    <!---- loadBox begin ----->
+    <loadBox id="loadBox" wx:if="{{loadBox}}"></loadBox>
+    <!---- loadBox end ----->
+</page-meta>

@@ -1,0 +1,5 @@
+<view class="loadBox">
+    <view class='span'>
+        <view wx:for='{{[0,0,0,0,0,0,0,0,0,0,0,0]}}' wx:key="item" class="point"></view>
+    </view>
+</view>

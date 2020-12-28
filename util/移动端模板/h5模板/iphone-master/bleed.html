@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微信竖屏出血页</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script src="js/base/base.js"></script>
+<script>
+ibase.init();
+ibase.load('css/index.css');//无缓存加载文件
+</script>
+</head>
+<body>
+<!--------------------------------------------------------------html区域-------------------------------------------------------------------------------------------->
+<article>
+	<aside class="loadBox" id="loadPage" style="display: block;">
+		<span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+	</aside>
+	<div class="articleBleed" style="background-color: #0BB20C;">
+		<section class="index" style="background-color: #fc0000;"></section>
+	</div>
+</article>
+<!--------------------------------------------------------------javascript区域-------------------------------------------------------------------------------------->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/base/jquery.js"></script>
+<script src="js/base/framwork.js"></script>
+<script src="js/base/monitor.js"></script>
+<script src="js/base/share.js"></script>
+<script src="//ad.h5-x.com/jssdk/ad_api.js"></script>
+<script>ibase.load('js/bleed.js');</script>
+</body>
+</html>

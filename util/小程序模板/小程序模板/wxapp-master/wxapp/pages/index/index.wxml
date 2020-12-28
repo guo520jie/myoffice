@@ -1,0 +1,31 @@
+<page-meta root-font-size="{{fontSize}}" page-style="padding-top:{{pagePadding}}" catchtouchmove='articleTouchmove'>
+    <!---- navigationBar begin ----->
+    <navigationBar id="navigationBar" navigation-title="首页" ></navigationBar>
+    <!---- navigationBar end ----->
+    <!-- article begin -->
+    <view id="article" style='height:{{pageHeight}}'>
+        <!---- section begin ----->
+        <view class='section sectionIndex {{sectionIndexFade}}' wx:if="{{sectionIndexShow}}">
+            <view class="test" style="position: absolute; left: 50%; bottom: 4rem; width: 3rem; margin-left: -1.5rem; height: 2rem; color:#fff;text-align: center; line-height: 2rem; font-size: 0.4rem; ">css media</view>
+            <view class="btnStart" style="width: 80%; height: 1rem; border: 1px solid #000; border-radius: 0.2rem; text-align:center; font-size: 0.4rem; line-height: 1rem; display: block; margin: 1rem auto 0;" catchtap="btnStartClick">开始</view>
+        </view>
+        <!---- section end ----->
+        <!---- section begin ----->
+        <view class='section sectionLogin' wx:if="{{loginShow}}">
+            <button style="width: 80%; height: 1rem; border: 1px solid #000; border-radius: 0.2rem; text-align:center; font-size: 0.4rem; line-height: 1rem; display: block; margin: 1rem auto 0;" open-type="getUserInfo" bindgetuserinfo="getUserInfoClick">微信登录</button>
+        </view>
+        <!---- section end ----->
+        <!----section begin----->
+        <view class='section sectionLogin sectionPhone' wx:if="{{phoneShow}}">
+            <button style="width: 80%; height: 1rem; border: 1px solid #000; border-radius: 0.2rem; text-align:center; font-size: 0.4rem; line-height: 1rem; display: block; margin: 1rem auto 0;" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumberClick">微信手机号授权</button>
+        </view> 
+        <!---- section begin ----->
+        <!---- bgm start ----->
+        <bgmBtn id='bgmBtn'></bgmBtn>
+        <!---- bgm end ----->
+    </view>
+    <!---- article end ----->
+    <!---- loadBox begin ----->
+    <loadBox id="loadBox" wx:if="{{loadBox}}"></loadBox>
+    <!---- loadBox end ----->
+</page-meta>

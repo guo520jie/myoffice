@@ -1,0 +1,20 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/page/page"
+    ],
+    "window": {
+        "navigationStyle": "custom",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "plugins": {
+        "myPlugin": {
+            "version": "1.0.2",
+            "provider": "wx3f2a904342263e2e"
+        }
+    }
+}

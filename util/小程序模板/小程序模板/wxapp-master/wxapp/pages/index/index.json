@@ -1,0 +1,8 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "navigationBar": "/components/navigationBar/navigationBar",
+        "loadBox": "/components/loadBox/loadBox",
+        "bgmBtn": "/components/bgmBtn/bgmBtn"
+    }
+}

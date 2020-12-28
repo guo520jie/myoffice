@@ -1,0 +1,7 @@
+/* 小程序自定义头部bar */
+.navigationBar{ width: 100%;  background-color: lightblue;}
+.navigationBar .bar{ width: 100%; display: flex; align-items: center; padding: 0 2rem; background-color: lightpink;}
+.navigationBar .text{ color: #fff; font-size: 0.32rem; display: block;}
+.navigationBar .title{ flex: 1; text-align: center;}
+.navigationBar .back{ position: absolute; left: 0.3rem; top: 50%; width: 1.5rem; height: 0.32rem; margin-top: -0.16rem; display: flex; align-items: center;}
+.navigationBar .back .ic{ width:0.16rem; height: 0.3rem; margin-right: 0.1rem;   background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAdCAYAAACjbey/AAABn0lEQVRIS7WVMUtcQRSFv9MEEQOCYEDBQGKRJo1pTKOVhSamsLKyWrHQ0k7tsnYp1047Oy0MISHRkOgf0S5oK0RFkxNmmZVh3Ldv1+BtHgxzvnfvnTN3RIdh+y1Qi7KKOtFH8S7wKOpO2gbYngA+Al3JT8/aAtgeBz4D3VnGC6UA26+Br8DjTLwiab0lwPYr4ADozcTvJa2FtUKA7ZfAD6AvE3+QtNxYawqw/QL4CTzJxDVJS+naHYDt58AhMJiJN4F5SS4E2H4axeGbxjYwJ+lv7pvbDGwPAEdAyCCNHWBW0p9mpqsDbPfHP4fa0/gEzEi6LnKsbIcuh26HrqfxDXgn6apIXD9G23thY7YpNHFS0kUrcQNwDvQkGy+BZ5J+lYnLMpiS9LsM0qoH+8B0aQ/++xQaKUYfhOYNZ2mHARJ8cFPogwQyFM3UuRMTSNFd2AIqLe9CAim6jRuSFtNSHmYeJJmMAN+bTKSqpNW6kcqMYnsUCPcin4mrkqqlgOiTMeDLvaZyUk6zd+G0rQwSSHjW0pfpuCNALOcNsBGhlX8dKZrqPIh8twAAAABJRU5ErkJggg==');}

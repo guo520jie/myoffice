@@ -1,0 +1,52 @@
+/* ---------------------------------------- css base 基础部分---------------------------------------- */
+page { height: 100%; background-size:100% 100%; text-size-adjust: 100% !important; -webkit-text-size-adjust: 100% !important;}
+
+view,picker,input,textarea,button,navigator,scroll-view,swiper { word-break:break-all; background-position: 50% 50%; background-repeat: no-repeat; background-size:100% 100%; background-origin: padding-box; background-clip: padding-box; line-height: 1; box-sizing: border-box; background-color: transparent; border: none; padding: 0; margin: 0; border-radius: 0; font-size: 24rpx; display: block; position: relative;}
+
+button::after {display: none;}
+
+#article { width: 100%; height: 100%;}
+.section{ width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
+.aside{ width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
+.pop{ width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
+.layer{ position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+
+::-webkit-scrollbar { width: 0.1rem; height: 100%; color: rgba(255,255,255,0.8);}
+
+.noPointer{pointer-events:none;}/* 禁止触摸互动事件 */
+.noCallout{-webkit-touch-callout: none;}/*禁用长触弹出的下载图片菜单*/
+.noSelect{-webkit-user-select:none;}/*禁用长触选择文字等功能*/
+.gpuOpen{will-change:transform;}
+.gpuClose{will-change:auto;}
+.moving{ will-change:transform;}
+.txtOutline{ text-shadow: 1px 0 0 #000,-1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000; }
+.txtOverflow{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+/* 1行超出截断 */
+.overtext1 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+/* 2行超出截断 */
+.overtext2 { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+/* 3行超出截断 */
+.overtext3 { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;}
+
+/* ---------------------------------------- css common 公共部分 ---------------------------------------- */
+
+
+/* 默认渐变动画 */
+.showTransparent{ opacity: 0;}
+.showOpaque{ opacity: 1;}
+
+.fadeIn{ animation: fadeIn 0.35s ease 1 forwards;}
+@keyframes fadeIn{
+  0%{ opacity: 0;}
+  100%{ opacity: 1;}
+}
+
+.fadeOut{ animation: fadeOut 0.3s ease 1 forwards;}
+@keyframes fadeOut{
+  0%{ opacity: 1;}
+  100%{ opacity: 0;}
+}
+
+/* 柔和缓动 */
+.easeInOutQuad{transition-timing-function: cubic-bezier(.455,.03,.515,.955);}

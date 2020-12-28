@@ -1,0 +1,20 @@
+/*默认分辨率1920x1080*/
+body{ background-color: #fff; color: #000;}
+a{ color: #000;}
+a:hover{ color: #000;}
+
+/*1600x900*/
+@media only screen and (max-width:1600px ) {
+}
+
+/*1440x900*/
+@media only screen and (max-width:1440px ) {
+}
+
+/*1366x768*/
+@media only screen and (max-width:1366px ) {
+}
+
+/*2560x1080*/
+@media only screen and (min-width:2000px ) {
+}
