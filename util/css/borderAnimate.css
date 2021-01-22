@@ -1,0 +1,249 @@
+/* 边框效果 */
+:root {
+    --main-bg-color: coral;
+    --borderColor: #03A9F3;
+    --main-padding: 15px;
+}
+.border-move1{
+    position: relative;
+    border: 1px solid #03A9F3;
+}
+.border-move1::before,.border-move1::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+.border-move1::before{
+    top: -5px;
+    left: -5px;
+    border-top: 1px solid var(--borderColor);
+    border-left: 1px solid var(--borderColor);
+}
+.border-move1::after{
+    bottom: -5px;
+    right: -5px;
+    border-bottom: 1px solid var(--borderColor);
+    border-right: 1px solid var(--borderColor);
+}
+.border-move1:hover::before,.border-move1:hover:after{
+    width: calc(100% + 9px);
+    height: calc(100% + 9px);
+    transition: all 0.5s;
+}
+
+/* 边框虚线动画 */
+.border-move2{
+    background: 
+        linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+        linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+        linear-gradient(0deg, #333 50%, transparent 0) repeat-y,
+        linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
+    background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
+    background-position: 0 0, 0 100%, 0 0, 100% 0;    
+}
+/* 实线变虚线动画 */
+.border-move2{
+    outline: 1px solid #333;
+    outline-offset: -1px;
+}
+.border-move2:hover{
+    outline: none;
+    animation: linearGradientMove .3s infinite linear;
+}
+
+@keyframes linearGradientMove {
+    100%{
+        background-position: 4px 0, -4px 100%, 0 -4px, 100% 4px;
+    }
+}
+
+/* 四色边框动画 */
+.border-move3{
+    position: relative;
+    overflow: hidden;
+}
+.border-move3::before{
+    box-sizing: border-box;
+    z-index: -2;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(red,red),linear-gradient(green,green),linear-gradient(yellow,yellow),linear-gradient(pink,pink);
+    animation: rotate 1s infinite linear;
+}
+
+.border-move3::after{
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 5px;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+/* 单色边框动画 */
+.border-move4{
+    position: relative;
+    overflow: hidden;
+}
+.border-move4::before{
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #1a232a;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: conic-gradient(transparent, rgba(168, 239, 255, 1), transparent 30%);
+    animation: rotateMove4 3s linear infinite;
+}
+.border-move4::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: #000;
+    border-radius: 5px;
+}
+
+@keyframes rotateMove4 {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+/* 单色边框动画2 */
+
+.border-move5{
+    position: relative;
+}
+.border-move5::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid gold;
+    transition: all .5s;
+    animation: clippath 3s infinite linear;
+}
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 95% 0);
+    }
+    
+    25% {
+        clip-path: inset(0 95% 0 0);
+    }
+    50% {
+        clip-path: inset(95% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 95%);
+    }
+}
+
+/* 双条动画 */
+
+.border-move6{
+    position: relative;
+}
+.border-move6::before,.border-move6::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid gold;
+    transition: all .5s;
+    animation: clippath 3s infinite linear;
+}
+.border-move6::after{
+    animation: clippath 3s infinite -1.5s linear;;
+}
+
+/* hover外边框效果 */
+
+.border-move7{
+    position: relative;
+    overflow: hidden;
+}
+
+.border-move7::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: -20px;
+    left: 0px;
+    background: red;
+    transform: rotateZ(-90deg) translate(-100%, -100%);
+    transform-origin: top left;
+    transition: transform .3s;
+    transition-timing-function: linear;
+}
+.border-move7::after{
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    left: 4px;
+    line-height: 92px;
+    font-size: 24px;
+    background: #fff;
+    border: 2px solid yellowgreen;
+    cursor: pointer;
+    color: yellowgreen;
+}
+/* .border-move7:hover{
+    filter: contrast(1.2)
+} */
+
+.border-move7:hover::before{
+    transform: rotateZ(0deg) translate(0%, -0%);
+}
+
+/* 随机颜色边框 */
+.border-move8{
+    border: 5px solid;    
+    border-image: linear-gradient(45deg, gold,pink) 1;
+    clip-path: inset(0px round 5px);
+    filter: hue-rotate(360deg);
+    animation: hueMove8 5s infinite linear;
+}
+
+@keyframes hueMove8 {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
