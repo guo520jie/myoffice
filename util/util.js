@@ -25,6 +25,10 @@ function getUserid() { //获取uid
   }
   return null;
 }
+//判断用户是否绑定微信
+// function isBindWx(){
+
+// }
 
 function isWxWeb() { //判断微信环境
   var ua = window.navigator.userAgent.toLowerCase();
@@ -33,6 +37,13 @@ function isWxWeb() { //判断微信环境
   } else {
     return false;
   }
+}
+
+function clearStorage(){
+  // 退出登陆 清除用户资料
+  localStorage.setItem('token', '')
+  localStorage.setItem('user_info', '')
+  localStorage.setItem('role', '')
 }
 
 function getQueryString(name, str) { //获取URL参数
@@ -531,7 +542,88 @@ function debounce(fn, interval) {
     }, gapTime);
   };
 }
+
+// 分割数组
+function spArr(arr, num) { 
+	let newArr = [] 
+	for (let i = 0; i < arr.length; i += num) { 
+		newArr.push(arr.slice(i, i + num));
+	}
+	return newArr
+}
+// 时间戳转时间
+
+function add0(m){return m<10?'0'+m:m }
+function formatTimeime(shijianchuo)
+{
+  // 判断返回的时间戳是10位还是13位
+if(shijianchuo.toString().length == 10){
+  shijianchuo = shijianchuo*1000
+}
+//shijianchuo是整数，否则要parseInt转换
+var time = new Date(shijianchuo);
+var y = time.getFullYear();
+var m = time.getMonth()+1;
+var d = time.getDate();
+var h = time.getHours();
+var mm = time.getMinutes();
+var s = time.getSeconds();
+return y+'-'+add0(m)+'-'+add0(d)+' '+add0(h)+':'+add0(mm)+':'+add0(s);
+}
+// 判断对象是否存在空值
+function isObjEmpty (params) {
+  let flag = true;
+ 
+  for(var key in params){
+    if(params[key] != '0' && !params[key]){
+      return false; // 终止程序
+    }
+  }
+ 
+  return flag;
+}
+
+// 获取当前时间
+function getNewTime(){
+  var now = new Date();
+  var yy = now.getFullYear(); //年
+  var mm = now.getMonth() + 1; //月
+  var dd = now.getDate(); //日
+  var hh = now.getHours(); //时
+  var ii = now.getMinutes(); //分
+  var ss = now.getSeconds(); //秒
+  var time = yy + "-";
+  if (mm < 10) time += "0";
+  time += mm + "-";
+  if (dd < 10) time += "0";
+  time += dd + " ";
+  if (hh < 10) time += "0";
+  time += hh + ":";
+  if (ii < 10) time += '0';
+  time += ii + ":";
+  if (ss < 10) time += '0';
+  time += ss;
+  return time
+}
+
+//如果返回的是false说明当前操作系统是手机端，如果返回的是true则说明当前的操作系统是电脑端
+function IsPC() {
+  var userAgentInfo = navigator.userAgent;
+  var Agents = ["Android", "iPhone",
+      "SymbianOS", "Windows Phone",
+      "iPad", "iPod"];
+  var flag = true;
+  for (var v = 0; v < Agents.length; v++) {
+      if (userAgentInfo.indexOf(Agents[v]) > 0) {
+          flag = false;
+          break;
+      }
+  }
+  return flag;
+}
+
 export default {
+  clearStorage,
   throttle,
   debounce,
   numTransforms,
@@ -565,5 +657,10 @@ export default {
   saveKey,
   getItem,
   groupArr,
-  numTransform
+  numTransform,
+  spArr,
+  formatTimeime,
+  isObjEmpty,
+  getNewTime,
+  IsPC
 }
